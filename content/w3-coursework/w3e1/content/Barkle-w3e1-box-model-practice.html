@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+This document demonstrates the CSS box model for Week 03 Exercise 01.
+It is built to professional standards using relative links so it will
+publish cleanly to GitHub Pages. The comments explain why each element
+exists and how it contributes to predictable, maintainable layout.  I use paragraph style comments so I can come back later and study my work and remebner why I did things a certain way.
+-->
+<html lang="en">
+
+<head>
+  <!--
+  Character encoding and viewport meta tags ensure that the text renders
+  correctly and the layout adapts to different screen sizes. This is a
+  baseline requirement for all responsive web pages.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+  The title identifies this specific assignment in the browser tab. It
+  matches the file and project naming conventions for clear traceability.
+  -->
+  <title>Barkle W3E1 Box Model Practice</title>
+
+  <!--
+  The link to the stylesheet is relative, meaning it will work whether this
+  folder is viewed locally or hosted on GitHub Pages. Keeping styles in a
+  separate file aligns with professional separation of structure and style.
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <!--
+  The header provides a top section for the page, giving context for the
+  content below. It could later include navigation or branding. Keeping it
+  semantically correct improves accessibility and code clarity.
+  -->
+  <header>
+    <h1>Barkle W3E Box Model Practice</h1>
+  </header>
+
+  <!--
+  The main element contains the primary content of the page. It is used here
+  to hold a single article that demonstrates the box model in a self-contained
+  way, making it easy to study or grade.
+  -->
+  <main>
+    <!--
+    The article represents a standalone block of content — in this case, the
+    personal card. It replaces a generic div so the HTML reflects intent and
+    keeps "div as last resort" discipline. The class name is used for styling.
+    -->
+    <article class="card">
+      <!--
+      The header inside this article introduces the content that follows. It
+      contains the subject's name, styled later in CSS to create hierarchy and
+      visible spacing using margin and font size rather than empty divs.
+      -->
+      <header class="card-header">
+        <h2>John Barkle</h2>
+      </header>
+
+      <!--
+      This section holds the descriptive text. Grouping it semantically clarifies
+      that this paragraph belongs to the card and not the page at large. Its
+      padding, margin, and border relationships will show how the box model works.
+      -->
+      <section class="card-bio">
+        <p>
+          This card demonstrates the CSS box model by using padding, borders,
+          and margins to create space around the content. The box model is a core
+          concept in web design that defines how elements are sized and spaced.
+          I use a &lt;div&gt; as a last resort, preferring semantic HTML5 elements like
+          &lt;article&gt;, &lt;section&gt;, and &lt;header&gt; to give meaning to the structure of
+          the page. If you notice somewhere I used the &lt;div&gt; tag and could have used
+          a more appropriate tag, your feedback is welcome.</p>
+        <p>
+          If you look at my code, you will notice I use paragraph style comments so I can come back later and study my
+          work and remebner why I did things a certain way.
+        </p>
+      </section>
+
+      <!--
+      The footer closes the article and provides a place for secondary details
+      like a course label or attribution. It maintains semantic completeness
+      and consistent sectioning within the page.
+      -->
+      <footer class="card-footer">
+        <small>Week 03 • CMPA 3304</small>
+      </footer>
+    </article>
+  </main>
+
+  <!--
+  The page footer appears at the bottom and identifies authorship. This is
+  common in academic or corporate documentation and keeps the structure clear.
+  -->
+  <footer>
+    <p>© 2025 John Barkle IV</p>
+  </footer>
+</body>
+
+</html>
