@@ -1,94 +1,153 @@
 /*
-Universal sizing policy — reliability, constraints, and affordability:
-Using border-box ensures width/height include padding and border. This stabilizes layout math across components,
-reduces rework (affordability), and enforces a clear constraint: the declared width is the final outer size.
-It also improves mapping between design intent and rendered result, which strengthens signifiers for users.
+==============================================================================
+WEEK 03 EXERCISE 01 — BOX MODEL PRACTICE
+Author: John Barkle IV
+-------------------------------------------------------------------------------
+This stylesheet follows a clean top-down structure:
+1. Universal rules
+2. Page baseline and global layout
+3. Flexbox layout logic (alignment and structure)
+4. Card component
+5. Typography and readability
+6. Exploration and testing notes
+Each section is explained in full paragraphs to support comprehension.
+==============================================================================
+*/
+
+/*
+------------------------------------------------------------------------------
+1. UNIVERSAL RULES
+------------------------------------------------------------------------------
+Every element uses border-box to make width calculations intuitive.
+Padding and border are included in the total width and height so layouts
+stay predictable. This rule is essential to avoid cumulative growth when
+adding spacing or outlines, which would otherwise break the layout grid.
 */
 * {
   box-sizing: border-box;
 }
 
 /*
-Page baseline — contrast and reading flow:
-A dark canvas increases contrast for the card; a system font stack keeps load fast (affordability) and familiar
-(signifiers users already recognize). Generous line-height supports paragraph readability; paragraphs are better
-than sentences for scanning and comprehension. Outer padding prevents edge collisions, clarifying the layout map.
+------------------------------------------------------------------------------
+2. PAGE BASELINE AND GLOBAL LAYOUT
+------------------------------------------------------------------------------
+The body defines the overall environment: dark background for contrast,
+light text for legibility, and generous outer padding to prevent the
+content from touching screen edges. The system font stack provides quick
+loading and a familiar look, improving perceived performance and trust.
 */
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.5;
-  background-color: #0f172a; /* deep slate for high contrast */
-  color: #e5e7eb;            /* default copy color with sufficient contrast */
+  background-color: #0f172a; /* dark canvas enhances contrast */
+  color: #e5e7eb;            /* neutral light gray maintains readability */
   margin: 0;
   padding: 24px;
 }
 
 /*
-Content width strategy — constraints and eye guidance:
-Max-width limits line length to an optimal reading measure and keeps the focal content centered. This constraint
-directs attention to the topic, reducing cognitive load. Auto margins provide affordable centering with no extra
-markup, preserving clean mapping between structure and presentation.
+------------------------------------------------------------------------------
+3. FLEXBOX LAYOUT LOGIC
+------------------------------------------------------------------------------
+The main container uses flexbox to center its content both horizontally
+and vertically. Flexbox is chosen instead of fixed margins because it
+responds gracefully to changes in viewport height or width.
+
+Explanation of key properties:
+- display: flex activates the flex context, letting child elements align
+  relative to both axes rather than stacking in normal flow.
+- flex-direction: column stacks items vertically (header → card → footer).
+- justify-content: center aligns items along the main axis (vertical here),
+  keeping the card vertically centered in the viewport.
+- align-items: center aligns items along the cross axis (horizontal),
+  centering them from left to right.
 */
 main {
-  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* gives flexbox space to center content visually */
+  gap: 24px;        /* consistent spacing between stacked elements */
   margin: 0 auto;
+  max-width: 960px;
 }
 
 /*
-Card box model — visible structure and signifiers:
-The card demonstrates padding (inner comfort), border (edge signifier), and margin (external separation).
-Max-width 600px creates a consistent focal column; padding establishes readable paragraphs; the border color
-acts as a subtle affordance that this is a distinct unit. Shadow adds depth to separate foreground from background
-without harming contrast.
+------------------------------------------------------------------------------
+4. CARD COMPONENT — STRUCTURE AND BOX MODEL
+------------------------------------------------------------------------------
+The .card acts as the primary demo element for box model behavior.
+It demonstrates how content, padding, border, and margin interact.
+
+Important properties:
+- max-width keeps line length readable and prevents overly wide text blocks.
+- margin: 0 auto horizontally centers the card.
+- padding creates internal spacing between the text and its border.
+- border outlines the box boundary, making the box model visible.
+- border-radius softens edges without affecting the box size.
+- box-shadow provides depth to visually separate the card from the background.
 */
 .card {
-  max-width: 600px;                 /* special width: focused reading column */
-  margin: 0 auto;                   /* horizontal centering (affordable, robust) */
-  padding: 28px;                    /* inner breathing room for paragraphs */
-  background-color: #111827;        /* near-black for content contrast */
-  border: 4px solid #22d3ee;        /* edge signifier: clear boundary */
-  border-radius: 10px;              /* reduces edge harshness; maintains clarity */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35); /* depth cue; preserves contrast hierarchy */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px;
+  background-color: #111827;         /* slightly lighter than body for layering */
+  border: 4px solid #22d3ee;         /* bright cyan edge highlights boundary */
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  display: flex;                     /* flex container for internal layout */
+  flex-direction: column;            /* stack header, bio, footer vertically */
+  gap: 16px;                         /* even spacing between card sections */
 }
 
 /*
-Card heading — hierarchy and mapping:
-A larger, high-contrast heading creates immediate topic clarity and sets the visual hierarchy. Bottom margin
-separates heading from body copy, keeping spacing controlled by margins (outside) rather than padding (inside),
-which maps cleanly to the box model mental model.
+------------------------------------------------------------------------------
+5. TYPOGRAPHY AND READABILITY
+------------------------------------------------------------------------------
+Each textual element receives visual hierarchy through font size, weight,
+and spacing. Margins manage external separation; padding remains for
+container comfort.
+
+The header stands out first, the body paragraphs invite reading, and the
+footer recedes slightly to convey its secondary importance.
 */
+
+/* Card Heading — establishes hierarchy */
 .card-header h2 {
-  color: #67e8f9;       /* accent with strong contrast on dark */
-  font-size: 1.75rem;   /* clear step above body size for hierarchy */
-  margin: 0 0 12px 0;   /* margin defines inter-element spacing */
+  color: #67e8f9;       /* cyan accent against dark background for visibility */
+  font-size: 1.75rem;   /* scaled up for clear title emphasis */
+  margin: 0 0 12px 0;   /* external spacing below heading */
+  text-align: center;   /* visually balances centered card */
 }
 
-/*
-Body copy — paragraphs over sentences:
-Readable size and modest top margin support skimmable paragraphs. Spacing via margins clarifies relationships
-between sibling elements and keeps padding reserved for container comfort. This maintains predictable layout behavior.
-*/
+/* Card Body — primary readable text block */
 .card-bio p {
   color: #e5e7eb;
   font-size: 1rem;
-  margin: 8px 0 0 0;
+  margin: 12px 0;
+  text-align: left;
+  line-height: 1.6;
 }
 
-/*
-Card footer — secondary information:
-Reduced size and a subtle separator line signal lower priority (signifier) without sacrificing contrast. Padding-top
-creates local spacing that reads as a contained subsection, aligning with users’ mental mapping of primary vs. secondary content.
-*/
+/* Card Footer — secondary information with visual separation */
 .card-footer {
-  padding-top: 16px;
   border-top: 1px solid rgba(34, 211, 238, 0.25);
+  padding-top: 12px;
   text-align: right;
   font-size: 0.875rem;
   color: #a5f3fc;
 }
 
 /*
-Exploration cues — predictable behavior under constraints:
-Increase padding (e.g., 28px → 48px) or border (e.g., 4px → 8px) and observe that total width remains fixed due to border-box.
-This confirms constraints are honored, contrast remains strong, and signifiers (edges, spacing) continue to direct the eye.
+------------------------------------------------------------------------------
+6. EXPLORATION AND TESTING NOTES
+------------------------------------------------------------------------------
+Changing padding or border values illustrates the box model directly.
+For example:
+- Increasing padding expands inner comfort without affecting outer width.
+- Increasing border thickness makes the edge stronger but still preserves
+  total width due to border-box sizing.
+Flexbox ensures that when these adjustments occur, the overall alignment
+remains centered and balanced, confirming predictable layout behavior.
 */

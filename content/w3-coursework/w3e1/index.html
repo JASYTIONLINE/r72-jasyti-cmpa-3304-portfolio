@@ -1,129 +1,96 @@
 <!DOCTYPE html>
 <!--
-This index page acts as a local hub for Week 03 Exercise 01.
-All links use relative paths so they function correctly when
-published to GitHub Pages or moved within the course portfolio.
+Week 03 Exercise 01 — Box Model Practice
+This page demonstrates correct separation of concerns between structure (HTML)
+and presentation (CSS). Each comment explains purpose, structure, and rationale
+in paragraph form for future reference and study.
 -->
 <html lang="en">
-
 <head>
+  <!--
+  Metadata establishes consistent rendering across devices.
+  The linked stylesheet controls all visual design.
+  -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Barkle-w3e1-box-model-practice</title>
+  <title>Barkle W3E1 Box Model Practice</title>
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.5;
-      margin: 0;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #67e8f9;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    li {
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    a {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #22d3ee;
-      color: #0f172a;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    a:hover {
-      background-color: #67e8f9;
-    }
-  </style>
+  <!--
+  External stylesheet reference.
+  The relative path ensures GitHub Pages compatibility.
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
   <!--
-  The page title clearly labels the exercise for both graders and visitors.
-  Each list item provides access to either a live view (HTML) or a static PDF copy
-  of the same files. All paths are relative, ensuring they work on GitHub Pages.
+  The header provides page identity and hierarchy.
+  It contains a level-one heading to signal the primary topic.
   -->
-  <h1>Week 03 Exercise 01 — Box Model Practice</h1>
-  The main element contains the primary content of the page. It is used here
-  to hold a single article that demonstrates the box model in a self-contained
-  way, making it easy to study or grade.
+  <header>
+    <h1>Barkle W3E1 Box Model Practice</h1>
+  </header>
+
+  <!--
+  The main region holds the self-contained article card.
+  It demonstrates the box model using semantic HTML elements.
   -->
   <main>
     <!--
-    The article represents a standalone block of content — in this case, the
-    personal card. It replaces a generic div so the HTML reflects intent and
-    keeps "div as last resort" discipline. The class name is used for styling.
+    The article element acts as the container for the personal card.
+    It replaces generic div usage to improve meaning and accessibility.
     -->
     <article class="card">
       <!--
-      The header inside this article introduces the content that follows. It
-      contains the subject's name, styled later in CSS to create hierarchy and
-      visible spacing using margin and font size rather than empty divs.
+      The internal header introduces the card content.
+      It identifies the subject name and defines a clear information hierarchy.
       -->
       <header class="card-header">
         <h2>John Barkle</h2>
       </header>
 
       <!--
-      This section holds the descriptive text. Grouping it semantically clarifies
-      that this paragraph belongs to the card and not the page at large. Its
-      padding, margin, and border relationships will show how the box model works.
+      The section groups related descriptive text about the subject.
+      Multiple paragraphs are used to encourage thoughtful reading and spacing.
       -->
       <section class="card-bio">
         <p>
-          This card demonstrates the CSS box model by using padding, borders,
-          and margins to create space around the content. The box model is a core
-          concept in web design that defines how elements are sized and spaced.
-          I use a &lt;div&gt; as a last resort, preferring semantic HTML5 elements like
-          &lt;article&gt;, &lt;section&gt;, and &lt;header&gt; to give meaning to the structure of
-          the page. If you notice somewhere I used the &lt;div&gt; tag and could have used
-          a more appropriate tag, your feedback is welcome.</p>
+          This card demonstrates how the CSS box model defines space around
+          elements. The flexbox is styled by refernceing style.css in my assets/css folder. 
+        </p>
         <p>
-          If you look at my code, you will notice I use paragraph style comments so I can come back later and study my
-          work and remebner why I did things a certain way.
+          I am using a &lt;DIV&gt; as a last resort protocol. Meaning I seeking to use descriptive semantic tags such as &lt;article&gt;, &lt;section&gt;, and &lt;header&gt; provide
+          clear structure and act as visual and cognitive signifiers for both
+          developers and users. Threrefore, the &lt;div&gt; tag is reserved for situations with no
+          semantic alternative.
+        </p>
+        <p>
+          I also use long format Paragraph-style comments throughout this file explain intent rather
+          than isolated commands. This documentation supports long-term
+          maintainability, instructional clarity, and portfolio review. I use it to help me remember what I did and why the next time I look back at this file.
         </p>
       </section>
 
       <!--
-      The footer closes the article and provides a place for secondary details
-      like a course label or attribution. It maintains semantic completeness
-      and consistent sectioning within the page.
+      The footer offers contextual metadata or attribution for the card.
+      It provides closure to the component and maintains balanced structure.
       -->
       <footer class="card-footer">
         <small>Week 03 • CMPA 3304</small>
       </footer>
     </article>
-
-    <ul>
-      <!-- Link to the PDF copy of the HTML -->
-      <li><a href="./card.pdf" target="_blank">
-          Download Card (HTML PDF Copy)
-        </a></li>
-
-      <!-- Link to the PDF copy of the CSS -->
-      <li><a href="./style-css.pdf" target="_blank">
-          Download Stylesheet (CSS PDF Copy)
-        </a></li>
-    </ul>
   </main>
-</body>
 
+  <!--
+  The page footer supplies global ownership and copyright information.
+  It marks the end of the document flow and maintains consistent semantics.
+  -->
+  <hr>
+  <footer>
+    <footer>
+     <p><a href="../../index.html">Return Home</a></p>
+      <p>© 2025 John E. Barkle IV</p>
+    </footer>
+  </footer>
+</body>
 </html>

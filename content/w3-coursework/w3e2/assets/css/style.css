@@ -1,0 +1,94 @@
+/*
+Universal sizing policy — reliability, constraints, and affordability:
+Using border-box ensures width/height include padding and border. This stabilizes layout math across components,
+reduces rework (affordability), and enforces a clear constraint: the declared width is the final outer size.
+It also improves mapping between design intent and rendered result, which strengthens signifiers for users.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/*
+Page baseline — contrast and reading flow:
+A dark canvas increases contrast for the card; a system font stack keeps load fast (affordability) and familiar
+(signifiers users already recognize). Generous line-height supports paragraph readability; paragraphs are better
+than sentences for scanning and comprehension. Outer padding prevents edge collisions, clarifying the layout map.
+*/
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #0f172a; /* deep slate for high contrast */
+  color: #e5e7eb;            /* default copy color with sufficient contrast */
+  margin: 0;
+  padding: 24px;
+}
+
+/*
+Content width strategy — constraints and eye guidance:
+Max-width limits line length to an optimal reading measure and keeps the focal content centered. This constraint
+directs attention to the topic, reducing cognitive load. Auto margins provide affordable centering with no extra
+markup, preserving clean mapping between structure and presentation.
+*/
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/*
+Card box model — visible structure and signifiers:
+The card demonstrates padding (inner comfort), border (edge signifier), and margin (external separation).
+Max-width 600px creates a consistent focal column; padding establishes readable paragraphs; the border color
+acts as a subtle affordance that this is a distinct unit. Shadow adds depth to separate foreground from background
+without harming contrast.
+*/
+.card {
+  max-width: 600px;                 /* special width: focused reading column */
+  margin: 0 auto;                   /* horizontal centering (affordable, robust) */
+  padding: 28px;                    /* inner breathing room for paragraphs */
+  background-color: #111827;        /* near-black for content contrast */
+  border: 4px solid #22d3ee;        /* edge signifier: clear boundary */
+  border-radius: 10px;              /* reduces edge harshness; maintains clarity */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35); /* depth cue; preserves contrast hierarchy */
+}
+
+/*
+Card heading — hierarchy and mapping:
+A larger, high-contrast heading creates immediate topic clarity and sets the visual hierarchy. Bottom margin
+separates heading from body copy, keeping spacing controlled by margins (outside) rather than padding (inside),
+which maps cleanly to the box model mental model.
+*/
+.card-header h2 {
+  color: #67e8f9;       /* accent with strong contrast on dark */
+  font-size: 1.75rem;   /* clear step above body size for hierarchy */
+  margin: 0 0 12px 0;   /* margin defines inter-element spacing */
+}
+
+/*
+Body copy — paragraphs over sentences:
+Readable size and modest top margin support skimmable paragraphs. Spacing via margins clarifies relationships
+between sibling elements and keeps padding reserved for container comfort. This maintains predictable layout behavior.
+*/
+.card-bio p {
+  color: #e5e7eb;
+  font-size: 1rem;
+  margin: 8px 0 0 0;
+}
+
+/*
+Card footer — secondary information:
+Reduced size and a subtle separator line signal lower priority (signifier) without sacrificing contrast. Padding-top
+creates local spacing that reads as a contained subsection, aligning with users’ mental mapping of primary vs. secondary content.
+*/
+.card-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(34, 211, 238, 0.25);
+  text-align: right;
+  font-size: 0.875rem;
+  color: #a5f3fc;
+}
+
+/*
+Exploration cues — predictable behavior under constraints:
+Increase padding (e.g., 28px → 48px) or border (e.g., 4px → 8px) and observe that total width remains fixed due to border-box.
+This confirms constraints are honored, contrast remains strong, and signifiers (edges, spacing) continue to direct the eye.
+*/
