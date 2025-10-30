@@ -10,6 +10,16 @@
     "category": null
   },
   {
+    "name": "COMMIT_EDITMSG",
+    "path": ".git/COMMIT_EDITMSG",
+    "type": "file",
+    "ext": "",
+    "size": 142,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
     "name": "config",
     "path": ".git/config",
     "type": "file",
@@ -204,7 +214,7 @@
     "path": ".git/index",
     "type": "file",
     "ext": "",
-    "size": 7686,
+    "size": 8085,
     "title": null,
     "sitemap": null,
     "category": "unknown"
@@ -244,7 +254,7 @@
     "path": ".git/logs/HEAD",
     "type": "file",
     "ext": "",
-    "size": 213,
+    "size": 812,
     "title": null,
     "sitemap": null,
     "category": "unknown"
@@ -274,7 +284,7 @@
     "path": ".git/logs/refs/heads/main",
     "type": "file",
     "ext": "",
-    "size": 213,
+    "size": 812,
     "title": null,
     "sitemap": null,
     "category": "unknown"
@@ -304,7 +314,17 @@
     "path": ".git/logs/refs/remotes/origin/HEAD",
     "type": "file",
     "ext": "",
-    "size": 369,
+    "size": 1929,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "main",
+    "path": ".git/logs/refs/remotes/origin/main",
+    "type": "file",
+    "ext": "",
+    "size": 447,
     "title": null,
     "sitemap": null,
     "category": "unknown"
@@ -318,6 +338,696 @@
     "title": null,
     "sitemap": null,
     "category": null
+  },
+  {
+    "name": "08",
+    "path": ".git/objects/08",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "154147ad16f2e02ac8105edf29a58cec535da6",
+    "path": ".git/objects/08/154147ad16f2e02ac8105edf29a58cec535da6",
+    "type": "file",
+    "ext": "",
+    "size": 73,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "09",
+    "path": ".git/objects/09",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "093fabb451aee8fe0327b7b61d1ae05892de6d",
+    "path": ".git/objects/09/093fabb451aee8fe0327b7b61d1ae05892de6d",
+    "type": "file",
+    "ext": "",
+    "size": 766,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "0a",
+    "path": ".git/objects/0a",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "cb09c50909c6c27adfd1a167304d35cb75b680",
+    "path": ".git/objects/0a/cb09c50909c6c27adfd1a167304d35cb75b680",
+    "type": "file",
+    "ext": "",
+    "size": 192,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "27",
+    "path": ".git/objects/27",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "b4539931975f667b88064ff5cc04df56d7261f",
+    "path": ".git/objects/27/b4539931975f667b88064ff5cc04df56d7261f",
+    "type": "file",
+    "ext": "",
+    "size": 1619,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "29",
+    "path": ".git/objects/29",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "93b00179d5af912459ef21475827dda12680b9",
+    "path": ".git/objects/29/93b00179d5af912459ef21475827dda12680b9",
+    "type": "file",
+    "ext": "",
+    "size": 110,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "4d",
+    "path": ".git/objects/4d",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "344a81e3d28daac16a02f9ccb518759047a2d7",
+    "path": ".git/objects/4d/344a81e3d28daac16a02f9ccb518759047a2d7",
+    "type": "file",
+    "ext": "",
+    "size": 87,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "60",
+    "path": ".git/objects/60",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "d177b6cbe1377736e0c69a5a3573a558068a69",
+    "path": ".git/objects/60/d177b6cbe1377736e0c69a5a3573a558068a69",
+    "type": "file",
+    "ext": "",
+    "size": 2535,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "65",
+    "path": ".git/objects/65",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "7ee34131dc6d568597aef85859c7cff97102f3",
+    "path": ".git/objects/65/7ee34131dc6d568597aef85859c7cff97102f3",
+    "type": "file",
+    "ext": "",
+    "size": 2761,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "6b",
+    "path": ".git/objects/6b",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "776d2bc5fe28a32c47e52ae3e407d30c7c1f8e",
+    "path": ".git/objects/6b/776d2bc5fe28a32c47e52ae3e407d30c7c1f8e",
+    "type": "file",
+    "ext": "",
+    "size": 87,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "72",
+    "path": ".git/objects/72",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "fdab2c35ad03873ababaf946d9a1899ec3c9dd",
+    "path": ".git/objects/72/fdab2c35ad03873ababaf946d9a1899ec3c9dd",
+    "type": "file",
+    "ext": "",
+    "size": 88,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "74",
+    "path": ".git/objects/74",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "4d719f0ff34decca45e1feb63e6d11af8d7533",
+    "path": ".git/objects/74/4d719f0ff34decca45e1feb63e6d11af8d7533",
+    "type": "file",
+    "ext": "",
+    "size": 759,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "7a",
+    "path": ".git/objects/7a",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "f6a0d72cb98c38d5b841dc00b4c30246566689",
+    "path": ".git/objects/7a/f6a0d72cb98c38d5b841dc00b4c30246566689",
+    "type": "file",
+    "ext": "",
+    "size": 222,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "7d",
+    "path": ".git/objects/7d",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "ee61eaefb41aed74266f34b49d3817ce3cd931",
+    "path": ".git/objects/7d/ee61eaefb41aed74266f34b49d3817ce3cd931",
+    "type": "file",
+    "ext": "",
+    "size": 55,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "82",
+    "path": ".git/objects/82",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "dc760b5e9e69e82f3df4025f6a31444cda95b4",
+    "path": ".git/objects/82/dc760b5e9e69e82f3df4025f6a31444cda95b4",
+    "type": "file",
+    "ext": "",
+    "size": 192,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "83",
+    "path": ".git/objects/83",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "f0b0932ab5fd708f33ea1557fa2c5088e1e013",
+    "path": ".git/objects/83/f0b0932ab5fd708f33ea1557fa2c5088e1e013",
+    "type": "file",
+    "ext": "",
+    "size": 202,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "84",
+    "path": ".git/objects/84",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "7d1c0e056fde0a2c4df9021717ab2767910f36",
+    "path": ".git/objects/84/7d1c0e056fde0a2c4df9021717ab2767910f36",
+    "type": "file",
+    "ext": "",
+    "size": 98,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "87",
+    "path": ".git/objects/87",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "80aee055ce73d600b821695d18b49381c8c5ac",
+    "path": ".git/objects/87/80aee055ce73d600b821695d18b49381c8c5ac",
+    "type": "file",
+    "ext": "",
+    "size": 222,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "98",
+    "path": ".git/objects/98",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "f5fb7ce3ed6400ae50e78ea55c846d17a59f30",
+    "path": ".git/objects/98/f5fb7ce3ed6400ae50e78ea55c846d17a59f30",
+    "type": "file",
+    "ext": "",
+    "size": 87,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "9b",
+    "path": ".git/objects/9b",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "3801dfb4507da485addb61527102af263da3fd",
+    "path": ".git/objects/9b/3801dfb4507da485addb61527102af263da3fd",
+    "type": "file",
+    "ext": "",
+    "size": 102,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "9d",
+    "path": ".git/objects/9d",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "fc052e616292c6c605c36b0fe837cf6c918ada",
+    "path": ".git/objects/9d/fc052e616292c6c605c36b0fe837cf6c918ada",
+    "type": "file",
+    "ext": "",
+    "size": 484,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "ad",
+    "path": ".git/objects/ad",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "ccfaf89e5452ab84d199c23e4b5586c245af57",
+    "path": ".git/objects/ad/ccfaf89e5452ab84d199c23e4b5586c245af57",
+    "type": "file",
+    "ext": "",
+    "size": 1854,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "af",
+    "path": ".git/objects/af",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "0e855c7afd2f8d8d579c0bc2cc4742773af1a3",
+    "path": ".git/objects/af/0e855c7afd2f8d8d579c0bc2cc4742773af1a3",
+    "type": "file",
+    "ext": "",
+    "size": 45,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "c106440a1043b7409e753aa2b12ec50b4b0aa8",
+    "path": ".git/objects/af/c106440a1043b7409e753aa2b12ec50b4b0aa8",
+    "type": "file",
+    "ext": "",
+    "size": 213,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "b5",
+    "path": ".git/objects/b5",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "574dd5f7ee6b04c68e91ed91879a52f187ae02",
+    "path": ".git/objects/b5/574dd5f7ee6b04c68e91ed91879a52f187ae02",
+    "type": "file",
+    "ext": "",
+    "size": 221,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "bf",
+    "path": ".git/objects/bf",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "4e76d649a10ffcf18938586cb08960378f9f2c",
+    "path": ".git/objects/bf/4e76d649a10ffcf18938586cb08960378f9f2c",
+    "type": "file",
+    "ext": "",
+    "size": 110,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "c1",
+    "path": ".git/objects/c1",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "0f71ac7952feb09e98412d284376e5f9e9eae8",
+    "path": ".git/objects/c1/0f71ac7952feb09e98412d284376e5f9e9eae8",
+    "type": "file",
+    "ext": "",
+    "size": 74,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "c5",
+    "path": ".git/objects/c5",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "69250e529f9747a7dd5ed0398522bb2fe2e949",
+    "path": ".git/objects/c5/69250e529f9747a7dd5ed0398522bb2fe2e949",
+    "type": "file",
+    "ext": "",
+    "size": 76,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "ce",
+    "path": ".git/objects/ce",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "887e3a35597a1014002a527d66770e766588f3",
+    "path": ".git/objects/ce/887e3a35597a1014002a527d66770e766588f3",
+    "type": "file",
+    "ext": "",
+    "size": 988989,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "d7",
+    "path": ".git/objects/d7",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "02c34bbb4d7022355fa60fcbe05d1c536556db",
+    "path": ".git/objects/d7/02c34bbb4d7022355fa60fcbe05d1c536556db",
+    "type": "file",
+    "ext": "",
+    "size": 193,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "d9",
+    "path": ".git/objects/d9",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "86fbc719cccfbc3cc825fbb995832cfb3ae026",
+    "path": ".git/objects/d9/86fbc719cccfbc3cc825fbb995832cfb3ae026",
+    "type": "file",
+    "ext": "",
+    "size": 54,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "e2",
+    "path": ".git/objects/e2",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "fed9537afd677288d22cdc0c2daf76b1a63683",
+    "path": ".git/objects/e2/fed9537afd677288d22cdc0c2daf76b1a63683",
+    "type": "file",
+    "ext": "",
+    "size": 789,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "e3",
+    "path": ".git/objects/e3",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "567976d7bc3e0761db55fa2910e2a2baf493b0",
+    "path": ".git/objects/e3/567976d7bc3e0761db55fa2910e2a2baf493b0",
+    "type": "file",
+    "ext": "",
+    "size": 53,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "eb",
+    "path": ".git/objects/eb",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "faa416fd80a2e276482f1f28c885ae0e56d0ea",
+    "path": ".git/objects/eb/faa416fd80a2e276482f1f28c885ae0e56d0ea",
+    "type": "file",
+    "ext": "",
+    "size": 110,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "ec",
+    "path": ".git/objects/ec",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "3e5ce3efe9955fcca9d3a6949fc7b1d9cd42fb",
+    "path": ".git/objects/ec/3e5ce3efe9955fcca9d3a6949fc7b1d9cd42fb",
+    "type": "file",
+    "ext": "",
+    "size": 244,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
+    "name": "f9",
+    "path": ".git/objects/f9",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "5021d2192bdac85c62a98d68a2223b3a6928e1",
+    "path": ".git/objects/f9/5021d2192bdac85c62a98d68a2223b3a6928e1",
+    "type": "file",
+    "ext": "",
+    "size": 408,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
   },
   {
     "name": "info",
@@ -440,6 +1150,16 @@
     "category": "unknown"
   },
   {
+    "name": "main",
+    "path": ".git/refs/remotes/origin/main",
+    "type": "file",
+    "ext": "",
+    "size": 41,
+    "title": null,
+    "sitemap": null,
+    "category": "unknown"
+  },
+  {
     "name": "tags",
     "path": ".git/refs/tags",
     "type": "folder",
@@ -460,6 +1180,26 @@
     "category": null
   },
   {
+    "name": "css",
+    "path": "assets/css",
+    "type": "folder",
+    "ext": null,
+    "size": null,
+    "title": null,
+    "sitemap": null,
+    "category": null
+  },
+  {
+    "name": "style.css",
+    "path": "assets/css/style.css",
+    "type": "file",
+    "ext": ".css",
+    "size": 19792,
+    "title": null,
+    "sitemap": null,
+    "category": "stylesheet"
+  },
+  {
     "name": "data",
     "path": "assets/data",
     "type": "folder",
@@ -474,7 +1214,7 @@
     "path": "assets/data/tree.json",
     "type": "file",
     "ext": ".json",
-    "size": 48682,
+    "size": 44206,
     "title": null,
     "sitemap": null,
     "category": "data"
@@ -704,7 +1444,7 @@
     "path": "content/w1-coursework/index.html",
     "type": "file",
     "ext": ".html",
-    "size": 1343,
+    "size": 1304,
     "title": "CMPA 3304 Week 1",
     "sitemap": "none",
     "category": "markup"
@@ -734,7 +1474,7 @@
     "path": "content/w2-coursework/index.html",
     "type": "file",
     "ext": ".html",
-    "size": 822,
+    "size": 837,
     "title": "CMPA 3304 Week 2",
     "sitemap": "none",
     "category": "markup"
@@ -754,7 +1494,7 @@
     "path": "content/w3-coursework/index.html",
     "type": "file",
     "ext": ".html",
-    "size": 943,
+    "size": 829,
     "title": "Week 03 Coursework",
     "sitemap": "none",
     "category": "markup"
@@ -1050,26 +1790,6 @@
     "category": "audio"
   },
   {
-    "name": "css",
-    "path": "content/w3-coursework/w3e1/assets/css",
-    "type": "folder",
-    "ext": null,
-    "size": null,
-    "title": null,
-    "sitemap": null,
-    "category": null
-  },
-  {
-    "name": "style.css",
-    "path": "content/w3-coursework/w3e1/assets/css/style.css",
-    "type": "file",
-    "ext": ".css",
-    "size": 6313,
-    "title": null,
-    "sitemap": null,
-    "category": "stylesheet"
-  },
-  {
     "name": "pdf",
     "path": "content/w3-coursework/w3e1/assets/pdf",
     "type": "folder",
@@ -1104,7 +1824,7 @@
     "path": "content/w3-coursework/w3e1/index.html",
     "type": "file",
     "ext": ".html",
-    "size": 3310,
+    "size": 3950,
     "title": "Barkle W3E1 Box Model Practice",
     "sitemap": "none",
     "category": "markup"
@@ -1130,8 +1850,8 @@
     "category": null
   },
   {
-    "name": "css",
-    "path": "content/w3-coursework/w3e2/assets/css",
+    "name": "images",
+    "path": "content/w3-coursework/w3e2/assets/images",
     "type": "folder",
     "ext": null,
     "size": null,
@@ -1140,21 +1860,21 @@
     "category": null
   },
   {
-    "name": "style.css",
-    "path": "content/w3-coursework/w3e2/assets/css/style.css",
+    "name": "w3e2-flexbox-froggy-solved.png",
+    "path": "content/w3-coursework/w3e2/assets/images/w3e2-flexbox-froggy-solved.png",
     "type": "file",
-    "ext": ".css",
-    "size": 4263,
+    "ext": ".png",
+    "size": 1000432,
     "title": null,
     "sitemap": null,
-    "category": "stylesheet"
+    "category": "image"
   },
   {
     "name": "index.html",
     "path": "content/w3-coursework/w3e2/index.html",
     "type": "file",
     "ext": ".html",
-    "size": 1462,
+    "size": 5725,
     "title": "Barkle – Week 03 Exercise 02: Flexbox Froggy",
     "sitemap": "none",
     "category": "markup"
@@ -1244,7 +1964,7 @@
     "path": "index.html",
     "type": "file",
     "ext": ".html",
-    "size": 1991,
+    "size": 1999,
     "title": "John E. Barkle IV – CMPA 3304 Course Homepage",
     "sitemap": "none",
     "category": "markup"

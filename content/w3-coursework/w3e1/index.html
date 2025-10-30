@@ -20,7 +20,7 @@ in paragraph form for future reference and study.
   External stylesheet reference.
   The relative path ensures GitHub Pages compatibility.
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+          <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 
 <body>
@@ -37,12 +37,12 @@ in paragraph form for future reference and study.
   It demonstrates the box model using semantic HTML elements.
   -->
   <main>
+          <!--
+      The section groups related descriptive text about the subject.
+      Multiple paragraphs are used to encourage thoughtful reading and spacing.
+      -->
+     <article class="card card--bio ring-green">
     <!--
-    The article element acts as the container for the personal card.
-    It replaces generic div usage to improve meaning and accessibility.
-    -->
-    <article class="card">
-      <!--
       The internal header introduces the card content.
       It identifies the subject name and defines a clear information hierarchy.
       -->
@@ -50,11 +50,6 @@ in paragraph form for future reference and study.
         <h2>John Barkle</h2>
       </header>
 
-      <!--
-      The section groups related descriptive text about the subject.
-      Multiple paragraphs are used to encourage thoughtful reading and spacing.
-      -->
-      <section class="card-bio">
         <p> My name is John Barkle, and I am 55 years old and recently started a year long sabatical from work to go
           back to school and finish a degree in CMPA, as well as get traineid in Full Stack Engenering. My goal after I
           finish all this training is to sequey into AI application development and Full Stack engeeering.I’m currently
@@ -76,7 +71,8 @@ in paragraph form for future reference and study.
           than isolated commands. This documentation supports long-term maintainability, instructional clarity, and
           portfolio review. I use it to help me remember what I did and why the next time I look back at this file.
         </p>
-      </section>
+   
+</article>
 
       <!--
       The footer offers contextual metadata or attribution for the card.

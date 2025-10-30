@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+CMPA 3304 — DESIGN SYSTEM REFERENCE (Public Teaching Page)
+This page is a living catalog of the site’s components and patterns. 
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMPA 3304 — Style Guide & Component Reference</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="bg-dark">
+
+  <header class="header">
+    <div class="navbar">
+      <a class="navbar-brand" href="../index.html">JASYTI • CMPA 3304</a>
+      <nav class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="../content/w3-coursework/index.html">Week 03</a>
+        <a href="../styleguide/">Style Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section bg-gradient-blue" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="h1">JASYTI's Pop Palette Style Guide • Modern, Glowy, Readable</h1>
+      <p class="lead">
+        This reference page shows how the palette, spacing, type, and layout
+        come together across real components. Tweak variables once; review here.
+      </p>
+      <div class="toolbar">
+        <a class="btn btn-primary" href="../content/w3-coursework/w3e1/">View Box Model Card</a>
+        <a class="btn btn-outline" href="../content/w3-coursework/w3e2/">Flexbox Froggy Screenshot</a>
+      </div>
+      <div>
+        <p class="badge-red">LIVE DEMO • RED ACCENT</p>
+        <article class="card ring-green">This is a cool “lighted” border for special emphasis items.</article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+    SECTION 1: TYPOGRAPHY SHOWCASE
+    ========================================================== -->
+    <section class="section" aria-labelledby="typography">
+      <h2 id="typography" class="h2">Typography • Heading Hierarchy & Body Text</h2>
+      <h1 class="h1">H1 Electric Blue</h1>
+      <h2 class="h2">H2 Mid Blue</h2>
+      <h3 class="h3">H3 Soft Cyan</h3>
+      <h4 class="h4">H4 Pale Blue-Gray</h4>
+      <h5 class="h5">H5 Off-White Subheader</h5>
+      <h6 class="h6">H6 Muted Gray-Cyan</h6>
+
+      <p>
+        Body paragraph text uses the neutral light gray for long-form readability
+        on a dark canvas. The <a href="#">link style</a> uses a softer cyan by default and
+        shifts toward red on hover for clear feedback.
+      </p>
+      <p class="lead">Lead text emphasizes introductory content with a slightly larger size.</p>
+      <p><small>Small / caption text helps with secondary labels and notes.</small></p>
+
+      <ul>
+        <li>Unordered list item one</li>
+        <li>Unordered list item two</li>
+        <li>Unordered list item three</li>
+      </ul>
+      <ol>
+        <li>Ordered item one</li>
+        <li>Ordered item two</li>
+        <li>Ordered item three</li>
+      </ol>
+    </section>
+
+    <!-- =========================================================
+    SECTION 1A: QUOTES • BLOCKQUOTE STYLING
+    Demonstrates the dedicated blockquote styles (italics, centered, lighter tone).
+    ========================================================== -->
+    <section class="section" aria-labelledby="quotes">
+      <h2 id="quotes" class="h2">Quotes • Blockquote Styling</h2>
+      <blockquote class="card p-6">
+        <p>“Blockquote wrapped in a card to demonstrate contrast and spacing.”</p>
+      </blockquote>
+    </section>
+
+    <!-- =========================================================
+    SECTION 2: BUTTONS & TOOLBARS
+    ========================================================== -->
+    <section class="section" aria-labelledby="buttons">
+      <h2 id="buttons" class="h2">Buttons & Toolbars • Primary Controls</h2>
+      <div class="toolbar">
+        <a class="btn btn-primary pulse-on-hover" href="#">Primary</a>
+        <a class="btn btn-outline" href="#">Outline</a>
+        <a class="btn btn-danger" href="#">Danger</a>
+        <a class="btn btn-disabled" aria-disabled="true" href="#">Disabled</a>
+      </div>
+      <p>
+        Buttons use consistent padding, borders, and transitions. Primary buttons
+        carry the electric cyan fill, outline leans on strokes, danger uses red,
+        and disabled reduces interactivity and opacity without layout shifts.
+      </p>
+    </section>
+
+    <!-- =========================================================
+    SECTION 3: LAYOUT CONTAINERS • FLEX & GRID
+    ========================================================== -->
+    <section class="section" aria-labelledby="layout">
+      <h2 id="layout" class="h2">Layout • Containers, Flex, and Grid</h2>
+
+      <h3 class="h3">Flex Center</h3>
+      <div class="card flex-center">
+        <span>Centered A</span><span>Centered B</span><span>Centered C</span>
+      </div>
+
+      <h3 class="h3 mt-4">Grid 2 Columns</h3>
+      <div class="grid-2">
+        <div class="card">Grid cell 1</div>
+        <div class="card">Grid cell 2</div>
+      </div>
+
+      <h3 class="h3 mt-4">Grid 3 Columns</h3>
+      <div class="grid-3">
+        <div class="card">Grid cell 1</div>
+        <div class="card">Grid cell 2</div>
+        <div class="card">Grid cell 3</div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+    SECTION 4: CARDS (STANDARD, PROFILE, SUCCESS)
+    ========================================================== -->
+    <section class="section" aria-labelledby="cards">
+      <h2 id="cards" class="h2">Cards • Standard, Profile, and Success Variants</h2>
+
+      <div class="grid-3">
+        <!-- Standard -->
+        <article class="card">
+          <header class="card-header"><h3 class="h3">Standard Card</h3></header>
+          <div class="card-body">
+            <p>
+              Demonstrates the accent border, rounded corners, and shadow depth
+              that separate content from the dark canvas while maintaining contrast.
+            </p>
+          </div>
+          <footer class="card-footer"><small>Updated just now</small></footer>
+        </article>
+
+        <!-- Profile -->
+        <article class="card">
+          <header class="card-header"><h3 class="h3">Profile Card</h3></header>
+          <div class="card-body flex-center" style="gap: var(--space-4);">
+            <figure class="screenshot">
+              <img src="../content/w3-coursework/w3e2/assets/images/w3e2-flexbox-froggy-solved.png"
+                   alt="Profile placeholder (screenshot used as avatar)">
+              <figcaption>Avatar</figcaption>
+            </figure>
+            <div>
+              <h4 class="h4">John Barkle</h4>
+              <p>Full-stack learner. Focused on clean, fast, accessible UI.</p>
+              <div class="toolbar">
+                <a class="btn btn-outline" href="#">Message</a>
+                <a class="btn btn-primary" href="#">Follow</a>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer"><small>Member since 2025</small></footer>
+        </article>
+
+        <!-- Success (green accent variant) -->
+        <article class="card card--success">
+          <header class="card-header"><h3 class="h3">Success Card</h3></header>
+          <div class="card-body">
+            <p>
+              This variant demonstrates the <code>.card--success</code> class, using
+              a neon-green border and glow to signify a positive or completed state.
+            </p>
+          </div>
+          <footer class="card-footer"><small>Operation completed successfully</small></footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+    (remaining sections unchanged)
+    ========================================================== -->
+    <!-- keep your Media, Forms, Tables, Alerts, Sidebar, Pagination, Utilities, and Motion sections here exactly as before -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 John E. Barkle IV • CMPA 3304 • Style Guide</small>
+    </div>
+  </footer>
+
+</body>
+</html>
