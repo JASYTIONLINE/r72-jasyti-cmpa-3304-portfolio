@@ -1,122 +1,211 @@
+/* ==========================================================================
+   KUK SOOL WON COLLECTION — CUSTOM DARK THEME
+   Layout: from style-1.css
+   Theme & Typography: adapted from instructor's style.css
+   Author: John Barkle IV
+   ========================================================================== */
+
+/* Font import (Oswald for disciplined martial-arts aesthetic) */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap");
+
+/* ==========================================================================
+   1. GLOBAL BASE + RESET
+   ========================================================================== */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    min-height: 100vh;
-    margin: 0;
+  min-height: 100vh;
+  margin: 0;
 }
 
 body {
-    font-family: "Times New Roman", serif;
-    line-height: 2;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 32px 0;
+  font-family: "Oswald", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.8;
+  color: #e5e7eb; /* light gray for readability */
+  background-color: #0f172a; /* deep navy */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 0;
 }
 
+/* ==========================================================================
+   2. STRUCTURE
+   ========================================================================== */
 main {
-    max-width: 1000px;
-    width: 90%;
-    padding: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+  max-width: 1000px;
+  width: 90%;
+  padding: 16px;
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  background-color: #111b33;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
+/* ==========================================================================
+   3. TYPOGRAPHY
+   ========================================================================== */
 h1 {
-    font-weight: normal;
-    font-size: 48px;
-    line-height: 1em;
-    margin-top: 48px;
-    margin-bottom: 48px;
-    text-align: center;
-}
-h2 {
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 1em;
-    margin-top: 24px;
-    margin-bottom: 24px;
-    text-align: center;
-}
-main>p {
-    margin-bottom: 32px;
-    text-align: center;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.1em;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  text-align: center;
+  color: #22d3ee;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+  letter-spacing: 1px;
 }
 
+h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.2em;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #67e8f9;
+  text-shadow: 0 0 6px rgba(103, 232, 249, 0.4);
+}
+
+main > p {
+  margin-bottom: 32px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   4. LOGO
+   ========================================================================== */
+.logo img {
+  display: block;
+  width: 25%;
+  max-width: 300px;
+  margin: 0 auto 32px auto;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+}
+
+/* ==========================================================================
+   5. COLLECTION GRID & CARDS
+   ========================================================================== */
 .collection-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin: 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 48px 0;
 }
 
 .collection-card {
   flex: 1 1 100%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: #fafafa;
-  padding: 16px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(34, 211, 238, 0.25);
+}
 
 .collection-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    margin-bottom: 16px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid rgba(103, 232, 249, 0.4);
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 .collection-card h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 8px;
-    line-height: 1.2;
+  font-size: 24px;
+  font-weight: 500;
+  color: #22d3ee;
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .collection-card .details {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 16px;
-    font-style: italic;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+  font-style: italic;
 }
 
 .collection-card .description {
-    font-size: 16px;
-    margin-bottom: 0;
-    line-height: 1.6;
+  font-size: 16px;
+  color: #e2e8f0;
+  line-height: 1.7;
 }
 
-/* Logo styles */
-.logo img {
-  display: block;
-  width: 25%;
-  max-width: 300px; /* optional safeguard */
-  margin: 0 auto; /* centers horizontally */
+/* ==========================================================================
+   6. RESPONSIVENESS
+   ========================================================================== */
+/* Mobile (≤479px) — 1 column */
+@media (max-width: 479px) {
+  .collection-card {
+    flex: 1 1 100%;
+  }
 }
 
-/* Responsive breakpoints:
-     - ≤479px: 1 column
-     - 480–1023px: 2 columns
-     - ≥1024px: 3 columns
-*/
-
-/*tablet: two columns */
-@media (width >= 480px) {
+/* Tablet (480–1023px) — 2 columns */
+@media (min-width: 480px) and (max-width: 1023px) {
   .collection-card {
     flex: 1 1 45%;
   }
 }
 
-/* desktop: three columns */
-@media (width >= 1024px) {
+/* Desktop (≥1024px) — 3 columns */
+@media (min-width: 1024px) {
   .collection-card {
     flex: 1 1 30%;
+  }
+}
+
+/* ==========================================================================
+   7. INTERACTIVE EFFECTS
+   ========================================================================== */
+a {
+  color: #22d3ee;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #ff3344;
+}
+
+.collection-card:hover h2 {
+  color: #67e8f9;
+}
+
+/* ==========================================================================
+   8. FOOTER / PRINT SAFE OVERRIDES (optional for project expansion)
+   ========================================================================== */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  main {
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+  .collection-card {
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    color: #000 !important;
   }
 }
