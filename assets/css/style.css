@@ -1,0 +1,759 @@
+/*
+==============================================================================
+CMPA 3304 — SITEWIDE DESIGN SYSTEM (Pure CSS)
+Author: John Barkle IV
+-------------------------------------------------------------------------------
+This stylesheet provides a complete base for the course website.  It is heavily commented 
+for my future reference.  I have explained why ech item is and how it effects the page or
+elemnt it refers to. This way I can come back in a week or maont and see what I used and 
+start buildig muscle memory.
+
+It provides a consistent visual system (colors, spacing,
+type, layout) and reusable components (headers, navbars, sidebars, cards,
+toolbars, buttons, screenshots) with paragraph-style documentation. Structure
+and behavior are defined only with CSS, preserving separation of concerns.
+Learning markers reference MDN/W3C topics you can verify anytime.
+==============================================================================
+
+Refernces (MDN / W3C):
+- Box model / box-sizing: https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/The_box_model
+- Flexbox: https://developer.mozilla.org/docs/Web/CSS/CSS_flexible_box_layout
+- Grid: https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout
+- Media queries: https://developer.mozilla.org/docs/Web/CSS/Media_Queries
+- Transitions: https://developer.mozilla.org/docs/Web/CSS/CSS_transitions
+- Animations (keyframes): https://developer.mozilla.org/docs/Web/CSS/@keyframes
+- Print styles: https://developer.mozilla.org/docs/Web/CSS/@media/print
+- Focus visibility: https://developer.mozilla.org/docs/Web/CSS/:focus-visible
+*/
+
+/*=============================================================================
+0) THEME PALETTE, TOKENS, AND SCALES (GLOBAL)
+-----------------------------------------------------------------------------
+This block defines the site’s visual language as CSS variables so every page
+shares the same look. Colors follow the PepsiWorld-inspired, modern, glowy
+scheme: deep navy backgrounds, electric cyan as the primary accent, clean
+whites for clarity, vivid red for calls to action, and neon green used only
+as a subtle highlight. Spacing, radii, shadows, and transitions are included
+to keep rhythm and motion consistent across components.
+=============================================================================*/
+:root {
+  /* Color tokens */
+  --color-bg-dark: #0f172a;
+  /* deep navy background */
+  --color-surface: #111b33;
+  /* slightly lighter surface panel */
+  --color-primary: #22d3ee;
+  /* electric cyan (primary accent) */
+  --color-primary-ghost: #67e8f9;
+  /* softer cyan for glows / subtle text */
+  --color-text: #e5e7eb;
+  /* neutral light gray for body text */
+  --color-white: #ffffff;
+  /* crisp white for highlights */
+  --color-red: #ff3344;
+  /* energetic red for CTAs */
+  --color-green: #00ff88;
+  /* neon green used sparingly for highlight */
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --lh-base: 1.5;
+
+  /* Spacing scale (rem-based for accessibility) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* Radii, borders, shadows, motion */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --border-strong: 4px solid var(--color-primary);
+  --border-soft: 1px solid rgba(34, 211, 238, 0.25);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+
+  /* Content constraints */
+  --container-max: 2560px;
+  /* site must not exceed this width */
+  --content-max: 960px;
+  /* comfortable reading line-length */
+}
+
+/*=============================================================================
+1) GLOBAL RESET, BASE STRUCTURE, AND ACCESSIBILITY (APPLIES TO ALL PAGES)
+-----------------------------------------------------------------------------
+This block normalizes the box model, establishes the site’s background and
+typography, and constrains layout width. Vertical scrolling is enabled when
+content exceeds viewport height; horizontal overflow is hidden to prevent
+sideways scroll. Focus-visible states are styled for keyboard accessibility.
+=============================================================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--lh-base);
+  color: var(--color-text);
+  background-color: var(--color-bg-dark);
+  overflow-x: hidden;
+  /* prevent accidental horizontal scroll */
+  /* vertical scrolling occurs naturally when content exceeds the viewport */
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary-ghost);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-red);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  /* keyboard-friendly focus that meets contrast guidance */
+}
+
+/*=============================================================================
+2) CONTAINERS, SECTIONS, AND RESPONSIVE LAYOUT UTILITIES
+-----------------------------------------------------------------------------
+These classes centralize content, enforce the maximum site width, and provide
+flex/grid utilities used throughout the site without custom one-off CSS. By
+relying on these helpers, pages stay consistent and easier to maintain.
+LEARN MORE: Flexbox & Grid on MDN.
+=============================================================================*/
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-block: var(--space-6);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+/* Spacing utilities (margin/padding shorthand) */
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.pt-4 {
+  padding-top: var(--space-4);
+}
+
+.pb-4 {
+  padding-bottom: var(--space-4);
+}
+
+.p-6 {
+  padding: var(--space-6);
+}
+
+/* Responsive breakpoints: desktop-first downscale */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+/*
+------------------------------------------------------------------------------
+GLOBAL TYPOGRAPHY SYSTEM — Pepsi Contrast (blue hierarchy + red utility)
+This set restores visual steps: H1 is the brightest electric blue, then each
+level dims slightly for a clear scan line. The .accent class introduces red
+for small callouts without overwhelming the palette.
+------------------------------------------------------------------------------
+*/
+.h1, h1 { font-size: 2.2rem; color: #22d3ee; margin: 0 0 var(--space-4); text-shadow: 0 0 8px rgba(34,211,238,.45); }
+.h2, h2 { font-size: 1.9rem; color: #1da1f2; margin: var(--space-4) 0 var(--space-2); text-shadow: 0 0 6px rgba(29,161,242,.35); }
+.h3, h3 { font-size: 1.6rem; color: #67e8f9; margin: var(--space-3) 0 var(--space-2); }
+.h4, h4 { font-size: 1.3rem; color: #8fd3f4; margin: var(--space-3) 0 var(--space-2); }
+.h5, h5 { font-size: 1.1rem; color: #dbeafe; margin: var(--space-2) 0 var(--space-1); }
+.h6, h6 { font-size: 1.0rem; color: #94a3b8; margin: var(--space-2) 0 var(--space-1); }
+
+.lead { font-size: 1.125rem; color: var(--color-white); margin-bottom: var(--space-4); }
+small, .caption { font-size: .875rem; color: #8fd3f4; }
+
+/* small red callouts inside text or labels */
+.accent { color: var(--color-red); font-weight: 600; }
+
+
+/*=============================================================================
+4) HEADER AND TOP NAVIGATION (NO JS)
+-----------------------------------------------------------------------------
+This section styles the page header and optional top navigation bar with the
+electric cyan accent. Sticky positioning keeps the header visible without JS.
+=============================================================================*/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, #0f172a 0%, #101a30 100%);
+  border-bottom: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding-block: var(--space-4);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+.navbar-brand {
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.navbar-links a {
+  color: var(--color-primary-ghost);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  background-color: rgba(34, 211, 238, 0.12);
+  color: var(--color-white);
+}
+
+/*=============================================================================
+5) SIDEBAR PANELS (LEFT / RIGHT) — PURE CSS COLLAPSIBLE FEEL
+-----------------------------------------------------------------------------
+Sidebars provide supportive navigation or notes. They use consistent surfaces,
+borders, and spacing. Without JS, collapse/expand affordances are limited to
+CSS-only techniques (e.g., :hover, :focus-within) used conservatively.
+=============================================================================*/
+.sidebar {
+  background-color: var(--color-surface);
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+  width: 280px;
+}
+
+.sidebar-left {
+  margin-right: var(--space-6);
+}
+
+.sidebar-right {
+  margin-left: var(--space-6);
+}
+
+.sidebar .sidebar-header {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.sidebar .sidebar-item a {
+  display: block;
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar .sidebar-item a:hover,
+.sidebar .sidebar-item a:focus-visible {
+  background-color: rgba(34, 211, 238, 0.12);
+  color: var(--color-white);
+}
+
+/* Stack layout on narrow screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    margin: var(--space-4) 0;
+  }
+}
+
+/*=============================================================================
+6) BUTTONS AND TOOLBARS
+-----------------------------------------------------------------------------
+Buttons are designed as reusable controls with variants that mirror the visual
+theme. Toolbars arrange groups of buttons evenly with spacing that adapts to
+screen size. Transitions provide subtle, accessible feedback on hover/focus.
+=============================================================================*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #0a1628;
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-primary-ghost);
+  border-color: var(--color-primary-ghost);
+  box-shadow: 0 0 12px var(--color-green);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary-ghost);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  color: var(--color-white);
+  border-color: var(--color-primary-ghost);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+.btn-danger {
+  background-color: var(--color-red);
+  color: #140a0a;
+  border-color: var(--color-red);
+}
+
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background-color: #ff5260;
+  border-color: #ff5260;
+  box-shadow: 0 0 12px rgba(255, 51, 68, 0.65);
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/*=============================================================================
+7) MAIN CONTENT SURFACES: CARDS, SCREENSHOTS, PANELS
+-----------------------------------------------------------------------------
+Cards and screenshots share the same accent border to unify the brand feel.
+Cards contain structured content with a header, body, and footer. Screenshots
+stay small (max 300px) so they inform without dominating the page.
+=============================================================================*/
+.main-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.card {
+  background-color: #111827;
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-header {
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.card-body {
+  color: var(--color-text);
+}
+
+.card-footer {
+  border-top: var(--border-soft);
+  padding-top: var(--space-3);
+  text-align: right;
+  color: var(--color-primary-ghost);
+}
+
+.screenshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-6) auto;
+  gap: var(--space-2);
+}
+
+.screenshot img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.screenshot figcaption {
+  color: var(--color-primary-ghost);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/*=============================================================================
+7.1) CARD WITH GREEN GLOW BORDER (BIO HIGHLIGHT)
+-----------------------------------------------------------------------------
+This variant merges the .card--bio size constraint and the .ring-green visual
+accent to form a featured profile or biography card. The width is limited to
+800 pixels for optimal readability, centered within its container, and framed
+by a soft neon-green halo. The shadow and border radiate the same brand-green
+tone used for success indicators, making this element feel important but not
+overbearing.
+=============================================================================*/
+.card--bio.ring-green {
+  max-width: 800px;              /* prevents full-width stretch on large screens */
+  margin: 2rem auto;             /* centers the card horizontally */
+  box-shadow:
+    0 0 0 3px var(--color-green),
+    0 0 20px rgba(0, 255, 136, 0.4);  /* refined glow intensity for the smaller card */
+}
+
+/*=============================================================================
+8) BACKGROUNDS, GRADIENTS, AND GLOW EFFECTS
+-----------------------------------------------------------------------------
+These classes let you theme sections without rewriting components. Gradients
+and glow shadows should be used sparingly to keep content readable and tidy.
+=============================================================================*/
+.bg-dark {
+  background-color: var(--color-bg-dark);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-blue {
+  background-color: #0c1f3c;
+}
+
+.bg-accent {
+  background-color: rgba(34, 211, 238, 0.08);
+}
+
+.bg-gradient-blue {
+  background: radial-gradient(1000px 600px at 50% 0%, rgba(34, 211, 238, 0.15) 0%, rgba(15, 23, 42, 0) 70%),
+    linear-gradient(180deg, #0f172a 0%, #101a30 100%);
+}
+
+.glow-blue {
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.45) !important;
+}
+
+.glow-green {
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.35) !important;
+}
+
+.glow-red {
+  box-shadow: 0 0 16px rgba(255, 51, 68, 0.45) !important;
+}
+
+/*=============================================================================
+9) COLOR ACCENTS & VISUAL HIGHLIGHTS
+-----------------------------------------------------------------------------
+This section introduces a small group of reusable accent utilities that inject
+the “Pepsi pop” into otherwise monochromatic layouts. They extend the blue
+core palette by adding red and green highlights used for emphasis, success
+feedback, or decorative energy. These classes are optional—applied only when
+you want extra visual punch without changing underlying structure.
+
+Each class can be attached to existing components such as .card, .screenshot,
+or text spans to create instant visual variety while maintaining consistent
+layout, spacing, and accessibility contrast levels.
+=============================================================================*/
+
+/*
+The .ring-green utility adds a thin neon-green halo around an element. It
+combines a solid 3 px border-like outline with a soft outer glow to simulate
+a “lit” edge. This should be used sparingly for success cards, featured
+elements, or hover highlights. It respects border radius tokens to preserve
+rounded corners visually.
+*/
+.ring-green {
+  box-shadow:
+    0 0 0 3px var(--color-green),
+    0 0 16px rgba(0, 255, 136, 0.25);
+  border-radius: var(--radius-md);
+}
+
+/*
+The .badge-red utility produces a small pill-shaped badge with a vivid red
+background. It is typically used for live-status labels, counts, or alert
+tags inside navigation bars or cards. The high contrast between the red fill
+and dark text ensures the badge is readable while immediately drawing the eye.
+*/
+.badge-red {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: var(--color-red);
+  color: #140a0a;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/*
+The .card--success modifier gives any card or panel a subtle green accent
+treatment. It swaps the border color to the neon-green token and applies a
+gentle green shadow, suggesting completion or positive feedback without
+overpowering the electric-blue theme.
+*/
+.card--success {
+  border-color: var(--color-green);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.15);
+}
+
+/*=============================================================================
+10) BLOCKQUOTE STYLING
+-----------------------------------------------------------------------------
+Blockquotes display cited or emphasized text. To preserve readability inside
+the electric-blue card borders, this rule uses italics, lighter color contrast,
+and centered alignment. Spacing keeps the quotation balanced in the box
+without collapsing margins or breaking line rhythm.
+=============================================================================*/
+blockquote {
+  font-style: italic;                 /* italic gives the quote a distinct voice */
+  color: #cbd5e1;                     /* slightly lighter than body text */
+  text-align: center;                 /* visually centers within the bordered card */
+  padding: var(--space-5);            /* inner breathing room */
+  margin: var(--space-4) auto;        /* separate from surrounding text */
+  line-height: 1.6;                   /* relaxed for long quotes */
+}
+
+blockquote p {
+  margin: 0;                          /* prevent extra space between quote lines */
+}
+
+/*=============================================================================
+11) ANIMATION AND TRANSITIONS (PURE CSS)
+-----------------------------------------------------------------------------
+Transitions provide gentle state changes without JavaScript. Keyframes define
+reusable micro-animations (e.g., pulse) applied on hover/focus for feedback.
+LEARN MORE: CSS transitions and @keyframes on MDN.
+=============================================================================*/
+.transition-base {
+  transition: all var(--transition-base);
+}
+
+@keyframes pulse-cyan {
+  0% {
+    box-shadow: 0 0 4px rgba(103, 232, 249, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 14px rgba(103, 232, 249, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 4px rgba(103, 232, 249, 0.3);
+  }
+}
+
+.pulse-on-hover:hover,
+.pulse-on-hover:focus-visible {
+  animation: pulse-cyan 1.8s ease-in-out infinite;
+}
+
+/*=============================================================================
+12) FOOTER
+-----------------------------------------------------------------------------
+The footer maintains a subtle presence with soft borders and lighter cyan
+labels. Layout remains readable on all devices, with graceful spacing and
+no reliance on JavaScript for behavior.
+=============================================================================*/
+.footer {
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border-top: var(--border-soft);
+  color: var(--color-primary-ghost);
+}
+
+.footer a {
+  color: var(--color-primary-ghost);
+  text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: var(--color-white);
+}
+
+/*=============================================================================
+13) PRINT STYLES (PURE CSS, NO JS)
+-----------------------------------------------------------------------------
+Print rules optimize pages for paper: dark backgrounds are removed to save
+ink and increase legibility; navigation UI is hidden; content adopts a
+simple, readable layout. These apply automatically via the browser print
+dialog. LEARN MORE: @media print on MDN.
+=============================================================================*/
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .header,
+  .navbar,
+  .sidebar,
+  .toolbar,
+  .footer {
+    display: none !important;
+  }
+
+  .container,
+  .section,
+  .main-content,
+  .card {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  a {
+    color: #0000ee !important;
+    text-decoration: underline !important;
+  }
+}
+
+/*=============================================================================
+14) RESPONSIVE TWEAKS AND SAFETY
+-----------------------------------------------------------------------------
+This final block refines spacing and layout for smaller screens and ensures
+elements never render off-screen in a way that hides content. These are
+lightweight safeguards that complement the earlier utilities.
+=============================================================================*/
+@media (max-width: 480px) {
+  .navbar {
+    padding-inline: var(--space-4);
+  }
+
+  .toolbar {
+    gap: var(--space-2);
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+
+  .screenshot {
+    margin: var(--space-4) auto;
+  }
+}
+
+/* End of file — the site is now themed, accessible, and componentized with
+   a consistent palette and reusable classes, ready for HTML to consume. */

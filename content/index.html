@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+CMPA 3304 — Content Redirect Page
+This page exists only as a safety redirect. If a user manually enters or
+navigates to the /content/ directory, it automatically sends them back to the
+main homepage at the root of the portfolio. There is no styling beyond default
+HTML behavior for speed and reliability.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting to Home...</title>
+
+  <!--
+  Meta refresh performs an automatic redirect after 0 seconds.
+  Adjust content="0" to a positive number if you ever want a short delay.
+  -->
+  <meta http-equiv="refresh" content="0; url=../index.html">
+</head>
+
+<body>
+  <p>
+    If you are not automatically redirected,
+    <a href="../index.html">click here to return to the homepage</a>.
+  </p>
+</body>
+</html>
