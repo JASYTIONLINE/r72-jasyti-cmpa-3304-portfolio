@@ -244,18 +244,67 @@ level dims slightly for a clear scan line. The .accent class introduces red
 for small callouts without overwhelming the palette.
 ------------------------------------------------------------------------------
 */
-.h1, h1 { font-size: 2.2rem; color: #22d3ee; margin: 0 0 var(--space-4); text-shadow: 0 0 8px rgba(34,211,238,.45); }
-.h2, h2 { font-size: 1.9rem; color: #1da1f2; margin: var(--space-4) 0 var(--space-2); text-shadow: 0 0 6px rgba(29,161,242,.35); }
-.h3, h3 { font-size: 1.6rem; color: #67e8f9; margin: var(--space-3) 0 var(--space-2); }
-.h4, h4 { font-size: 1.3rem; color: #8fd3f4; margin: var(--space-3) 0 var(--space-2); }
-.h5, h5 { font-size: 1.1rem; color: #dbeafe; margin: var(--space-2) 0 var(--space-1); }
-.h6, h6 { font-size: 1.0rem; color: #94a3b8; margin: var(--space-2) 0 var(--space-1); }
+.h1,
+h1 {
+  font-size: 2.2rem;
+  color: #22d3ee;
+  margin: 0 0 var(--space-4);
+  text-shadow: 0 0 8px rgba(34, 211, 238, .45);
+}
 
-.lead { font-size: 1.125rem; color: var(--color-white); margin-bottom: var(--space-4); }
-small, .caption { font-size: .875rem; color: #8fd3f4; }
+.h2,
+h2 {
+  font-size: 1.9rem;
+  color: #1da1f2;
+  margin: var(--space-4) 0 var(--space-2);
+  text-shadow: 0 0 6px rgba(29, 161, 242, .35);
+}
+
+.h3,
+h3 {
+  font-size: 1.6rem;
+  color: #67e8f9;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.h4,
+h4 {
+  font-size: 1.3rem;
+  color: #8fd3f4;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.h5,
+h5 {
+  font-size: 1.1rem;
+  color: #dbeafe;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.h6,
+h6 {
+  font-size: 1.0rem;
+  color: #94a3b8;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+small,
+.caption {
+  font-size: .875rem;
+  color: #8fd3f4;
+}
 
 /* small red callouts inside text or labels */
-.accent { color: var(--color-red); font-weight: 600; }
+.accent {
+  color: var(--color-red);
+  font-weight: 600;
+}
 
 
 /*=============================================================================
@@ -452,7 +501,7 @@ stay small (max 300px) so they inform without dominating the page.
 }
 
 .card {
-  max-width:1000px;
+  max-width: 1000px;
   background-color: #111827;
   border: var(--border-strong);
   border-radius: var(--radius-md);
@@ -514,11 +563,14 @@ tone used for success indicators, making this element feel important but not
 overbearing.
 =============================================================================*/
 .card--bio.ring-green {
-  max-width: 800px;              /* prevents full-width stretch on large screens */
-  margin: 2rem auto;             /* centers the card horizontally */
+  max-width: 800px;
+  /* prevents full-width stretch on large screens */
+  margin: 2rem auto;
+  /* centers the card horizontally */
   box-shadow:
     0 0 0 3px var(--color-green),
-    0 0 20px rgba(0, 255, 136, 0.4);  /* refined glow intensity for the smaller card */
+    0 0 20px rgba(0, 255, 136, 0.4);
+  /* refined glow intensity for the smaller card */
 }
 
 /*=============================================================================
@@ -623,16 +675,23 @@ and centered alignment. Spacing keeps the quotation balanced in the box
 without collapsing margins or breaking line rhythm.
 =============================================================================*/
 blockquote {
-  font-style: italic;                 /* italic gives the quote a distinct voice */
-  color: #cbd5e1;                     /* slightly lighter than body text */
-  text-align: center;                 /* visually centers within the bordered card */
-  padding: var(--space-5);            /* inner breathing room */
-  margin: var(--space-4) auto;        /* separate from surrounding text */
-  line-height: 1.6;                   /* relaxed for long quotes */
+  font-style: italic;
+  /* italic gives the quote a distinct voice */
+  color: #cbd5e1;
+  /* slightly lighter than body text */
+  text-align: center;
+  /* visually centers within the bordered card */
+  padding: var(--space-5);
+  /* inner breathing room */
+  margin: var(--space-4) auto;
+  /* separate from surrounding text */
+  line-height: 1.6;
+  /* relaxed for long quotes */
 }
 
 blockquote p {
-  margin: 0;                          /* prevent extra space between quote lines */
+  margin: 0;
+  /* prevent extra space between quote lines */
 }
 
 /*=============================================================================
