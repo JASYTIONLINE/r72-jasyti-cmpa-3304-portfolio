@@ -153,6 +153,21 @@ main > p {
 /* ==========================================================================
    6. RESPONSIVENESS
    ========================================================================== */
+
+/* Flexbox grid adjustments for different screen sizes:
+   The flex-wrap rule allows cards to wrap within the grid,
+   while pixel-based media queries control how many columns appear
+   at defined screen widths by adjusting each card’s flex-basis. */
+
+
+.collection-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 48px 0;
+}
+
 /* Mobile (≤479px) — 1 column */
 @media (max-width: 479px) {
   .collection-card {
