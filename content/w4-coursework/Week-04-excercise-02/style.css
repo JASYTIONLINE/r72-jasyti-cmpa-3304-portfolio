@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 90%;
     padding: 16px;
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -32,7 +32,14 @@ h1 {
     margin-bottom: 48px;
     text-align: center;
 }
-
+h2 {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 1em;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
 main>p {
     margin-bottom: 32px;
     text-align: center;
@@ -42,14 +49,20 @@ main>p {
 }
 
 .collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
     margin: 48px 0;
 }
 
 .collection-card {
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    background-color: #fafafa;
-    padding: 16px;
+  flex: 1 1 100%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #fafafa;
+  padding: 16px;
 }
+
 
 .collection-card img {
     width: 100%;
@@ -78,4 +91,32 @@ main>p {
     font-size: 16px;
     margin-bottom: 0;
     line-height: 1.6;
+}
+
+/* Logo styles */
+.logo img {
+  display: block;
+  width: 25%;
+  max-width: 300px; /* optional safeguard */
+  margin: 0 auto; /* centers horizontally */
+}
+
+/* Responsive breakpoints:
+     - ≤479px: 1 column
+     - 480–1023px: 2 columns
+     - ≥1024px: 3 columns
+*/
+
+/*tablet: two columns */
+@media (width >= 480px) {
+  .collection-card {
+    flex: 1 1 45%;
+  }
+}
+
+/* desktop: three columns */
+@media (width >= 1024px) {
+  .collection-card {
+    flex: 1 1 30%;
+  }
 }
