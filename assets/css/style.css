@@ -452,6 +452,7 @@ stay small (max 300px) so they inform without dominating the page.
 }
 
 .card {
+  max-width:1000px;
   background-color: #111827;
   border: var(--border-strong);
   border-radius: var(--radius-md);
