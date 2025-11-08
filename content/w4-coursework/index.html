@@ -14,18 +14,45 @@
   </header>
 
   <main>
-    <h2>Week 03 Exercise 01: Box Model Practice</h2>
+    <h2>Week 04 Exercise 01: My Dev Tools Vandalism</h2>
     <ul>
-      <li><a href="w3e1/index.html">Week 03 Exercise 01: Box Model Practice</a></li>
+      <li><a href="w4-coursework/Week-04-excercise-01/index.html">Week 04 Exercise 01: My Dev Tools Vandalism</a></li>
     </ul>
 
-    <h2>Week 03 Exercise 02: Flexbox Froggy</h2>
+    <h2>Week 03 Exercise 02: Responsive Layout Techniques - My Collection</h2>
     <ul>
-      <li><a href="w4-coursework/Week-04-excercise-01/index.html">Week 03 Exercise 02: Flexbox Froggy</a></li>
+      <li><a href="w4-coursework/Week-04-excercise-02/index.html">Week 03 Exercise 02: Responsive Layout Techniques - My Collection</a></li>
     </ul>
+    <h2>Week 03 Discussion Post</h2>
+   
+<li>
+  Website Link:
+  <a href="https://account.entropiauniverse.com/play-now" target="_blank">
+    https://account.entropiauniverse.com/play-now
+  </a>
+</li>
+
+<p>For this discussion, I examined the Play Now page from Entropia Universe <a href="https://account.entropiauniverse.com/play-now" target="_blank">
+    https://account.entropiauniverse.com/play-now  </a> using Chrome DevTools. My goal was to understand how the site styles its buttons using the CSS Box Model and how its navigation bar uses Flexbox for layout control.</p>
+
+The first screenshot focuses on the small “Play” button near the top of the page. Inspecting its code shows two classes applied: .btn and .btn-sm. The .btn class acts as the base or parent style, defining shared attributes like padding, font size, and border radius. The .btn-sm class modifies those values to produce a smaller, tighter button. This shows how CSS inheritance works—.btn-sm keeps the core styling of .btn but overrides certain rules (like padding) when necessary.
+
+<p>The second set of screenshots shows what happens when I toggle specific properties in DevTools. By forcing the :hover pseudo-class, I could preview the hover state without actually hovering, revealing color and shadow transitions. Then, by deselecting the padding property, the Box Model visibly collapsed around the word “Play.” The text completely filled the button, proving how padding defines internal spacing, while margin defines space outside an element.</p>
+
+<p>The navigation bar also uses Flexbox to align its elements. In DevTools, .navbar-expand .navbar-collapse shows display: flex !important; flex-basis: auto;, while .navbar-collapse adds flex-grow: 1; align-items: center;. The !important tag here forces Flexbox to stay active even if other scripts or breakpoints try to override it. It’s a last-resort override—powerful but something to use sparingly in personal projects.</p>
+     
+    <div class="screenshot" style="align-items: flex-start; margin-left: 0;">
+
+      <img src="w4-d-dev-tool-ss.png" alt="Week 4 Discussion" style="max-width: 500px; width: 2560px; height: auto;">
+
+    </div>
+
 
     <h2>Backwards Navigation</h2>
     <ul>
+
+      <a href="../index.html">&larr; Back to Week 04 Coursework Index</a>
+
       <li><a href="../../index.html">Return Home</a></li>
     </ul>
   </main>
