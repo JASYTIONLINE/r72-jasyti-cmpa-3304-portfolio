@@ -81,6 +81,47 @@ main > p {
   margin-right: auto;
   color: #cbd5e1;
 }
+/* =======================
+   Responsive Navbar
+   ======================= */
+.navbar {
+  width: 100%;
+  background-color: #111b33;
+  border-bottom: 1px solid rgba(103, 232, 249, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #22d3ee;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ff3344;
+}
+
+/* Optional: smaller font on very narrow screens */
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 1rem;
+  }
+}
 
 /* ==========================================================================
    4. LOGO
