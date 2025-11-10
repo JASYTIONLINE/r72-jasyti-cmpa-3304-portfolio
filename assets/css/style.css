@@ -8,7 +8,6 @@
    and instructional reuse.  To change the color scheme, edit only :root tokens.
    ============================================================================= */
 
-
 /* =============================================================================
    0) DESIGN TOKENS — COLORS, TYPE, SPACING, MOTION, CONSTRAINTS
    -----------------------------------------------------------------------------
@@ -51,9 +50,9 @@
   --radius-md: 10px;
   --radius-lg: 16px;
   --border-strong: 4px solid var(--color-primary);
-  --border-soft: 1px solid rgba(34,211,238,0.25);
-  --shadow-sm: 0 4px 12px rgba(0,0,0,0.35);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+  --border-soft: 1px solid rgba(34, 211, 238, 0.25);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --transition-fast: 150ms ease-in-out;
   --transition-base: 300ms ease-in-out;
 
@@ -62,15 +61,21 @@
   --content-max: 960px;
 }
 
-
 /* =============================================================================
    1) GLOBAL RESET & ACCESSIBILITY
    -----------------------------------------------------------------------------
    Why: Standardize the box model, remove inconsistent browser defaults, and
    guarantee visible focus states.  This section should never contain branding.
    ============================================================================= */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -79,10 +84,20 @@ body {
   background-color: var(--color-bg-dark);
   overflow-x: hidden;
 }
-img, svg, video { max-width: 100%; height: auto; display: block; }
-:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
-p { max-width: 1000px; }
-
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+p {
+  max-width: 1000px;
+}
 
 /* =============================================================================
    2) GLOBAL TYPOGRAPHY
@@ -90,16 +105,58 @@ p { max-width: 1000px; }
    Why: Establish visual hierarchy for headings and body text.  The “scanline”
    palette moves from bright cyan (H1) to muted gray-blue (H6) for readability.
    ============================================================================= */
-h1, .h1 { font-size: 2.2rem; color: #22d3ee; text-shadow: 0 0 8px rgba(34,211,238,.45); margin: 0 0 var(--space-4); }
-h2, .h2 { font-size: 1.9rem; color: #1da1f2; text-shadow: 0 0 6px rgba(29,161,242,.35); margin: var(--space-4) 0 var(--space-2); }
-h3, .h3 { font-size: 1.6rem; color: #67e8f9; margin: var(--space-3) 0 var(--space-2); }
-h4, .h4 { font-size: 1.3rem; color: #8fd3f4; margin: var(--space-3) 0 var(--space-2); }
-h5, .h5 { font-size: 1.1rem; color: #dbeafe; margin: var(--space-2) 0 var(--space-1); }
-h6, .h6 { font-size: 1rem;  color: #94a3b8; margin: var(--space-2) 0 var(--space-1); }
-.lead { font-size: 1.125rem; color: var(--color-white); margin-bottom: var(--space-4); }
-small, .caption { font-size: .875rem; color: #8fd3f4; }
-.accent { color: var(--color-red); font-weight: 600; }
-
+h1,
+.h1 {
+  font-size: 2.2rem;
+  color: #22d3ee;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
+  margin: 0 0 var(--space-4);
+}
+h2,
+.h2 {
+  font-size: 1.9rem;
+  color: #1da1f2;
+  text-shadow: 0 0 6px rgba(29, 161, 242, 0.35);
+  margin: var(--space-4) 0 var(--space-2);
+}
+h3,
+.h3 {
+  font-size: 1.6rem;
+  color: #67e8f9;
+  margin: var(--space-3) 0 var(--space-2);
+}
+h4,
+.h4 {
+  font-size: 1.3rem;
+  color: #8fd3f4;
+  margin: var(--space-3) 0 var(--space-2);
+}
+h5,
+.h5 {
+  font-size: 1.1rem;
+  color: #dbeafe;
+  margin: var(--space-2) 0 var(--space-1);
+}
+h6,
+.h6 {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: var(--space-2) 0 var(--space-1);
+}
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+small,
+.caption {
+  font-size: 0.875rem;
+  color: #8fd3f4;
+}
+.accent {
+  color: var(--color-red);
+  font-weight: 600;
+}
 
 /* =============================================================================
    3) GLOBAL LINKS — UNIVERSAL LVHFA SYSTEM
@@ -113,12 +170,24 @@ a:link {
   text-decoration: underline;
   transition: color var(--transition-fast);
 }
-a:visited { color: var(--color-link-active); }
-a:hover, a:focus-visible { color: var(--color-link-hover); }
-a:active { color: var(--color-link-active); }
-a[href^="#"], a[href^="#"]:visited { color: var(--color-link-onpage); }
-a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover); }
-
+a:visited {
+  color: var(--color-link-active);
+}
+a:hover,
+a:focus-visible {
+  color: var(--color-link-hover);
+}
+a:active {
+  color: var(--color-link-active);
+}
+a[href^="#"],
+a[href^="#"]:visited {
+  color: var(--color-link-onpage);
+}
+a[href^="#"]:hover,
+a[href^="#"]:focus-visible {
+  color: var(--color-link-hover);
+}
 
 /* =============================================================================
    4) LAYOUT FRAME — HEADER, HERO, SIDEBAR, MAIN, FOOTER
@@ -127,18 +196,30 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
    the sidebar is fixed for persistent navigation, and main scrolls freely.
    ============================================================================= */
 .header {
-  position: sticky; top: 0; z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: linear-gradient(180deg, #0f172a 0%, #101a30 100%);
   border-bottom: var(--border-soft);
   box-shadow: var(--shadow-sm);
 }
 .navbar {
-  display: flex; justify-content: space-between; align-items: center;
-  max-width: var(--container-max); margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
   padding: var(--space-4) var(--space-6);
 }
-.navbar h1 { color: var(--color-primary); margin: 0; font-weight: 700; }
-.navbar-links { display: flex; gap: var(--space-4); }
+.navbar h1 {
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 700;
+}
+.navbar-links {
+  display: flex;
+  gap: var(--space-4);
+}
 
 /* Hero introduction area aligned with main content */
 .hero {
@@ -154,7 +235,11 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
 
 /* Sidebar navigation (fixed) */
 .sidebar {
-  position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
   margin-top: 86px; /* height of sticky header */
   background-color: var(--color-surface);
   border-right: var(--border-soft);
@@ -162,9 +247,18 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
   padding: var(--space-6) var(--space-4);
   overflow-y: auto;
 }
-.sidebar h3 { color: var(--color-primary); margin-bottom: var(--space-4); }
-.sidebar ul { list-style: none; padding-left: var(--space-4); margin: 0; }
-.sidebar li { margin-bottom: var(--space-3); }
+.sidebar h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.sidebar ul {
+  list-style: none;
+  padding-left: var(--space-4);
+  margin: 0;
+}
+.sidebar li {
+  margin-bottom: var(--space-3);
+}
 
 /* Main scrollable content area */
 .main-content {
@@ -172,10 +266,17 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
   padding: var(--space-6);
   flex: 1;
 }
-
+.discussion {
+  margin-left: 260px;
+  padding: var(--space-6);
+  flex: 1;
+}
 /* Footer fixed at viewport bottom, aligned with main column */
 .footer {
-  position: fixed; bottom: 0; left: 260px; right: 0;
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
   background-color: var(--color-surface);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
@@ -183,8 +284,9 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
   padding: var(--space-4) var(--space-6);
   box-shadow: var(--shadow-sm);
 }
-body { padding-bottom: 80px; }
-
+body {
+  padding-bottom: 80px;
+}
 
 /* =============================================================================
    5) COMPONENTS — CARDS, SCREENSHOTS, TOOLBAR, BUTTONS
@@ -203,8 +305,12 @@ body { padding-bottom: 80px; }
   flex-direction: column;
   gap: var(--space-4);
 }
-.card-header { color: var(--color-primary); }
-.card-body { color: var(--color-text); }
+.card-header {
+  color: var(--color-primary);
+}
+.card-body {
+  color: var(--color-text);
+}
 .card-footer {
   border-top: var(--border-soft);
   padding-top: var(--space-3);
@@ -214,20 +320,29 @@ body { padding-bottom: 80px; }
 
 /* Screenshot presentation */
 .screenshot {
-  display: flex; flex-direction: column; align-items: center;
-  margin: var(--space-6) auto; gap: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: var(--space-6) auto;
+  gap: var(--space-2);
 }
 .screenshot img {
-  max-width: 300px; border: 3px solid var(--color-primary);
-  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+  max-width: 300px;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
 }
 .screenshot figcaption {
-  color: var(--color-primary-ghost); font-size: 0.9rem; text-align: center;
+  color: var(--color-primary-ghost);
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /* Toolbar container for grouped controls */
 .toolbar {
-  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   padding: var(--space-3);
   background-color: var(--color-surface);
   border: var(--border-soft);
@@ -237,7 +352,9 @@ body { padding-bottom: 80px; }
 
 /* Button system */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-sm);
@@ -246,16 +363,16 @@ body { padding-bottom: 80px; }
   text-decoration: none;
   cursor: pointer;
   transition: background-color var(--transition-base),
-              color var(--transition-base),
-              border-color var(--transition-base),
-              box-shadow var(--transition-base);
+    color var(--transition-base), border-color var(--transition-base),
+    box-shadow var(--transition-base);
 }
 .btn-primary {
   background-color: #0060c7;
   color: #ffffff;
   border-color: #0060c7;
 }
-.btn-primary:hover, .btn-primary:focus-visible {
+.btn-primary:hover,
+.btn-primary:focus-visible {
   background-color: var(--color-link);
   border-color: var(--color-link);
   box-shadow: 0 0 12px var(--color-green);
@@ -265,7 +382,8 @@ body { padding-bottom: 80px; }
   color: var(--color-primary-ghost);
   border-color: var(--color-primary);
 }
-.btn-outline:hover, .btn-outline:focus-visible {
+.btn-outline:hover,
+.btn-outline:focus-visible {
   color: var(--color-white);
   border-color: var(--color-primary-ghost);
   box-shadow: 0 0 10px var(--color-primary);
@@ -275,13 +393,16 @@ body { padding-bottom: 80px; }
   color: #140a0a;
   border-color: var(--color-red);
 }
-.btn-danger:hover, .btn-danger:focus-visible {
+.btn-danger:hover,
+.btn-danger:focus-visible {
   background-color: #ff5260;
   border-color: #ff5260;
-  box-shadow: 0 0 12px rgba(255,51,68,0.65);
+  box-shadow: 0 0 12px rgba(255, 51, 68, 0.65);
 }
-.btn-disabled { opacity: 0.5; pointer-events: none; }
-
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 /* =============================================================================
    6) CONTEXT OVERRIDES — HEADER & SIDEBAR LINKS
@@ -296,23 +417,32 @@ body { padding-bottom: 80px; }
   text-decoration: none;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
 }
-.navbar-links a:hover, .navbar-links a:focus-visible {
-  background-color: rgba(34,211,238,0.12);
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  background-color: rgba(34, 211, 238, 0.12);
   color: var(--color-white);
 }
 
 /* Sidebar navigation links (explicitly last in cascade) */
-.sidebar a, .sidebar a:link {
+.sidebar a,
+.sidebar a:link {
   color: var(--color-link);
   text-decoration: underline;
   transition: color var(--transition-fast);
 }
-.sidebar a:visited { color: var(--color-link-active); }
-.sidebar a:hover, .sidebar a:focus-visible { color: var(--color-link-hover); }
-.sidebar a:active { color: var(--color-link-active); }
-
+.sidebar a:visited {
+  color: var(--color-link-active);
+}
+.sidebar a:hover,
+.sidebar a:focus-visible {
+  color: var(--color-link-hover);
+}
+.sidebar a:active {
+  color: var(--color-link-active);
+}
 
 /* =============================================================================
    7) UTILITIES & RESPONSIVE ADAPTATION
@@ -320,25 +450,78 @@ body { padding-bottom: 80px; }
    Why: Final layer of small, composable helpers and breakpoints.  They adjust
    layout without changing visual hierarchy or brand logic.
    ============================================================================= */
-.container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--space-6); }
-.section { max-width: var(--content-max); margin: 0 auto; padding-block: var(--space-6); }
-.flex-center { display: flex; justify-content: center; align-items: center; gap: var(--space-4); }
-.flex-between { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
-.flex-column { display: flex; flex-direction: column; gap: var(--space-4); }
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-block: var(--space-6);
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
 
 @media (max-width: 1024px) {
-  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 768px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .container { padding-inline: var(--space-4); }
-  .sidebar { position: static; width: 100%; height: auto; margin-top: 0; }
-  .main-content, .hero, .footer { margin-left: 0; left: 0; }
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding-inline: var(--space-4);
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  .main-content,
+  .hero,
+  .footer {
+    margin-left: 0;
+    left: 0;
+  }
 }
 @media (max-width: 480px) {
-  .navbar { padding-inline: var(--space-4); }
-  .toolbar { gap: var(--space-2); }
-  .card { padding: var(--space-4); }
+  .navbar {
+    padding-inline: var(--space-4);
+  }
+  .toolbar {
+    gap: var(--space-2);
+  }
+  .card {
+    padding: var(--space-4);
+  }
 }
