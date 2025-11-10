@@ -1,71 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Layout Template</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John E. Barkle IV – CMPA 3304 Course Homepage</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <body>
+    <!-- ==========================================================
+       HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
+       ----------------------------------------------------------
+       This region defines the persistent top-level navigation bar 
+       across the entire website. It introduces site identity and 
+       provides quick access to universal links such as Home or Repo.
+       The header is designed to remain visible during scroll 
+       (sticky positioning) and anchors the site's brand color scheme.
+       ========================================================== -->
+    <header class="header">
+      <div class="navbar">
+        <h1>John E. Barkle IV</h1>
+        <nav class="navbar-links">
+          <!-- a href="#">Home</a> -->
+          <a href="styleguide/index.html">Style Guide</a>
+          <a
+            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
 
-</head>
-
-<body>
-  <header class="header">
-    <h1>John E. Barkle IV</h1>
-    <h2>CMPA 3304 – Computing Applications Technology Course Homepage</h2>
-    <h3>CMPA 3304 – Computing Applications Technology I – Late Fall 2025</h3>
-    <nav>
-      <a href="https://github.com/jasytionline">My JASYTIONLINE Personal GitHub Profile</a><br>
-      <a href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/">My Course Repository(This Page)</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>Exercises</h2>
-      <ul>
-        <li><a href="content/w1-coursework/index.html">Week 01 Coursework</a></li>
-        <li><a href="content/w2-coursework/index.html">Week 02 Coursework</a></li>
-        <li><a href="content/w3-coursework/index.html">Week 03 Coursework</a></li>
-        <li><a href="content/w4-coursework/index.html">Week 04 Coursework</a></li>
-      </ul>
+    <!-- ==========================================================
+       HERO — PAGE CONTEXT INTRODUCTION
+       ----------------------------------------------------------
+       The hero region directly follows the header and serves as a 
+       contextual introduction for each page. It provides a brief 
+       headline and subtitle that explain what content the visitor 
+       is viewing. Its width aligns with the main content area 
+       (not full-screen) to maintain visual hierarchy and focus.
+       ========================================================== -->
+    <section class="hero">
+      <h2>CMPA 3304 - Course Portfolio Home Page</h2>
+      <p>
+        This page serves as a live workspace to showcase coursework,
+        assignments, and design deliverables.
+      </p>
     </section>
 
-    <section>
-      <h2>Assignments</h2>
-      <ul>
-        <li><a href="content/assignment-01/index.html">Assignment 01: Structuring a Page with Semantic HTML</a></li>
+    <!-- ==========================================================
+       LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
+       ----------------------------------------------------------
+       This flex container creates the core of the site layout. 
+       It divides the viewport horizontally into two primary zones:
+       (1) a fixed-position sidebar for navigation links, and
+       (2) a scrollable main content area that displays cards, text, 
+       or any other inserted material. The sidebar remains visible 
+       during scrolling for consistent navigation.
+       ========================================================== -->
+    <div class="layout">
+      <!-- SIDEBAR (LEFT) -->
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+        <section>
+          <h3>Exercises</h3>
+          <ul>
+            <li>
+              <a href="content/w1-coursework/index.html">Week 01 Coursework</a>
+            </li>
+            <li>
+              <a href="content/w2-coursework/index.html">Week 02 Coursework</a>
+            </li>
+            <li>
+              <a href="content/w3-coursework/index.html">Week 03 Coursework</a>
+            </li>
+            <li>
+              <a href="content/w4-coursework/index.html">Week 04 Coursework</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Assignments</h3>
+          <ul>
+            <li>
+              <a href="content/assignment-01/index.html"
+                >Assignment 01: Structuring a Page with Semantic HTML</a
+              >
+            </li>
+          </ul>
+        </section>
+
         <!--
-        <li><a href="assignment-02/">Assignment 02: Responsive & Interactive Component</a></li>
-      -->
-      </ul>
-    </section>
-    <!--
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="project-01/">Project 01 – Landing Page</a></li>
-        <li><a href="project-02/">Project 02 – Portfolio Final</a></li>
-      </ul>
-    </section>
-  -->
-    <!--
-    <section>
-      <h2>Discussions</h2>
-      <ul>
-        <li><a href="discussion-01/">Project 01 – Landing Page</a></li>
-        <li><a href="discussion-02/">Project 01 – Landing Page</a></li>
-        <li><a href="discussion-03/">Project 01 – Landing Page</a></li>
-      </ul>
-    </section>
-  -->
-  </main>
+        <section>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="project-01/">Project 01 – Landing Page</a></li>
+            <li><a href="project-02/">Project 02 – Portfolio Final</a></li> 
+          </ul>
+        </section>-->
+      </aside>
 
-  <footer>
-    <ul>
-      <p><a href="styleguide/index.html">Check out the Site Styleguide</a></p>
-      <p>© 2025 John E. Barkle IV</p>
-  </footer>
-</body>
+      <!-- MAIN CONTENT (RIGHT) -->
+      <main class="main-content">
+        <!-- FEATURED CONTENT AREA -->
+        <div class="feature">
+          <h1>This Week's Features:</h1>
+        </div>
+        <!-- Inside the Card Content  -->
+        <div class="card">
+          <h2>
+            <a href="content/w4-coursework/index.html">Week 04 Coursework</a>
+          </h2>
+          <ul>
+            <li>
+              <h3>
+                <a href="content/w4-coursework/Week-04-excercise-01/index.html"
+                  >Week 04 Exercise 01: My Dev Tools Vandalism</a
+                >
+              </h3>
+            </li>
+            <li>
+              <h3>
+                <a href="content/w4-coursework/Week-04-excercise-02/index.html"
+                  >Week 04 Exercise 02: Responsive Layout Techniques</a
+                >
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
 
+    <!-- ==========================================================
+       FOOTER — SITE CLOSING ELEMENT
+       ----------------------------------------------------------
+       The footer provides secondary navigation or ownership data.
+       It visually anchors the page bottom with a soft border and 
+       subdued color contrast to maintain readability without 
+       competing with primary content.
+       ========================================================== -->
+    <footer class="footer">
+      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+    </footer>
+  </body>
 </html>
