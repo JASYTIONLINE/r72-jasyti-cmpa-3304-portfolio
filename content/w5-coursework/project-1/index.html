@@ -1,17 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example Project 00</title>
-    <link rel="stylesheet" href="../../../assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DigiPortAI</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 
 <body>
-    <h1>Example Project 00</h1>
-    <p>This is an example project.</p>
-    <a href="../index.html">Back to Homepage</a>
+
+  <!-- VIDEO OVERLAY (COVERS PAGE WHILE PLAYING) -->
+  <div id="stage" aria-label="Intro video">
+    <video id="intro" autoplay muted playsinline>
+      <source src="../../../assets/video/index-intro.mp4" type="video/mp4" />
+    </video>
+    <div class="skip-message">Click or press Spacebar to skip intro video</div>
+  </div>
+
+  <!-- Dragon BANNER (25% HEIGHT) -->
+  <header class="dragon" id="dragon">
+    <img src="../../../assets/images/Dai-banner.png" alt="DigiPortAI splash" />
+    <div class="hero-ui">
+      <h1 class="hero-title">Your Portal to the Digital AI Universe</h1>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT BELOW HERO -->
+  <main id="content">
+
+    <!-- Custom Button Navigation -->
+    <div class="hero-buttons" id="modeButtons">
+      <button class="button-red" data-mode="portfolio">CMPA 3304</button>
+      <button class="button-red" data-mode="juke">Juke Box</button>
+      <button class="button-red" data-mode="pmp">Project PMP</button>
+      <button class="button-red" data-mode="ghost">JASYTI's Ghost Kitchen</button>
+      <button class="button-red" data-mode="hr">JASYTI's HR Portal Application</button>
+    </div>
+
+    <!-- Section content -->
+    <div class="container">
+      <div class="section">
+        <h2>Welcome to the Digital Artificial Intelligence Integrated Solutions Portal</h2>
+        <p>Use the buttons above to navigate to your destination.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="splash-footer">
+      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+    </footer>
+  <!-- JS to Remove Video and Handle Navigation -->
+  <script>
+    const vid = document.getElementById('intro');
+    const stage = document.getElementById('stage');
+    const skipMessage = document.querySelector('.skip-message');
+
+    function showHero() {
+      stage.remove();
+      document.body.classList.add('show-hero');
+    }
+
+    // Auto-hide video when it ends
+    vid.addEventListener('ended', showHero);
+
+    // Fallback: in case video doesn’t autoplay
+    let started = false;
+    vid.addEventListener('play', () => { started = true; }, { once: true });
+    setTimeout(() => {
+      if (!started) showHero();
+    }, 3000);
+
+    // Click anywhere to skip
+    stage.addEventListener('click', showHero);
+
+    // Press spacebar to skip
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        showHero();
+      }
+    });
+
+    // Custom nav button logic
+    const modeButtons = document.getElementById('modeButtons');
+    if (modeButtons) {
+      modeButtons.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-mode]');
+        if (!btn) return;
+        const mode = btn.getAttribute('data-mode');
+        const map = {
+          portfolio: 'https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/',
+          juke: 'https://jasytionline.github.io/r91-juke-box/index.html',
+          pmp: 'https://jasytionline.github.io/r32-project-pass-pmp/',
+          ghost: 'https://jasytionline.github.io/r61-fullstack/web-sites/jasytis-ghost-kitchen/',
+          hr: 'https://jasytionline.github.io/r63-hr-portal-app/'
+
+        };
+        const url = map[mode];
+        if (url) window.open(url, '_blank', 'noopener');
+      });
+    }
+  </script>
+
 </body>
 
 </html>
