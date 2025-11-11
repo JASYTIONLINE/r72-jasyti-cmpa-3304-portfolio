@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises Week 05 Exercise 01: Interactive Buttons</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+ <body>
+    <!-- ==========================================================
+       HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
+       ----------------------------------------------------------
+       This region defines the persistent top-level navigation bar 
+       across the entire website. It introduces site identity and 
+       provides quick access to universal links such as Home or Repo.
+       The header is designed to remain visible during scroll 
+       (sticky positioning) and anchors the site's brand color scheme.
+       ========================================================== -->
+    <header class="header">
+      <div class="navbar">
+        <h1>CMPA 3304</h1>
+        <nav class="navbar-links">
+          <a href="../index.html">Home</a>
+          <a href="../../styleguide/index.html">Style Guide</a>
+          <a
+            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- ==========================================================
+       HERO — PAGE CONTEXT INTRODUCTION
+       ========================================================== 
+    <section class="hero">
+      <h2>CMPA 3304 Week 5 Exercise 1</h2>
+      <h3> CSS pseudo-classes and transitions</h3>
+          
+      <p>This exercise provides focused practice with the core concepts of Week 05: styling an element's :hover state and using the transition property to animate changes smoothly. You will work with a template that includes two completed sample buttons, then create several additional button variations to practice different hover effects and transition techniques.
+        </p>
+    </section>
+
+     ==========================================================
+       LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
+       ----------------------------------------------------------
+       This flex container creates the core of the site layout. 
+       It divides the viewport horizontally into two primary zones:
+       (1) a fixed-position sidebar for navigation links, and
+       (2) a scrollable main content area that displays cards, text, 
+       or any other inserted material. The sidebar remains visible 
+       during scrolling for consistent navigation.
+       ========================================================== -->
+   <div class="layout">
+     <!--  SIDEBAR (LEFT) -->
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+        <section>
+          <h3>Exercises</h3>
+          <ul>
+            <li>
+              <a href="../../w1-coursework/index.html">Week 01 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w2-coursework/index.html">Week 02 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w3-coursework/index.html">Week 03 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w4-coursework/index.html">Week 04 Coursework</a>
+            </li>
+              <li>
+              <a href="../../w5-coursework/index.html">Week 05 Coursework</a>
+            </li>
+          </ul>
+        </section>
+
+       <section>
+          <h3>Assignments</h3>
+          <ul>
+            <li>
+              <a href="../../assignment-01/index.html"
+                >Assignment 01: Structuring a Page with Semantic HTML</a
+              >
+            </li>
+          </ul>
+        </section>
+
+       
+        <section>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="../project-1/index.html">Project 01 – Landing Page</a></li> 
+    <li><a href="project-02/">Project 02 – Portfolio Final</a></li> 
+          </ul>
+        </section>
+      </aside>
+
+      <!-- MAIN CONTENT (RIGHT) -->
+    <div class= "container">
+    <div class="card">
+        <h1>Interactive Buttons</h1>
+        <p class="subtitle">Hover over each button to see the transition effects</p>
+
+        <section class="button-section">
+            <h2>Button Style 01: Color Fade</h2>
+            <p>This button smoothly transitions its background and text colors on hover.</p>
+            <button class="button-01">Hover Me</button>
+        </section>
+
+
+        <section class="button-section">
+            <h2>Button Style 02: Lift and Shadow</h2>
+            <p>This button rises up and gains a shadow when you hover over it.</p>
+            <button class="button-02">Lift Off</button>
+        </section>
+
+        <section class="button-section">
+            <h2>Button Style 03</h2>
+            <p>Create your button here with a unique hover effect.</p>
+        </section>
+
+        <section class="button-section">
+            <h2>Button Style 04</h2>
+            <p>Create your button here with a different hover effect.</p>
+        </section>
+
+        <section class="button-section">
+            <h2>Button Style 05</h2>
+            <p>Create your button here with another unique effect.</p>
+        </section>
+
+        <section class="button-section">
+            <h2>Button Style 06</h2>
+            <p>Create your button here with your most creative effect.</p>
+        </section>
+    </div>
+    </div>
+    </main>
+</body>
+
+</html>
