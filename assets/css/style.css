@@ -285,8 +285,7 @@ a[href^="#"]:focus-visible {
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
   text-align: center;
-  padding: var(--space-4) var(--space-6);
-  box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm);
 }
 
 .splash-footer {
@@ -313,6 +312,7 @@ body {
    ============================================================================= */
 .card {
   max-width: 1000px;
+  margin-bottom: 50px;
   background-color: #111827;
   border: var(--border-strong);
   border-radius: var(--radius-md);
