@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Universal Layout Template</title>
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-  </head>
 
-  <body>
-    <!-- ==========================================================
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Layout Template</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- ==========================================================
        HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
        ----------------------------------------------------------
        This region defines the persistent top-level navigation bar 
@@ -17,36 +18,38 @@
        The header is designed to remain visible during scroll 
        (sticky positioning) and anchors the site's brand color scheme.
        ========================================================== -->
-    <header class="header">
-      <div class="navbar">
-        <h1>CMPA 3304</h1>
-        <nav class="navbar-links">
-          <a href="../index.html">Home</a>
-          <a href="../../styleguide/index.html">Style Guide</a>
-          <a
-            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
-            >GitHub</a
-          >
-        </nav>
-      </div>
-    </header>
+  <header class="header">
+    <div class="navbar">
+      <h1>CMPA 3304</h1>
+      <nav class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="styleguide/index.html">Style Guide</a>
+        <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
+        <a
+          href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html">Digi
+          Port Ai</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ==========================================================
+  <!-- ==========================================================
        HERO — PAGE CONTEXT INTRODUCTION
        ========================================================== -->
-    <section class="hero">
-      <h2>CMPA 3304 Week 3</h2>
-      <h3> Week 03: CSS Foundations and Layouts.</h3>
-      <p> This week, I shift from architect to interior designer—focusing on how to
-        style, align, and shape the content I’ve built so far. </p>
-        <p>I’m learning how
-        to use CSS selectors to target elements, control spacing through the Box Model, and organize content with Flexbox to create clean, balancedlayouts. Everything I’ve studied here builds toward my first major project, where I’ll combine these techniques to design a fully styled, professional-looking webpage. </p>
-        <p>From this page, you can access all Week 03
-        materials, including the Box Model Practice, and Flexbox Froggy exercises.
-      </p>
-    </section>
+  <section class="hero">
+    <h2>CMPA 3304 Week 3</h2>
+    <h3> Week 03: CSS Foundations and Layouts.</h3>
+    <p> This week, I shift from architect to interior designer—focusing on how to
+      style, align, and shape the content I’ve built so far. </p>
+    <p>I’m learning how
+      to use CSS selectors to target elements, control spacing through the Box Model, and organize content with Flexbox
+      to create clean, balancedlayouts. Everything I’ve studied here builds toward my first major project, where I’ll
+      combine these techniques to design a fully styled, professional-looking webpage. </p>
+    <p>From this page, you can access all Week 03
+      materials, including the Box Model Practice, and Flexbox Froggy exercises.
+    </p>
+  </section>
 
-    <!-- ==========================================================
+  <!-- ==========================================================
        LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
        ----------------------------------------------------------
        This flex container creates the core of the site layout. 
@@ -56,73 +59,67 @@
        or any other inserted material. The sidebar remains visible 
        during scrolling for consistent navigation.
        ========================================================== -->
-    <div class="layout">
-      <!-- SIDEBAR (LEFT) -->
-      <aside class="sidebar">
-        <h2>Navigation</h2>
-        <section>
-          <h3>Exercises</h3>
-          <ul>
-            <li>
-              <a href="../w1-coursework/index.html">Week 01 Coursework</a>
-            </li>
-            <li>
-              <a href="../w2-coursework/index.html">Week 02 Coursework</a>
-            </li>
-            <li>
-              <a href="../w3-coursework/index.html">Week 03 Coursework</a>
-            </li>
-            <li>
-              <a href="../w4-coursework/index.html">Week 04 Coursework</a>
-            </li>
-             <li>
-              <a href="../w5-coursework/index.html">Week 05 Coursework</a>
-            </li>
-          </ul>
-        </section>
 
-        <section>
-          <h3>Assignments</h3>
-          <ul>
-            <li>
-              <a href="../assignment-01/index.html"
-                >Assignment 01: Structuring a Page with Semantic HTML</a
-              >
-            </li>
-          </ul>
-        </section>
+  <!-- SIDEBAR (LEFT) -->
+  <aside class="sidebar">
+    <h2>Navigation</h2>
+    <section>
+      <h3>Exercises</h3>
+      <ul>
+        <li>
+          <a href="../w1-coursework/index.html">Week 01 Coursework</a>
+        </li>
+        <li>
+          <a href="../w2-coursework/index.html">Week 02 Coursework</a>
+        </li>
+        <li>
+          <a href="../w3-coursework/index.html">Week 03 Coursework</a>
+        </li>
+        <li>
+          <a href="../w4-coursework/index.html">Week 04 Coursework</a>
+        </li>
+        <li>
+          <a href="../w5-coursework/index.html">Week 05 Coursework</a>
+        </li>
+      </ul>
+    </section>
 
-        <section>
-          <h4>Projects</h4>
-          <ul>
-            <li><a href="../w5-coursework/project-1/index.html">Project 01 – Landing Page</a></li> 
-           </ul>
-        </section>
-      </aside>
+    <section>
+      <h3>Assignments</h3>
+      <ul>
+        <li>
+          <a href="../assignment-01/index.html">Assignment 01: Structuring a Page with Semantic HTML</a>
+        </li>
+      </ul>
+    </section>
 
-      <!-- MAIN CONTENT (RIGHT) -->
-      <main class="main-content">
-        <div class="feature">
-          <h2>Week 03 Coursework:</h2>
-        </div>
-        <!-- Inside the Card Content  -->
-        <div class="card">
-          <h3>
-            <a href="w3e1/index.html"
-              >Week 03 Exercise 01: Box Model Practice</a>
-          </h3>
-          <h3>
-            <a href="w3e2/index.html"
-            >Week 03 Exercise 02: Flexbox Froggy</a>
-          </h3>
-        </div>
-         
-      <section>
-         <h2>Discussion</h2>
-         <h3>No Discussion Topic in Week 3</h3>
-      </section>
+    <section>
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="../w5-coursework/project-1/index.html">Project 01 – Landing Page</a></li>
+      </ul>
+    </section>
+  </aside>
 
-    <!-- ==========================================================
+  <!-- MAIN CONTENT (RIGHT) -->
+  <main class="main-content">
+    <h2>Week 03 Coursework:</h2>
+    <!-- Inside the Card Content  -->
+    <div class="card">
+      <h3>
+        <a href="w3e1/index.html">Week 03 Exercise 01: Box Model Practice</a>
+      </h3>
+      <h3>
+        <a href="w3e2/index.html">Week 03 Exercise 02: Flexbox Froggy</a>
+      </h3>
+    </div>
+
+ <div class="discussion">
+      <h2>Discussion</h2>
+      <h3>No Discussion Topic in Week 3</h3>
+</div>
+  </main>
+  <!-- ==========================================================
        FOOTER — SITE CLOSING ELEMENT
        ----------------------------------------------------------
        The footer provides secondary navigation or ownership data.
@@ -130,8 +127,9 @@
        subdued color contrast to maintain readability without 
        competing with primary content.
        ========================================================== -->
-    <footer class="footer">
-      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+  </footer>
+</body>
+
 </html>
