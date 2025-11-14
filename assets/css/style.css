@@ -17,20 +17,30 @@
    ============================================================================= */
 :root {
   /* Core Palette */
-  --color-bg-dark: #0f172a;
-  --color-surface: #111b33;
   --color-primary: #22d3ee;
   --color-primary-ghost: #67e8f9;
-  --color-text: #e5e7eb;
-  --color-white: #ffffff;
-  --color-red: #ff3344;
-  --color-green: #00ff88;
+  --color-secondary: #1da1f2;
+  --color-secondary-ghost: #68bdf2;
+  --color-tertiary: #ff3344;
+  --color-tertiary-ghost: #f96f7b;
+  --color-quaternary: #06f988;
+  --color-quaternary-ghost: #99f7cb;
 
-  /* Electric-green link system */
-  --color-link: #1ef2a0;
-  --color-link-onpage: #5ceab1;
-  --color-link-hover: #ff3344;
-  --color-link-active: #22d3ee;
+  /*theme colors*/
+  --color-dk: #0f172a;
+  --color-dk-offset: #111b33;
+  --color-lt: #e5e7eb;
+  --color-lt-offset: #c8c7c7;
+
+  /*text*/
+  --color-text-dk: var(--color-lt);
+  --color-text-lt: var(--color-dk);
+
+  /* link system */
+  --color-link: #06f988;
+  --color-link-onpage: #99f7cb;
+  --color-link-active: #cbf3e0;
+  --color-link-hover: var(--color-tertiary-ghost);
 
   /* Typography and rhythm */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -82,8 +92,8 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   line-height: var(--lh-base);
-  color: var(--color-text);
-  background-color: var(--color-bg-dark);
+  color: var(--color-text-dk);
+  background-color: var(--color-dk);
   overflow-x: hidden;
 }
 
@@ -258,7 +268,7 @@ px;
 
 /* Hero introduction area aligned with main content */
 .hero {
-  background: var(--color-surface);
+  background: var(--color-dk-offset);
   border-bottom: var(--border-soft);
   box-shadow: var(--shadow-sm);
   padding: var(--space-6);
@@ -370,6 +380,7 @@ body {
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-4);
 }
 
@@ -384,6 +395,7 @@ body {
 .card-footer {
   border-top: var(--border-soft);
   padding-top: var(--space-3);
+  padding-right: var(--space-3);
   text-align: right;
   color: var(--color-primary-ghost);
 }
@@ -427,7 +439,7 @@ body {
   flex-wrap: wrap;
   gap: var(--space-3);
   padding: var(--space-3);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-offset);
   border: var(--border-soft);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -681,10 +693,16 @@ body {
     padding: var(--space-4);
   }
 }
+/*
+ * This block was previously experimental and shouldn't be active.
+ * It had syntax errors that broke formatting.
+ * If you need it later, re-enable safely.
+ */
+
+/* html, body {
 
 /* ======================================================
    1. GLOBAL RESET & PAGE SETUP
-====================================================== 
  {
   box-sizing: border-box;
 }
@@ -780,6 +798,48 @@ body.show-dragon {
 ====================================================== */
 .dragon-topnav {
   margin-top: 20px;
+  text-align: center;
+/* Optional intro message section */
+.intro {
+
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Navigation buttons for other actions */
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #444;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1001;
   text-align: center;
 }
 
