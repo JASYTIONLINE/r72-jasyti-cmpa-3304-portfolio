@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 5 Excercise 1</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../../../assets/css/style.css" />
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises Week 05 Exercise 01: Interactive Buttons</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+ <body>
     <!-- ==========================================================
        HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
        ----------------------------------------------------------
-       This region introduces site identity and provides quick access to universal links such as Home or Repo. The header is designed to remain visible during scroll 
+       This region defines the persistent top-level navigation bar 
+       across the entire website. It introduces site identity and 
+       provides quick access to universal links such as Home or Repo.
+       The header is designed to remain visible during scroll 
        (sticky positioning) and anchors the site's brand color scheme.
        ========================================================== -->
-
     <header class="header">
-      <section class="navbar">
+      <div class="navbar">
         <h1>CMPA 3304</h1>
         <nav class="navbar-links">
           <a href="../index.html">Home</a>
@@ -27,47 +28,21 @@
             >GitHub</a
           >
         </nav>
-      </section>
+      </div>
     </header>
 
     <!-- ==========================================================
-     HERO — PAGE CONTEXT INTRODUCTION
-     ========================================================== -->
+       HERO — PAGE CONTEXT INTRODUCTION
+       ========================================================== 
     <section class="hero">
-      <h2>CMPA 3304 Week 5</h2>
-      <h3>Week 05: Interactive Styling with Pseudo-Classes and Transitions</h3>
-      <p>
-        This is an <strong> Exciting Week </strong> for me. I broke through on
-        my understanding of CSS and HTML and gained a new level of
-        comprehension. I restyled the excercise template almost completey
-        manually. I integrated my golbal CSS style sheet with the excercise
-        sheet, embedded thhe excercise in my protfolio template and uccessfully
-        integrated a near 100% variable centered style.
-      </p>
-      <p>
-        What make this so cool is I did this <em>Manually</em>. I feel like I
-        finally understand what I am doing instead of just copy and pasting
-        studff I googled or asking Ai for help.
-      </p>
-      <p>
-        For the Week 5 excercise I shifted my focus to user interaction—learning
-        how to make buttons respond visually when users hover or click. The goal
-        is to build interfaces that feel smooth, intuitive, and alive.
-      </p>
-      <p>
-        Using CSS pseudo-classes like <strong>:hover</strong> and
-        <strong>:active</strong>, I explore how small animations and feedback
-        cues can improve usability. I also used the
-        <strong>transition</strong> property to add polish and fluid motion to
-        these effects.
-      </p>
-      <p>
-        This exercise showcases six button variations, each demonstrating
-        different combinations of color, motion, and feedback. It’s all about
-        making user interaction feel natural and satisfying.
-      </p>
+      <h2>CMPA 3304 Week 5 Exercise 1</h2>
+      <h3> CSS pseudo-classes and transitions</h3>
+          
+      <p>This exercise provides focused practice with the core concepts of Week 05: styling an element's :hover state and using the transition property to animate changes smoothly. You will work with a template that includes two completed sample buttons, then create several additional button variations to practice different hover effects and transition techniques.
+        </p>
     </section>
-    <!-- ==========================================================
+
+     ==========================================================
        LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
        ----------------------------------------------------------
        This flex container creates the core of the site layout. 
@@ -77,167 +52,93 @@
        or any other inserted material. The sidebar remains visible 
        during scrolling for consistent navigation.
        ========================================================== -->
-
-    <div class="layout">
-      <!-- SIDEBAR (LEFT) -->
+   <div class="layout">
+     <!--  SIDEBAR (LEFT) -->
       <aside class="sidebar">
         <h2>Navigation</h2>
         <section>
           <h3>Exercises</h3>
           <ul>
             <li>
-              <a href="../w1-coursework/index.html">Week 01 Coursework</a>
+              <a href="../../w1-coursework/index.html">Week 01 Coursework</a>
             </li>
             <li>
-              <a href="../w2-coursework/index.html">Week 02 Coursework</a>
+              <a href="../../w2-coursework/index.html">Week 02 Coursework</a>
             </li>
             <li>
-              <a href="../w3-coursework/index.html">Week 03 Coursework</a>
+              <a href="../../w3-coursework/index.html">Week 03 Coursework</a>
             </li>
             <li>
-              <a href="../w4-coursework/index.html">Week 04 Coursework</a>
+              <a href="../../w4-coursework/index.html">Week 04 Coursework</a>
             </li>
-            <li>
-              <a href="../w5-coursework/index.html">Week 05 Coursework</a>
+              <li>
+              <a href="../../w5-coursework/index.html">Week 05 Coursework</a>
             </li>
           </ul>
         </section>
 
-        <section>
+       <section>
           <h3>Assignments</h3>
           <ul>
             <li>
-              <a href="../assignment-01/index.html"
+              <a href="../../assignment-01/index.html"
                 >Assignment 01: Structuring a Page with Semantic HTML</a
               >
             </li>
           </ul>
         </section>
 
+       
         <section>
           <h4>Projects</h4>
           <ul>
-            <li>
-              <a href="../w5-coursework/project-1/index.html"
-                >Project 01 – Landing Page</a
-              >
-            </li>
+            <li><a href="../project-1/index.html">Project 01 – Landing Page</a></li> 
+    <li><a href="project-02/">Project 02 – Portfolio Final</a></li> 
           </ul>
         </section>
       </aside>
 
       <!-- MAIN CONTENT (RIGHT) -->
-      <main class="body-exercise-01">
-        <!--container holds the entire excercise body in a limited size box to keep it reader freindly and wraos the exercise ina a border to seperate it from the body backgound.  This allowed me to syle the body to fit my gloabl css while maintainining the references to the excercise style sheet-->
-        <div class="container-exercise-01 ">
-          <div class="card">
-            <h2>Interactive Buttons</h2>
-            <p class="subtitle">
-              This CSS exercise explores the difference between the 
-              <strong>hover</strong>, and the
-              <strong>:active</strong> pseudo-classes. Each button demonstrates
-              how user interface feedback is handled when hovering over or
-              clicking on a button.
-            </p>
-            <section class="intro">
-              <ul>
-                <li>The <strong>Hover: </strong>state responds to the pointer
-                  entering the button area, giving visual feedback before the
-                  user clicks.
-                </li>
-                <li>The <strong>Active</strong> state applies during the actual
-                  mouse click, simulating a pressed-in appearance.
-                </li>
-              </ul>
-          <p><strong><em>* Both are used to create intuitive and satisfying interactions.</em></strong></p>
+    <div class= "container">
+    <div class="card">
+        <h1>Interactive Buttons</h1>
+        <p class="subtitle">Hover over each button to see the transition effects</p>
 
-            </section>
+        <section class="button-section">
+            <h2>Button Style 01: Color Fade</h2>
+            <p>This button smoothly transitions its background and text colors on hover.</p>
+            <button class="button-01">Hover Me</button>
+        </section>
 
-            <!-- Button 01: Color Fade -->
-            <section class="button-section">
-              <h2>Button Style 01: Color Fade</h2>
-              <p>
-                This button smoothly transitions its background and text colors
-                on hover using background-color and color properties. On click,
-                it retains the same appearance but the effect remains to
-                emphasize simplicity and elegance.
-              </p>
-              <button class="button-01">Hover Me</button>
-            </section>
 
-            <!-- Button 02: Lift and Shadow -->
-            <section class="button-section">
-              <h2>Button Style 02: Lift and Shadow</h2>
-              <p>
-                This button rises slightly and adds a soft drop shadow on hover
-                using transform: translateY and box-shadow. On click, the lift
-                is reduced and the shadow softens to simulate the button being
-                pressed down.
-              </p>
-              <button class="button-02">Lift Off</button>
-            </section>
+        <section class="button-section">
+            <h2>Button Style 02: Lift and Shadow</h2>
+            <p>This button rises up and gains a shadow when you hover over it.</p>
+            <button class="button-02">Lift Off</button>
+        </section>
 
-            <!-- Button 03: Slide Effect -->
-            <section class="button-section">
-              <h2>Button Style 03: Slide Effect</h2>
-              <p>
-                This button slides slightly to the right on hover using
-                transform: translateX. On click, the slide distance is reduced
-                to give the appearance of the button being pressed inward.
-              </p>
-              <button class="button-03">Slide Right</button>
-            </section>
+        <section class="button-section">
+            <h2>Button Style 03</h2>
+            <p>Create your button here with a unique hover effect.</p>
+        </section>
 
-            <!-- Button 04: Glow Border -->
-            <section class="button-section">
-              <h2>Button Style 04: Glow Border</h2>
-              <p>
-                This button adds a glowing border and switches text color on
-                hover using box-shadow and color. On click, the glow dims
-                slightly and the text becomes darker, simulating a visual press
-                effect.
-              </p>
-              <button class="button-04">Glow Up</button>
-            </section>
+        <section class="button-section">
+            <h2>Button Style 04</h2>
+            <p>Create your button here with a different hover effect.</p>
+        </section>
 
-            <!-- Button 05: Scale and Shadow -->
-            <section class="button-section">
-              <h2>Button Style 05: Scale and Shadow</h2>
-              <p>
-                This button enlarges and casts a bold shadow on hover using
-                transform: scale and box-shadow. On click, the button shrinks
-                slightly and the shadow is softened, simulating a realistic
-                click press.
-              </p>
-              <button class="button-05">Zoom In</button>
-            </section>
+        <section class="button-section">
+            <h2>Button Style 05</h2>
+            <p>Create your button here with another unique effect.</p>
+        </section>
 
-            <!-- Button 06: Invert Colors -->
-            <section class="button-section">
-              <h2>Button Style 06: Invert Colors</h2>
-              <p>
-                This button inverts its background and text color on hover using
-                background-color and color. On click, it uses a lighter
-                background and deeper text color to represent a button being
-                clicked.
-              </p>
-              <button class="button-06">Invert</button>
-            </section>
-          </div>
-        </div>
-        <!--end container-->
-      </main>
+        <section class="button-section">
+            <h2>Button Style 06</h2>
+            <p>Create your button here with your most creative effect.</p>
+        </section>
     </div>
-    <!-- ==========================================================
-       FOOTER — SITE CLOSING ELEMENT
-       ----------------------------------------------------------
-       The footer provides secondary navigation or ownership data.
-       It visually anchors the page bottom with a soft border and 
-       subdued color contrast to maintain readability without 
-       competing with primary content.
-       ========================================================== -->
-    <footer class="footer">
-      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
-    </footer>
-  </body>
+    </div>
+    </main>
+</body>
+
 </html>

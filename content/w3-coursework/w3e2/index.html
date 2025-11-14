@@ -9,8 +9,9 @@ in detail to explain its role in the structure, layout, and teaching value
 of the page.
 -->
 <html lang="en">
-  <head>
-    <!--
+
+<head>
+  <!--
   The <meta> elements below ensure the page renders consistently across devices
   and maintains accessibility standards. The charset is set to UTF-8 to allow
   proper encoding of text characters. The viewport tag ensures that scaling and
@@ -18,18 +19,18 @@ of the page.
   two elements are fundamental for responsive web design and must appear in
   every HTML document that is intended for public viewing.
   -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!--
+  <!--
   The <title> tag defines what will appear in the browser tab and also serves
   as the title used by search engines when the site is indexed. Including both
   the course and exercise name maintains clarity and continuity for readers
   navigating the broader project repository.
   -->
-    <title>Barkle – Week 03 Exercise 02: Flexbox Froggy</title>
+  <title>Barkle – Week 03 Exercise 02: Flexbox Froggy</title>
 
-    <!--
+  <!--
   This line links the external stylesheet responsible for all visual presentation.
   Using a relative path allows the page to function both locally and when deployed
   to GitHub Pages. No styling is embedded here because we maintain strict
@@ -39,39 +40,42 @@ of the page.
   inside that file to see how images like the one below are centered and scaled
   consistently across the entire website.
   -->
-    <link rel="stylesheet" href="../../../assets/css/style.css" />
-  </head>
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+</head>
 
-  <body>
-    <!--
+<body>
+  <!--
   The <header> section provides the topmost identifier for this page. It contains
   the level-one heading (<h1>) that introduces the topic. Using <header> rather
   than a generic <div> adds semantic meaning, signaling to browsers and screen
   readers that this block defines the page’s introductory content.
   -->
-    <header>
-      <h1>Week 03 Exercise 02: Flexbox Froggy</h1>
-    </header>
+  <header>
+    <h1>Week 03 Exercise 02: Flexbox Froggy</h1>
+  </header>
   <header class="header">
-      <div class="navbar">
-        <h1>CMPA 3304</h1>
-        <nav class="navbar-links">
-           <a href="../index.html">Home</a>
-          <a href="../index.html">Week 3 Coursework</a>
-          <a
-            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
-            >GitHub</a
-          >
-        </nav>
-      </div>
-    </header>
-    <!--
+    <div class="navbar">
+      <h2>CMPA 3304</h2>
+      <nav class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="../../../index.html" class="nav-link">3304 Home</a>
+        <a href="../index.html" class="nav-link">Wk3 Home</a>
+        <a href="../w3e1/index.html" class="nav-link">Wk3 Ex1</a>
+        <a href="styleguide/index.html">Style Guide</a>
+        <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
+        <a
+          href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html">Digi
+          Port Ai</a>
+      </nav>
+    </div>
+  </header>
+  <!--
   The <main> element encloses all primary content unique to this page. It ensures
   that assistive technologies can quickly identify where the central instructional
   material begins, separate from navigation or footer information.
   -->
-    <main>
-      <!--
+  <main>
+    <!--
     The <figure> element groups the image (<img>) with its descriptive caption
     (<figcaption>). This combination ensures semantic clarity—indicating that
     the two pieces of content are related. The figure is assigned a class named
@@ -86,43 +90,36 @@ of the page.
     design, and how it provides padding and border details that match the site’s
     overall color palette.
     -->
-      <figure class="screenshot">
-        <!--
+    <figure class="screenshot">
+      <!--
       The <img> tag below embeds the PNG screenshot that documents the completed
       Flexbox Froggy exercise. The “src” attribute provides a relative path to the image file stored in this folder’s assets/images subdirectory. Because this path is relative, it will work correctly both in local previews and when hosted on GitHub Pages.
 
       The “alt” attribute supplies descriptive text for accessibility readers and also serves as fallback text if the image fails to load. It is important that the alt text be meaningful and specific enough to describe what the screenshot depicts, not just the filename.
       -->
-        <img
-          src="assets/images/w3e2-flexbox-froggy-solved.png"
-          alt="Screenshot showing the completed Flexbox Froggy exercise, demonstrating alignment and order concepts."
-        />
+      <img src="assets/images/w3e2-flexbox-froggy-solved.png"
+        alt="Screenshot showing the completed Flexbox Froggy exercise, demonstrating alignment and order concepts." />
 
-        <!--
+      <!--
       The <figcaption> tag provides a brief textual explanation beneath the screenshot. It clarifies what the image represents within the context of the course. Including captions helps reinforce visual-verbal learning by connecting the image to its educational purpose. This also improves SEO because search engines recognize the semantic link between the image and
       its captioned description.
       -->
-        <figcaption>
-          Completed Flexbox Froggy exercise — Week 03 CMPA 3304.
-        </figcaption>
-      </figure>
-    </main>
-
-    <!--
-  The <footer> section concludes the page and provides global attribution. Using
-  a footer ensures the information stays visually and structurally separated from
-  main content. Here we display the course week and number as part of the ongoing
-  documentation pattern followed throughout the portfolio. Future enhancements,
-  such as navigation links or contact details, could also be placed here.
-  -->  
-      <footer class="navbar">
- 
-        <nav class="nav-container">
-          <a href="../../../index.html" class="nav-link">CMPA 3304 Home</a>
-          <a href="../index.html" class="nav-link">Week 3 Home</a>
-          <a href="../w3e1/index.html" class="nav-link">Week 3 Ex 1</a>
-        </nav>
-      </header>
+      <p>
+        Completed Flexbox Froggy exercise — Week 03 CMPA 3304.
+      </p>
+    </figure>
+  </main>
+   <!-- ==========================================================
+       FOOTER — SITE CLOSING ELEMENT
+       ----------------------------------------------------------
+       The footer provides secondary navigation or ownership data.
+       It visually anchors the page bottom with a soft border and 
+       subdued color contrast to maintain readability without 
+       competing with primary content.
+       ========================================================== -->
+    <footer class="footer-nomarg">
+      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
     </footer>
-  </body>
+</body>
+
 </html>

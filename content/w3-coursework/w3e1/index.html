@@ -15,26 +15,8 @@ in paragraph form for future reference and study.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barkle W3E1 Box Model Practice</title>
-
-  <!--
-  External stylesheet reference.
-  The relative path ensures GitHub Pages compatibility.
-  -->
-          <link rel="stylesheet" href="../../../assets/css/style.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
-  <header class="header">
-      <div class="navbar">
-        <h1>CMPA 3304</h1>
-        <nav class="navbar-links">
-           <a href="../index.html">Home</a>
-          <a href="../index.html">Week 3 Coursework</a>
-          <a
-            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
-            >GitHub</a
-          >
-        </nav>
-      </div>
-    </header>
 <body>
   <!--
   The header provides page identity and hierarchy.
@@ -44,17 +26,37 @@ in paragraph form for future reference and study.
     <h1>Barkle W3E1 Box Model Practice</h1>
   </header>
 
+</head>
+<header class="header">
+  <div class="navbar">
+<h2>CMPA 3304</h2>
+    <nav class="navbar-links">
+      <a href="../index.html">Home</a>
+      <a href="../../../index.html" class="nav-link">3304 Home</a>
+      <a href="../index.html" class="nav-link">Wk3 Home</a>
+      <a href="../w3e2/index.html" class="nav-link">Wk3 Ex2</a>
+      <a href="styleguide/index.html">Style Guide</a>
+      <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
+      <a
+        href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html">Digi
+        Port Ai</a>
+    </nav>
+  </div>
+</header>
+
+
+
   <!--
   The main region holds the self-contained article card.
   It demonstrates the box model using semantic HTML elements.
   -->
   <main>
-          <!--
+    <!--
       The section groups related descriptive text about the subject.
       Multiple paragraphs are used to encourage thoughtful reading and spacing.
       -->
-     <article class="card card--bio ring-green">
-    <!--
+    <article class="card card--bio ring-green">
+      <!--
       The internal header introduces the card content.
       It identifies the subject name and defines a clear information hierarchy.
       -->
@@ -62,37 +64,37 @@ in paragraph form for future reference and study.
         <h2>John Barkle</h2>
       </header>
 
-        <p> My name is John Barkle, and I am 55 years old and recently started a year long sabatical from work to go
-          back to school and finish a degree in CMPA, as well as get traineid in Full Stack Engenering. My goal after I
-          finish all this training is to sequey into AI application development and Full Stack engeeering.I’m currently
-          studying web design. This card demonstrates how the CSS box model uses padding, borders, and margins to
-          control spacing and layout. </p>
-        <p>
-          This card demonstrates how the CSS box model defines space around
-          elements. The flexbox is styled by refernceing style.css in my assets/css folder.
-        </p>
-        <p>
-          I am using a &lt;DIV&gt; as a last resort protocol. Meaning I am seeking to use descriptive semantic tags such
-          as
-          &lt;article&gt;, &lt;section&gt;, and &lt;header&gt; to provide clear structure and act as a visual and
-          cognitive signifiers for both
-          developers and users. Threrefore, the &lt;div&gt; tag is reserved for situations with no semantic alternative.
-        </p>
-        <p>
-          I also use long format Paragraph-style comments throughout this file explain intent rather
-          than isolated commands. This documentation supports long-term maintainability, instructional clarity, and
-          portfolio review. I use it to help me remember what I did and why the next time I look back at this file.
-        </p>
-   
-</article>
+      <p> My name is John Barkle, and I am 55 years old and recently started a year long sabatical from work to go
+        back to school and finish a degree in CMPA, as well as get traineid in Full Stack Engenering. My goal after I
+        finish all this training is to sequey into AI application development and Full Stack engeeering.I’m currently
+        studying web design. This card demonstrates how the CSS box model uses padding, borders, and margins to
+        control spacing and layout. </p>
+      <p>
+        This card demonstrates how the CSS box model defines space around
+        elements. The flexbox is styled by refernceing style.css in my assets/css folder.
+      </p>
+      <p>
+        I am using a &lt;DIV&gt; as a last resort protocol. Meaning I am seeking to use descriptive semantic tags such
+        as
+        &lt;article&gt;, &lt;section&gt;, and &lt;header&gt; to provide clear structure and act as a visual and
+        cognitive signifiers for both
+        developers and users. Threrefore, the &lt;div&gt; tag is reserved for situations with no semantic alternative.
+      </p>
+      <p>
+        I also use long format Paragraph-style comments throughout this file explain intent rather
+        than isolated commands. This documentation supports long-term maintainability, instructional clarity, and
+        portfolio review. I use it to help me remember what I did and why the next time I look back at this file.
+      </p>
 
-      <!--
+    </article>
+
+    <!--
       The footer offers contextual metadata or attribution for the card.
       It provides closure to the component and maintains balanced structure.
       -->
-      <footer class="card-footer">
-        <small>Week 03 • CMPA 3304</small>
-      </footer>
+    <footer class="card-footer">
+      <small>Week 03 • CMPA 3304</small>
+    </footer>
     </article>
   </main>
 
