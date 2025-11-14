@@ -329,7 +329,7 @@ a[href^="#"]:focus-visible {
   left: 260px;
   right: 0;
   padding-right: 20px;
-  background-color: var(--color-surface);
+  background-color: var(--color-dk);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
   text-align: Right;
