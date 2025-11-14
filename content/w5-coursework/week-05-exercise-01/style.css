@@ -1,89 +1,175 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: "Times New Roman", serif;
-    line-height: 2;
-    background-color: #fafafa;
-    color: #1F2937;
-    padding: 32px 16px;
+.body-exercise-01 {
+  display: flex;
+  font-family: "Times New Roman", serif;
+  line-height: 2;
+  color: var(--color-secondary);
+  padding: 32px 16px;
 }
-
+.intro {
+  margin-bottom: 32px;
+  padding: 32px;
+  background-color: var(--color-primary-ghost);
+  color: var(--color-dk);
+  border: #000000 1px solid;
+  border-radius: 8px;
+}
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-surface);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Softer border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
 }
 
 h1 {
-    font-size: 48px;
-    line-height: 1em;
-    font-weight: normal;
-    text-align: center;
-    margin-bottom: 16px;
+  font-size: 48px;
+  line-height: 1em;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
-.subtitle {
-    text-align: center;
-    font-size: 16px;
-    color: #6B7280;
-    margin-bottom: 32px;
+p.subtitle {
+  font-size: 24px;
+  color: var(--color-surface-dark);
+  margin-bottom: 32px;
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: normal;
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
-    padding-bottom: 8px;
-    margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: normal;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .button-section {
-    padding: 32px;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  background-color: #ffffff;
+  border-bottom: #000000 1px solid;
 }
 
 .button-section p {
-    font-size: 16px;
-    margin-bottom: 24px;
+  font-size: 16px;
+  margin-bottom: 24px;
 }
 
 button {
-    font-family: "Times New Roman", serif;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 0;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0;
 }
 
 .button-01 {
-    background-color: #0066CC;
-    color: #ffffff;
-    padding: 16px 32px;
-    border: 2px solid #0066CC;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  background-color: #0066cc;
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #0066cc;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .button-01:hover {
-    background-color: #ffffff;
-    color: #0066CC;
-    border-color: #0066CC;
+  background-color: #ffffff;
+  color: #0066cc;
+  border-color: #0066cc;
 }
 
 .button-02 {
-    background-color: #0e6027;
-    color: #ffffff;
-    padding: 16px 32px;
-    border: 2px solid #0e6027;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0e6027;
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #0e6027;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-02:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* Button 03 — Slide Right Effect */
+.button-03 {
+  background-color: #9c27b0; /* Initial background: purple */
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #9c27b0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button-03:hover {
+  transform: translateX(6px); /* On hover: slide right */
+  background-color: #7b1fa2; /* Darker purple */
+}
+
+.button-03:active {
+  transform: translateX(3px); /* On click: less slide (simulate press) */
+  background-color: #6a1b9a; /* Even darker purple */
+}
+
+/* Button 04 — Glow Border Effect */
+.button-04 {
+  background-color: #ff9800; /* Orange background */
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #ff9800;
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.button-04:hover {
+  box-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800; /* Glow effect */
+  color: #000000; /* Contrast text */
+}
+
+.button-04:active {
+  box-shadow: 0 0 5px #ff9800, 0 0 10px #ff9800; /* Smaller glow on press */
+  color: #333333; /* Slightly darker text */
+}
+
+/* Button 05 — Zoom and Shadow */
+.button-05 {
+  background-color: #009688; /* Teal background */
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #009688;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-05:hover {
+  transform: scale(1.1); /* Slight zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Drop shadow */
+}
+
+.button-05:active {
+  transform: scale(0.98); /* Shrink slightly when clicked */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+}
+
+/* Button 06 — Color Inversion */
+.button-06 {
+  background-color: #e91e63; /* Pink background */
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #e91e63;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-06:hover {
+  background-color: #ffffff; /* Invert to white */
+  color: #e91e63; /* Pink text */
+}
+
+.button-06:active {
+  background-color: #f8bbd0; /* Soft pink */
+  color: #880e4f; /* Deep magenta for pressed text */
 }
