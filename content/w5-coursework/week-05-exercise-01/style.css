@@ -12,36 +12,38 @@
   padding: 32px 16px;
 }
 .intro {
+  display: flex;
+  flex-direction: column;
+ align-items: flex-start;
   margin-bottom: 32px;
   padding: 32px;
   background-color: var(--color-primary-ghost);
   color: var(--color-dk);
-  border: #000000 1px solid;
   border-radius: 8px;
 }
-.container {
+
+.intro p {
+  align-self: center;
+  text-align: center;
+}
+
+.container-exercise-01 {
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: 250px;
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-surface);
+  background-color: var(--color-dk);
   border: 1px solid rgba(0, 0, 0, 0.1); /* Softer border */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
 }
 
-h1 {
-  font-size: 48px;
-  line-height: 1em;
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 16px;
-}
+
 
 p.subtitle {
   font-size: 24px;
-  color: var(--color-surface-dark);
+  color: var(--color-primary-ghost);
   margin-bottom: 32px;
 }
 
@@ -172,4 +174,13 @@ button {
 .button-06:active {
   background-color: #f8bbd0; /* Soft pink */
   color: #880e4f; /* Deep magenta for pressed text */
+}
+
+.card h2 {
+  font-size: 48px;
+  line-height: 1em;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 16px;
+  width: 100%;
 }
