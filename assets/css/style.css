@@ -18,20 +18,30 @@
    ============================================================================= */
 :root {
   /* Core Palette */
-  --color-bg-dark: #0f172a;
-  --color-surface: #111b33;
   --color-primary: #22d3ee;
   --color-primary-ghost: #67e8f9;
-  --color-text: #e5e7eb;
-  --color-white: #ffffff;
-  --color-red: #ff3344;
-  --color-green: #00ff88;
+  --color-secondary: #1da1f2;
+  --color-secondary-ghost: #68bdf2;
+  --color-tertiary: #ff3344;
+  --color-tertiary-ghost: #f96f7b;
+  --color-quaternary: #06f988;
+  --color-quaternary-ghost: #99f7cb;
 
-  /* Electric-green link system */
-  --color-link: #1ef2a0;
-  --color-link-onpage: #5ceab1;
-  --color-link-hover: #ff3344;
-  --color-link-active: #22d3ee;
+  /*theme colors*/
+  --color-dk: #0f172a;
+  --color-dk-offset: #111b33;
+  --color-lt: #e5e7eb;
+  --color-lt-offset: #c8c7c7;
+
+  /*text*/
+  --color-text-dk: var(--color-lt);
+  --color-text-lt: var(--color-dk);
+
+  /* link system */
+  --color-link: #06f988;
+  --color-link-onpage: #99f7cb;
+  --color-link-active: #cbf3e0;
+  --color-link-hover: var(--color-tertiary-ghost);
 
   /* Typography and rhythm */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -75,8 +85,8 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   line-height: var(--lh-base);
-  color: var(--color-text);
-  background-color: var(--color-bg-dark);
+  color: var(--color-text--dk);
+  background-color: var(--color-dk);
   overflow-x: hidden;
 }
 img, svg, video { max-width: 100%; height: auto; display: block; }
@@ -90,6 +100,7 @@ p { max-width: 1000px; }
    Why: Establish visual hierarchy for headings and body text.  The “scanline”
    palette moves from bright cyan (H1) to muted gray-blue (H6) for readability.
    ============================================================================= */
+<<<<<<< Updated upstream
 h1, .h1 { font-size: 2.2rem; color: #22d3ee; text-shadow: 0 0 8px rgba(34,211,238,.45); margin: 0 0 var(--space-4); }
 h2, .h2 { font-size: 1.9rem; color: #1da1f2; text-shadow: 0 0 6px rgba(29,161,242,.35); margin: var(--space-4) 0 var(--space-2); }
 h3, .h3 { font-size: 1.6rem; color: #67e8f9; margin: var(--space-3) 0 var(--space-2); }
@@ -101,6 +112,68 @@ small, .caption { font-size: .875rem; color: #8fd3f4; }
 .accent { color: var(--color-red); font-weight: 600; }
 
 
+=======
+h1,
+.h1 {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
+  margin: 0 0 var(--space-4);
+}
+h2,
+.h2 {
+  font-size: 1.9rem;
+  color: var(--color-secondary);
+  text-shadow: 0 0 6px rgba(29, 161, 242, 0.35);
+  margin: var(--space-4) 0 var(--space-2);
+}
+h3,
+.h3 {
+  font-size: 1.6rem;
+  color: var(--color-primary-ghost);
+  margin: var(--space-3) 0 var(--space-2);
+}
+h4,
+.h4 {
+  font-size: 1.3rem;
+  color: var(--color-secondary-ghost);
+  margin: var(--space-3) 0 var(--space-2);
+}
+h5,
+.h5 {
+  font-size: 1.1rem;
+  color: var(--color-lt-offset);
+  margin: var(--space-2) 0 var(--space-1);
+}
+h6,
+.h6 {
+  font-size: 1rem;
+  color: var(--color-lt);
+  margin: var(--space-2) 0 var(--space-1);
+}
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-lt);
+  margin-bottom: var(--space-4);
+}
+small,
+.caption {
+  font-size: 0.875rem;
+  color: var(--color-primary-ghost);
+}
+.accent {
+  color: var(--color-tertiary);
+  font-weight: 600;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.9rem;
+  color: var(--color-secondary);
+  text-shadow: 0 0 6px rgba(29, 161, 242, 0.35);
+  margin: var(--space-4) 0 var(--space-2);
+  margin-bottom: 32px;
+}
+>>>>>>> Stashed changes
 /* =============================================================================
    3) GLOBAL LINKS — UNIVERSAL LVHFA SYSTEM
    -----------------------------------------------------------------------------
@@ -127,8 +200,21 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
    the sidebar is fixed for persistent navigation, and main scrolls freely.
    ============================================================================= */
 .header {
+<<<<<<< Updated upstream
   position: sticky; top: 0; z-index: 1000;
   background: linear-gradient(180deg, #0f172a 0%, #101a30 100%);
+=======
+  /*Sticky keeps the header attached to the top of the viewport during scroll*/
+  position: sticky;
+  top: 0;
+  /* z index added to keep header on top of sidebar, a value of 1000 is highest on the sheet enxureing it remains on top during scrolling */
+  z-index: 1000;
+  background: linear-gradient(
+    180deg,
+    var(--color-dk) 0%,
+    var(--color-dk-offset) 100%
+  );
+>>>>>>> Stashed changes
   border-bottom: var(--border-soft);
   box-shadow: var(--shadow-sm);
 }
@@ -142,7 +228,7 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
 
 /* Hero introduction area aligned with main content */
 .hero {
-  background: var(--color-surface);
+  background: var(--color-dk-offset);
   border-bottom: var(--border-soft);
   box-shadow: var(--shadow-sm);
   padding: var(--space-6);
@@ -156,15 +242,35 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
 .sidebar {
   position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
   margin-top: 86px; /* height of sticky header */
-  background-color: var(--color-surface);
+  background-color: var(--color-dk-offset);
   border-right: var(--border-soft);
   box-shadow: var(--shadow-sm);
   padding: var(--space-6) var(--space-4);
   overflow-y: auto;
 }
+<<<<<<< Updated upstream
 .sidebar h3 { color: var(--color-primary); margin-bottom: var(--space-4); }
 .sidebar ul { list-style: none; padding-left: var(--space-4); margin: 0; }
 .sidebar li { margin-bottom: var(--space-3); }
+=======
+.sidebar .h2 {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.sidebar h3 {
+  color: var(--color-primary-ghost);
+  margin-bottom: var(--space-4);
+}
+.sidebar ul {
+  list-style: none;
+  padding-left: var(--space-4);
+  margin: 0;
+}
+.sidebar li {
+  margin-bottom: var(--space-3);
+}
+>>>>>>> Stashed changes
 
 /* Main scrollable content area */
 .main-content {
@@ -175,16 +281,45 @@ a[href^="#"]:hover, a[href^="#"]:focus-visible { color: var(--color-link-hover);
 
 /* Footer fixed at viewport bottom, aligned with main column */
 .footer {
+<<<<<<< Updated upstream
   position: fixed; bottom: 0; left: 260px; right: 0;
   background-color: var(--color-surface);
+=======
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
+  background-color: var(--color-dk-offset);
+>>>>>>> Stashed changes
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
-  text-align: center;
-  padding: var(--space-4) var(--space-6);
+  justify-content: right;
+  padding: 0px 3px;
   box-shadow: var(--shadow-sm);
 }
 body { padding-bottom: 80px; }
 
+<<<<<<< Updated upstream
+=======
+.splash-footer {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-dk-offset);
+  border-top: var(--border-soft);
+  color: var(--color-primary-ghost);
+  text-align: right;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+body {
+  padding-bottom: 100px;
+}
+>>>>>>> Stashed changes
 
 /* =============================================================================
    5) COMPONENTS — CARDS, SCREENSHOTS, TOOLBAR, BUTTONS
@@ -194,7 +329,7 @@ body { padding-bottom: 80px; }
    ============================================================================= */
 .card {
   max-width: 1000px;
-  background-color: #111827;
+  background-color: var(--color-dk-offset);
   border: var(--border-strong);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
@@ -203,11 +338,21 @@ body { padding-bottom: 80px; }
   flex-direction: column;
   gap: var(--space-4);
 }
+<<<<<<< Updated upstream
 .card-header { color: var(--color-primary); }
 .card-body { color: var(--color-text); }
+=======
+.card-header {
+  color: var(--color-primary);
+}
+.card-body {
+  color: var(--color-text-dk);
+}
+>>>>>>> Stashed changes
 .card-footer {
   border-top: var(--border-soft);
   padding-top: var(--space-3);
+  padding-right: var(--space-3);
   text-align: right;
   color: var(--color-primary-ghost);
 }
@@ -229,7 +374,7 @@ body { padding-bottom: 80px; }
 .toolbar {
   display: flex; flex-wrap: wrap; gap: var(--space-3);
   padding: var(--space-3);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-offset);
   border: var(--border-soft);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -320,6 +465,7 @@ body { padding-bottom: 80px; }
    Why: Final layer of small, composable helpers and breakpoints.  They adjust
    layout without changing visual hierarchy or brand logic.
    ============================================================================= */
+<<<<<<< Updated upstream
 .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--space-6); }
 .section { max-width: var(--content-max); margin: 0 auto; padding-block: var(--space-6); }
 .flex-center { display: flex; justify-content: center; align-items: center; gap: var(--space-4); }
@@ -327,6 +473,41 @@ body { padding-bottom: 80px; }
 .flex-column { display: flex; flex-direction: column; gap: var(--space-4); }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+=======
+
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-block: var(--space-6);
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+>>>>>>> Stashed changes
 
 @media (max-width: 1024px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
@@ -338,7 +519,209 @@ body { padding-bottom: 80px; }
   .main-content, .hero, .footer { margin-left: 0; left: 0; }
 }
 @media (max-width: 480px) {
+<<<<<<< Updated upstream
   .navbar { padding-inline: var(--space-4); }
   .toolbar { gap: var(--space-2); }
   .card { padding: var(--space-4); }
+=======
+  .navbar {
+    padding-inline: var(--space-4);
+  }
+  .toolbar {
+    gap: var(--space-2);
+  }
+  .card {
+    padding: var(--space-4);
+  }
+}
+/* ======================================================
+   1. GLOBAL RESET & PAGE SETUP
+====================================================== 
+ {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  overflow: hidden; /* Locks scroll during intro video 
+}
+
+*/
+/* ======================================================
+   2. INTRO VIDEO STAGE
+====================================================== */
+
+#stage {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#intro {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======================================================
+   3. Dragon SPLASH (Post Video Banner)
+====================================================== */
+
+#dragon {
+  width: 100vw;
+  height: 25vh; /* Takes up 25% of viewport height */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  overflow: hidden;
+  position: relative;
+}
+
+#dragon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* dragon overlay text */
+.dragon-ui {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.dragon-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* ======================================================
+   4. MAIN CONTENT AREA (Visible After Video)
+====================================================== */
+
+/* Unlock scroll after video */
+body.show-dragon {
+  overflow: auto;
+}
+
+/* ======================================================
+   5. RADIO BUTTON NAVIGATION (Platform Selector)
+====================================================== */
+.dragon-topnav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dragon-topnav label {
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #222;
+}
+
+.dragon-topnav input[type="radio"] {
+  margin-right: 6px;
+}
+
+.dragon-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.dragon-grid {
+}
+
+.button-red {
+  background-image: linear-gradient(
+    -180deg,
+    #d92323,
+    #aa1a1a
+  ); /* your red gradient */
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, system-ui, sans-serif;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 24px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  margin: 10px;
+}
+
+.button-red:hover {
+  box-shadow: rgba(217, 35, 35, 0.6) 0 3px 10px;
+  transform: translateY(-1px);
+}
+
+/* ======================================================
+   6. EXTRA COMPONENTS
+====================================================== */
+/* Optional intro message section */
+.intro {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Navigation buttons for other actions */
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #444;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1001;
+  text-align: center;
+>>>>>>> Stashed changes
 }

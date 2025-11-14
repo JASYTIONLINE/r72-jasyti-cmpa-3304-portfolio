@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercises Week 05 Exercise 01: Interactive Buttons</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+</head>
+<body>
+<main class="body-exercise-01">
+ <!--container holds the entire excercise body in a limited size box to keep it reader freindly and wraos the exercise ina a border to seperate it from the body backgound.  This allowed me to syle the body to fit my gloabl css while maintainining the references to the excercise style sheet-->
+  <div class="container"> 
+    <div class="card">
+      <h1>Interactive Buttons</h1>
+      <p class="subtitle">
+        This CSS exercise explores the difference between <strong>:hover</strong> and <strong>:active</strong> pseudo-classes. 
+        Each button demonstrates how user interface feedback is handled when hovering over or clicking on a button.</p>
+        
+         <section class="intro">
+        <ul>
+          <li>The <Strong>Hover: </Strong>state responds to the pointer entering the button area, giving visual feedback before the user clicks.</li>
+      <li>The <Strong>Active</Strong> state applies during the actual mouse click, simulating a pressed-in appearance. </li>
+      <ul>
+        <p>
+          Both are used to create intuitive and satisfying interactions.
+      </p>
+          </section>
+  
+      <!-- Button 01: Color Fade -->
+      <section class="button-section">
+        <h2>Button Style 01: Color Fade</h2>
+        <p>This button smoothly transitions its background and text colors on hover using background-color and color properties. On click, it retains the same appearance but the effect remains to emphasize simplicity and elegance.</p>
+        <button class="button-01">Hover Me</button>
+      </section>
+
+      <!-- Button 02: Lift and Shadow -->
+      <section class="button-section">
+        <h2>Button Style 02: Lift and Shadow</h2>
+        <p>This button rises slightly and adds a soft drop shadow on hover using transform: translateY and box-shadow. On click, the lift is reduced and the shadow softens to simulate the button being pressed down.</p>
+        <button class="button-02">Lift Off</button>
+      </section>
+
+      <!-- Button 03: Slide Effect -->
+      <section class="button-section">
+        <h2>Button Style 03: Slide Effect</h2>
+        <p>This button slides slightly to the right on hover using transform: translateX. On click, the slide distance is reduced to give the appearance of the button being pressed inward.</p>
+        <button class="button-03">Slide Right</button>
+      </section>
+
+      <!-- Button 04: Glow Border -->
+      <section class="button-section">
+        <h2>Button Style 04: Glow Border</h2>
+        <p>This button adds a glowing border and switches text color on hover using box-shadow and color. On click, the glow dims slightly and the text becomes darker, simulating a visual press effect.</p>
+        <button class="button-04">Glow Up</button>
+      </section>
+
+      <!-- Button 05: Scale and Shadow -->
+      <section class="button-section">
+        <h2>Button Style 05: Scale and Shadow</h2>
+        <p>This button enlarges and casts a bold shadow on hover using transform: scale and box-shadow. On click, the button shrinks slightly and the shadow is softened, simulating a realistic click press.</p>
+        <button class="button-05">Zoom In</button>
+      </section>
+
+      <!-- Button 06: Invert Colors -->
+      <section class="button-section">
+        <h2>Button Style 06: Invert Colors</h2>
+        <p>This button inverts its background and text color on hover using background-color and color. On click, it uses a lighter background and deeper text color to represent a button being clicked.</p>
+        <button class="button-06">Invert</button>
+      </section>
+    </div>
+    </main>
+</body>
+</html>
