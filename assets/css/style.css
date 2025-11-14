@@ -324,11 +324,14 @@ a[href^="#"]:focus-visible {
 .footer {
   display: flex;
   justify-content: flex-end;
+  text-align: center;
   position: fixed;
   bottom: 0;
   left: 260px;
   right: 0;
   padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: var(--color-dk);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
