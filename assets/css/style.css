@@ -811,11 +811,7 @@ body.show-dragon {
   margin-top: 20px;
   text-align: center;
 }
-/* Optional intro message section */
-.intro {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
+
 
 /* Navigation buttons for other actions */
 .navigation {
@@ -898,12 +894,6 @@ body.show-dragon {
 /* ======================================================
    6. EXTRA COMPONENTS
 ====================================================== */
-/* Optional intro message section */
-.intro {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
 
 /* Navigation buttons for other actions */
 .navigation {
