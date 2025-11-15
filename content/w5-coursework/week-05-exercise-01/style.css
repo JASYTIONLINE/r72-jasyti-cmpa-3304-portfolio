@@ -19,7 +19,9 @@
   border: #000000 1px solid;
   border-radius: 8px;
   font-size: 24px;
-}
+ }
+
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -58,14 +60,10 @@ h2 {
   padding: 32px;
   background-color: #ffffff;
   border-bottom: #000000 1px solid;
+  font-size: 32px;
 }
 
-.button-section p {
-  font-size: 16px;
-  margin-bottom: 24px;
-}
-
-button {
+.button {
   font-family: "Times New Roman", serif;
   font-size: 16px;
   cursor: pointer;
