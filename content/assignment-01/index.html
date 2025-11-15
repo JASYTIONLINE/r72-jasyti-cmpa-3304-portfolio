@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
   <header class="header">
-      <div class="navbar">
-        <h1>CMPA 3304</h1>
+      <section class="navbar">
+        <h1>John E. Barkle IV - CMPA 3304 Assignment 01</h1>
         <nav class="navbar-links">
           <a href="../index.html">Home</a>
           <a href="styleguide/index.html">Style Guide</a>
@@ -16,12 +16,9 @@
             href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
             >GitHub</a
           >
-             <a
-            href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html"
-            >Digi Port Ai</a
-          >
+          <a href="https://jasytionline.github.io">Digi Port Ai</a>
         </nav>
-      </div>
+      </section>
     </header>
 <body style="margin-top: 80px;">
 
@@ -29,7 +26,38 @@
     <h1>Assignment 01: Structuring a Page with Semantic HTML</h1>
   </header>
 
-  <main>
+  <section class="hero">  
+    <h2>Top 5 Songs I've Written</h2>
+    <p>As a songwriter, music has always been my way of expressing emotions, telling stories, and connecting with others. Over the years, I've penned numerous songs across various genres, each holding a special place in my heart. Here are the top five songs I've written that stand out for their personal significance, lyrical depth, and musicality.</p> 
+  </section>
+
+<!-- SIDEBAR (LEFT) -->
+  <aside class="sidebar">
+    <h2>Navigation</h2>
+    <section>
+      <h3>Exercises</h3>
+      <ul>
+        <li>
+          <a href="../w1-coursework/index.html">Week 01 Coursework</a>
+        </li>
+        <li>
+          <a href="../w2-coursework/index.html">Week 02 Coursework</a>
+        </li>
+        <li>
+          <a href="../w3-coursework/index.html">Week 03 Coursework</a>
+        </li>
+        <li>
+          <a href="../w4-coursework/index.html">Week 04 Coursework</a>
+        </li>
+        <li>
+          <a href="../w5-coursework/index.html">Week 05 Coursework</a>
+        </li>
+      </ul>
+    </section>
+</aside>
+<!-- MAIN CONTENT - weekly assignment container -->
+ <main 
+   <div class="assignment-container">
     <section>
       <h2>Top 5 Songs I've Written</h2>
       <ol>
@@ -94,11 +122,19 @@
         </li>
       </ol>
     </section>
+    </div>
   </main>
 
-  <footer>
-    <p><a href="../w2-coursework/index.html">← Back to Week 2 Coursework</a></p>
-    <p><a href="../index.html">← Back to Homepage</a></p>
-  </footer>
+<!-- ==========================================================
+       FOOTER — SITE CLOSING ELEMENT
+       ----------------------------------------------------------
+       The footer provides secondary navigation or ownership data.
+       It visually anchors the page bottom with a soft border and 
+       subdued color contrast to maintain readability without 
+       competing with primary content.
+       ========================================================== -->
+    <footer class="footer">
+      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+    </footer>
 </body>
 </html>
