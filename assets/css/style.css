@@ -235,6 +235,7 @@ a[href^="#"]:focus-visible {
    ============================================================================= */
 .layout {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
 }
@@ -252,6 +253,18 @@ a[href^="#"]:focus-visible {
   text-align: center;
 }
 
+/* Hero introduction area aligned with main content */
+.hero {
+  width: 100%;
+  background: var(--color-dk-offset);
+  border-bottom: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  /* height of sticky header */
+  margin-top: 65px;
+  margin-left: 260px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -266,16 +279,6 @@ a[href^="#"]:focus-visible {
   gap: 1rem;
 }
 
-/* Hero introduction area aligned with main content */
-.hero {
-  background: var(--color-dk-offset);
-  border-bottom: var(--border-soft);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-6);
-  margin-top: 50px;
-  margin-left: 260px;
-}
-
 /* Sidebar navigation (fixed) */
 .sidebar {
   position: fixed;
@@ -283,8 +286,8 @@ a[href^="#"]:focus-visible {
   left: 0;
   width: 260px;
   height: 100vh;
-  margin-top: 86px;
   /* height of sticky header */
+  margin-top: 65px;
   background-color: var(--color-dk);
   border-right: var(--border-soft);
   box-shadow: var(--shadow-sm);

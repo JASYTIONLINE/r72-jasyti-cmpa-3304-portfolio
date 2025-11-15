@@ -16,6 +16,7 @@ in paragraph form for future reference and study.
     <title>W3E1 Box Model</title>
     <link rel="stylesheet" href="../../../assets/css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <section class="navbar">
@@ -31,11 +32,11 @@ in paragraph form for future reference and study.
         </nav>
       </section>
     </header>
-    <!--
-  The main region holds the self-contained article card.
-  It demonstrates the box model using semantic HTML elements.
-  -->
+ <!-- The Layout class defines the overall page structure using Flexbox.
+      It contains the sidebar, hero section, main content, and footer.
+      Each section is clearly defined for easy navigation and readability. -->
     <div class="layout">
+      <!-- the sidebar offers quick links to other coursework and projects and persists throught the web site as static navigation section-->
       <aside class="sidebar">
         <h2>Navigation</h2>
         <section>
@@ -82,11 +83,19 @@ in paragraph form for future reference and study.
           </ul>
         </section>
       </aside>
-      <h2>h2>Week 03 Exercise 01: Box Model Practice</h2>
+<!-- The hero section provides a prominent introduction to the page content.
+      It highlights the exercise title and sets the tone for the main content. The Section persists throughtout the document, but the content changes based on the page context.-->
+      <section class="hero">
+        <h2>CMPA 3304 Week 03 Exercise 01: </h2>
+           <h3>Box Model Practice</h3>
+           <p>This week I learned about the CSS box model and reiforced that skill by building a simple personal card and styling it with padding, margins, borders, colors, and typography. The goal was to show that I could control spacing and presentation using core CSS properties while working inside a basic div container.</p>
+           <p>I created a new folder for the exercise, built an HTML page with a linked stylesheet, and added a div to hold my card content. Inside it, I wrote an h1 with my name and a short bio. Then I added the universal box-sizing rule, styled the body, and set up the card with max-width, centered layout, padding, background color, and a border. Finally, I styled the heading and paragraph for readability and added a link to the exercise on my main course homepage before committing everything to GitHub.</p>
+      </section>
+
       <main class="main-content">
         <!-- Inside the Card Content  -->
         <section class="assignment-container">
-          <h1>Week 03 Exercise 01: The Box Model</h1>
+       
           <article class="card card--bio ring-green">
             <!--
       The internal header introduces the card content.
@@ -130,9 +139,10 @@ in paragraph form for future reference and study.
       The footer offers contextual metadata or attribution for the card.
       It provides closure to the component and maintains balanced structure.
       --></main>
+
+      <footer class="footer">
+        <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+      </footer>
     </div>
-    <footer class="footer">
-      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
-    </footer>
   </body>
 </html>
