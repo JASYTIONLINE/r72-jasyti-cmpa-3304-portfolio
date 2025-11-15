@@ -15,17 +15,18 @@
        This region introduces site identity and provides quick access to universal links such as Home or Repo. The header is designed to remain visible during scroll 
        (sticky positioning) and anchors the site's brand color scheme.
        ========================================================== -->
-  
+
     <header class="header">
       <section class="navbar">
-        <h1>JASYTI's Portfolio/h1>
+        <h1>JASYTI's Portfolio</h1>
         <nav class="navbar-links">
           <a href="../index.html">Home</a>
-          <a href="../../styleguide/index.html">Style Guide</a>
+          <a href="styleguide/index.html">Style Guide</a>
           <a
             href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
             >GitHub</a
           >
+          <a href="https://jasytionline.github.io/">Digi Port Ai</a>
         </nav>
       </section>
     </header>
@@ -34,26 +35,19 @@
      HERO — PAGE CONTEXT INTRODUCTION
      ========================================================== -->
     <section class="hero">
-      <h2>CMPA 3304 Week 5</h2>
-      <h3>Week 05: Interactive Styling with Pseudo-Classes and Transitions</h3>
-      <p>
-        For the
-        excercise. What make this so cool is I did this <em>Manually</em>. I
-        feel like I finally understand what I am doing instead of just copy and
-        pasting studff I googled or asked Ai for help with.
-      </p>
+      <h2>CMPA 3304 Week 5 Excercise 01</h2>
+      <h3>Interactive Styling with Pseudo-Classes and Transitions</h3>
       <p>
         For the Week 5 excercise I shifted my focus to user interaction—learning
         how to make buttons respond visually when users hover or click. The goal
-        is to build interfaces that feel smooth, intuitive, and alive.
-      </p>
-      <p>
-        Using CSS pseudo-classes like <strong>:hover</strong> and
+        is to build interfaces that feel smooth, intuitive, and alive. Using CSS
+        pseudo-classes like <strong>:hover</strong> and
         <strong>:active</strong>, I explore how small animations and feedback
         cues can improve usability. I also use the
         <strong>transition</strong> property to add polish and fluid motion to
         these effects.
       </p>
+      <br />
       <p>
         This exercise showcases six button variations, each demonstrating
         different combinations of color, motion, and feedback. It’s all about
@@ -62,15 +56,8 @@
     </section>
     <!-- ==========================================================
        LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
-       ----------------------------------------------------------
-       This flex container creates the core of the site layout. 
-       It divides the viewport horizontally into two primary zones:
-       (1) a fixed-position sidebar for navigation links, and
-       (2) a scrollable main content area that displays cards, text, 
-       or any other inserted material. The sidebar remains visible 
-       during scrolling for consistent navigation.
-       ========================================================== -->
-
+       ============================================================
+        -->
     <div class="layout">
       <!-- SIDEBAR (LEFT) -->
       <aside class="sidebar">
@@ -100,7 +87,7 @@
           <h3>Assignments</h3>
           <ul>
             <li>
-              <a href="../assignment-01/index.html"
+              <a href="../../assignment-01/index.html"
                 >Assignment 01: Structuring a Page with Semantic HTML</a
               >
             </li>
@@ -111,17 +98,14 @@
           <h4>Projects</h4>
           <ul>
             <li>
-              <a href="../w5-coursework/project-1/index.html"
-                >Project 01 – Landing Page</a
-              >
+              <a href="../project-1/index.html">Project 01 – Landing Page</a>
             </li>
           </ul>
         </section>
       </aside>
-    </div>
+ 
     <!-- MAIN CONTENT (RIGHT) -->
-    <main class="body-exercise-01">
-      <!--container holds the entire excercise body in a limited size box to keep it reader freindly and wraos the exercise ina a border to seperate it from the body backgound.  This allowed me to syle the body to fit my gloabl css while maintainining the references to the excercise style sheet-->
+    <main class="main-content">
       <div class="container">
         <div class="card">
           <h1>Interactive Buttons</h1>
@@ -217,10 +201,8 @@
             <button class="button-06">Invert</button>
           </section>
         </div>
-      </div>
-      <!--end container-->
-    </main>
-
+      </main>
+    </div>
     <!-- ==========================================================
        FOOTER — SITE CLOSING ELEMENT
        ----------------------------------------------------------

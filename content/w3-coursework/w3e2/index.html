@@ -1,102 +1,97 @@
 <!DOCTYPE html>
 <!--
-Week 03 Exercise 02 — Flexbox Froggy
--------------------------------------------------------------------------------
-This file is part of the CMPA 3304 coursework portfolio. It demonstrates
-how to embed an image of the completed Flexbox Froggy exercise using purely
-semantic HTML and an external CSS stylesheet. Every element is commented
-in detail to explain its role in the structure, layout, and teaching value
-of the page.
+Week 03 Exercise 01 — Box Model Practice
+This page demonstrates correct separation of concerns between structure (HTML)
+and presentation (CSS). Each comment explains purpose, structure, and rationale
+in paragraph form for future reference and study.
 -->
 <html lang="en">
-
-<head>
-  <!--
-  The <meta> elements below ensure the page renders consistently across devices
-  and maintains accessibility standards. The charset is set to UTF-8 to allow
-  proper encoding of text characters. The viewport tag ensures that scaling and
-  layout adapt automatically for mobile screens and smaller viewports. These
-  two elements are fundamental for responsive web design and must appear in
-  every HTML document that is intended for public viewing.
-  -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!--
-  The <title> tag defines what will appear in the browser tab and also serves
-  as the title used by search engines when the site is indexed. Including both
-  the course and exercise name maintains clarity and continuity for readers
-  navigating the broader project repository.
-  -->
-  <title>Barkle – Week 03 Exercise 02: Flexbox Froggy</title>
-
-  <!--
-  This line links the external stylesheet responsible for all visual presentation.
-  Using a relative path allows the page to function both locally and when deployed
-  to GitHub Pages. No styling is embedded here because we maintain strict
-  separation of concerns: HTML handles structure and meaning, while CSS handles
-  presentation. To understand how specific elements are styled, open the CSS file
-  located at "../assets/css/style.css". Look for the class named “.screenshot”
-  inside that file to see how images like the one below are centered and scaled
-  consistently across the entire website.
-  -->
-  <link rel="stylesheet" href="../../../assets/css/style.css" />
-</head>
-
-<body>
-  <!--
-  The <header> section provides the topmost identifier for this page. It contains
-  the level-one heading (<h1>) that introduces the topic. Using <header> rather
-  than a generic <div> adds semantic meaning, signaling to browsers and screen
-  readers that this block defines the page’s introductory content.
-  -->
-  <header>
-    <h1>Week 03 Exercise 02: Flexbox Froggy</h1>
-  </header>
-  <header class="header">
-    <div class="navbar">
-      <h2>CMPA 3304</h2>
-      <nav class="navbar-links">
-        <a href="../index.html">Home</a>
-        <a href="../../../index.html" class="nav-link">3304 Home</a>
-        <a href="../index.html" class="nav-link">Wk3 Home</a>
-        <a href="../w3e1/index.html" class="nav-link">Wk3 Ex1</a>
-        <a href="styleguide/index.html">Style Guide</a>
-        <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
-        <a
-          href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html">Digi
-          Port Ai</a>
-      </nav>
-    </div>
-  </header>
-  <!--
-  The <main> element encloses all primary content unique to this page. It ensures
-  that assistive technologies can quickly identify where the central instructional
-  material begins, separate from navigation or footer information.
-  -->
-  <main>
+  <head>
     <!--
-    The <figure> element groups the image (<img>) with its descriptive caption
-    (<figcaption>). This combination ensures semantic clarity—indicating that
-    the two pieces of content are related. The figure is assigned a class named
-    “screenshot.” We use this class so that all screenshots throughout the
-    course portfolio can share a consistent style. By applying the same class
-    name everywhere, we can make a single change in the stylesheet to update
-    alignment, borders, or scaling for every screenshot site-wide.
+  Metadata establishes consistent rendering across devices.
+  The linked stylesheet controls all visual design.
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMPA 3304 W3E2</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="navbar">
+        <h1>JASYTI's Portfolio</h1>
+        <nav class="navbar-links">
+          <a href="../index.html">Home</a>
+          <a href="styleguide/index.html">Style Guide</a>
+          <a
+            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
+            >GitHub</a
+          >
+          <a href="https://jasytionline.github.io/">Digi Port Ai</a>
+        </nav>
+      </section>
+    </header>
+    <!--
+  The main region holds the self-contained article card.
+  It demonstrates the box model using semantic HTML elements.
+  -->
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+        <section>
+          <h3>Exercises</h3>
+          <ul>
+            <li>
+              <a href="../../w1-coursework/index.html">Week 01 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w2-coursework/index.html">Week 02 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w3-coursework/index.html">Week 03 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w4-coursework/index.html">Week 04 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w5-coursework/index.html">Week 05 Coursework</a>
+            </li>
+          </ul>
+        </section>
 
-    To locate the styling for this class, open the external CSS file referenced
-    above and search for ".screenshot". The comments there explain how the class
-    uses Flexbox to center the figure, how it limits image width for responsive
-    design, and how it provides padding and border details that match the site’s
-    overall color palette.
-    -->
-    <figure class="screenshot">
+        <section>
+          <h3>Assignments</h3>
+          <ul>
+            <li>
+              <a href="../../assignment-01/index.html"
+                >Assignment 01: Structuring a Page with Semantic HTML</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Projects</h4>
+          <ul>
+            <li>
+              <a href="../../w5-coursework/project-1/index.html"
+                >Project 01 – Landing Page</a
+              >
+            </li>
+            <!--    <li><a href="project-02/">Project 02 – Portfolio Final</a></li> -->
+          </ul>
+        </section>
+      </aside>
+
+         <main class="main-content">
+          <h2>CMPA 3304 Week 03</h2>
+            <h3>W3E2: Flexbox Froggy</h3>
+        <!-- Inside the Card Content  -->
+        <section class="assignment-container">
+            <figure class="screenshot">
       <!--
       The <img> tag below embeds the PNG screenshot that documents the completed
-      Flexbox Froggy exercise. The “src” attribute provides a relative path to the image file stored in this folder’s assets/images subdirectory. Because this path is relative, it will work correctly both in local previews and when hosted on GitHub Pages.
-
-      The “alt” attribute supplies descriptive text for accessibility readers and also serves as fallback text if the image fails to load. It is important that the alt text be meaningful and specific enough to describe what the screenshot depicts, not just the filename.
-      -->
+      Flexbox Froggy exercise.-->
       <img src="assets/images/w3e2-flexbox-froggy-solved.png"
         alt="Screenshot showing the completed Flexbox Froggy exercise, demonstrating alignment and order concepts." />
 
@@ -109,17 +104,9 @@ of the page.
       </p>
     </figure>
   </main>
-   <!-- ==========================================================
-       FOOTER — SITE CLOSING ELEMENT
-       ----------------------------------------------------------
-       The footer provides secondary navigation or ownership data.
-       It visually anchors the page bottom with a soft border and 
-       subdued color contrast to maintain readability without 
-       competing with primary content.
-       ========================================================== -->
-    <footer class="footer-nomarg">
+    </div>
+    <footer class="footer">
       <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
     </footer>
-</body>
-
+  </body>
 </html>
