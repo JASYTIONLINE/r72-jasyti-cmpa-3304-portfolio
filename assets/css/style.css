@@ -232,6 +232,12 @@ a[href^="#"]:focus-visible {
    Why: Provide structural layout using Flexbox.  Header and footer are fixed,
    the sidebar is fixed for persistent navigation, and main scrolls freely.
    ============================================================================= */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -311,7 +317,6 @@ a[href^="#"]:focus-visible {
 }
 .assignment-container {
   padding-bottom: 100px;
-  margin-left: 250px;
   margin-bottom: 50px;
   flex: 1;
 }
