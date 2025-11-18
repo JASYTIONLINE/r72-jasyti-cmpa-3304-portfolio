@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Lab - Home</title>
+  <!--
+    Head explanation: This head sets the document metadata and links the shared stylesheet.
+    From this root-level page the stylesheet lives in the `css/` folder; using `css/style.css`
+    ensures the same styles are applied across the entire site without duplication.
+  -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!--
+    Navigation explanation: The `.nav-horizontal` class implements a horizontal
+    header navigation using flexbox. Links are explicit relative paths to ensure
+    navigation works from any page and to make testing straightforward.
+  -->
+  <nav class="nav-horizontal">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects/index.html">Projects</a></li>
+      <li><a href="gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Sidebar navigation explanation: The `.nav-simple` class provides a vertical sidebar-style navigation.
+    Including the sidebar on root pages complements the top bar visually and functionally, ensuring both header
+    and sidebar navigation are identical on parent pages.
+  -->
+  <nav class="sidebar" aria-label="Primary sidebar navigation">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects/index.html">Projects</a></li>
+      <li><a href="gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Main content explanation: This main section holds the page content. The content
+    is intentionally simple because the exercise's learning objective is navigation
+    architecture and link/path management rather than dense content.
+  -->
+  <main>
+    <h1>Welcome to the Navigation Lab</h1>
+
+    <p>This is the homepage.</p>
+    <p>This exercise focuses on learning multi-page site architecture and experimenting with navigation patterns.</p>
+
+    <p>Your tasks:</p>
+    <ul>
+      <li>Fix all navigation links throughout the site</li>
+      <li>Fix CSS links on nested pages</li>
+      <li>Implement at least 3 different navigation styles</li>
+      <li>Customize colors, spacing, or typography to match your aesthetic</li>
+    </ul>
+
+    <p>Start by exploring the file structure in VS Code, then work through the instructions step by step.</p>
+  </main>
+
+</body>
+
+</html>

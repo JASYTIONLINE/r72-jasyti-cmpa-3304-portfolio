@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Lab - About</title>
+  <!--
+    Head explanation: Metadata and the shared stylesheet link. Root-level pages use `css/style.css` so
+    stylesheet references remain identical across root pages for consistency and easier maintenance.
+  -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!--
+    Navigation explanation: The `.nav-simple` class provides a vertical sidebar-style navigation.
+    On this page we use root-relative links so navigation behaves the same from any root page.
+  -->
+  <!--
+    Top navigation explanation: The `.nav-horizontal` top bar provides consistent primary navigation across parent pages.
+    Including the header here ensures users can access main sections immediately; links are root-relative for clarity.
+  -->
+  <nav class="nav-horizontal">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="projects/index.html">Projects</a></li>
+      <li><a href="gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Sidebar navigation explanation: The `.nav-simple` class provides a vertical sidebar-style navigation.
+    This complements the top bar and offers an alternative navigation affordance on parent pages.
+  -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="projects/index.html">Projects</a></li>
+      <li><a href="gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Main content explanation: This main area explains the learning objectives. Keeping the content
+    focused on navigation helps reviewers quickly verify that linking and styling requirements are met.
+  -->
+  <main>
+    <h1>About This Exercise</h1>
+
+    <p>This page demonstrates a different navigation style from the homepage. Notice how the navigation uses the
+      <strong>nav-simple</strong> class for a vertical list layout.
+    </p>
+
+    <h2>What You're Learning</h2>
+
+    <p>Multi-page websites require understanding how pages connect through relative file paths. This exercise helps you
+      practice:</p>
+
+    <ul>
+      <li>Linking between pages at the root level</li>
+      <li>Linking from root pages to nested pages</li>
+      <li>Linking from nested pages back to root pages</li>
+      <li>Maintaining a shared stylesheet across all pages</li>
+    </ul>
+
+    <p>Once you fix all the links, you can focus on experimenting with different navigation styles and customizing them
+      to match your personal aesthetic.</p>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Lab - Gallery</title>
+  <!--
+    Head explanation: This nested gallery page references `../css/style.css` to reach the
+    shared stylesheet one level up. Using the shared file prevents style drift between pages.
+  -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!--
+    Top navigation explanation: Although this page sits in the `gallery/` folder,
+    it should present the same header + sidebar layout as the root parent pages.
+    Header links go up one level to reach root pages, and the Gallery link is marked
+    as the current page for accessibility and clarity.
+  -->
+  <nav class="nav-horizontal">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects/index.html">Projects</a></li>
+      <li><a href="index.html" aria-current="page">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Sidebar navigation explanation: Mirror the root sidebar on this page so the
+    parent-style navigation is consistent across the site. Links use `..` to reach
+    root-level pages; the Gallery sidebar link is marked as current here as well.
+  -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects/index.html">Projects</a></li>
+      <li><a href="index.html" aria-current="page">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Main content explanation: The gallery page encourages experimentation with different
+    navigation classes. The content is intentionally minimal so reviewers can focus on
+    the navigation patterns and path correctness.
+  -->
+  <main>
+    <h1>Gallery</h1>
+
+    <p>This page uses the simple vertical navigation pattern, just like the About page. You can experiment with applying
+      different navigation classes to see how they look.</p>
+
+    <h2>Experimenting with Navigation</h2>
+
+    <p>Try changing the class on this page's <code>&lt;nav&gt;</code> element to see different styles:</p>
+
+    <ul>
+      <li><strong>class="nav-simple"</strong> - vertical list (current)</li>
+      <li><strong>class="nav-horizontal"</strong> - horizontal dark bar</li>
+      <li><strong>class="nav-custom"</strong> - your own creation</li>
+    </ul>
+
+    <p>Remember: all pages share the same <strong>style.css</strong> file, so changes to navigation classes in the CSS
+      will affect every page that uses that class.</p>
+  </main>
+
+</body>
+
+</html>

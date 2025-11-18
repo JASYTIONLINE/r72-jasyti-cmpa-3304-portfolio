@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Lab - Project Detail</title>
+  <!--
+    Head explanation: Nested pages must reference the shared stylesheet with a path
+    that goes up one level. Using `../css/style.css` ensures styling consistency
+    with the rest of the site while avoiding duplicated CSS files.
+  -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="with-sidebar-column">
+
+  <!--
+    Layout explanation: Create a two-column layout where column 1 is a narrow
+    sidebar column (60px) and column 2 is a flexible content column (1fr).
+    The `.projects-layout` wrapper keeps these columns side-by-side using flexbox.
+  -->
+  <div class="projects-layout">
+
+    <!--
+      Sidebar column explanation: Column 1 contains the `.nav-simple` sidebar.
+      The column is intentionally narrow (60px) so it hugs the size of the
+      navigation buttons; the nav itself remains in normal flow inside this column.
+    -->
+    <div class="sidebar-col">
+      <nav class="sidebar" aria-label="Project detail sidebar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="index.html" aria-current="page">Projects</a></li>
+          <li><a href="../gallery/index.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!--
+      Content column explanation: Column 2 (.content-col) is the main flexible
+      area that holds the centered navigation and the page content; it grows to
+      fill the remaining horizontal space (1fr).
+    -->
+    <div class="content-col">
+
+      <nav class="nav-custom">
+       <a href="index.html">Return to Projects Home</a></li>
+                     </nav>
+
+      <!--
+        Main content explanation: The page content sits below the centered nav
+        inside the flexible content column so both appear visually centered
+        together within column 2.
+      -->
+      <main>
+    <h1>Sample Project Detail</h1>
+
+    <p>This page demonstrates a detail page within the Projects section. Both this page and the Projects landing page
+      are in the same folder, so linking between them is simple.</p>
+
+    <h2>Navigation from Nested Pages</h2>
+
+    <p>When you are in a nested folder like <strong>projects/</strong>, you need to use <strong>../</strong> to go up
+      one level to reach pages at the root level.</p>
+
+    <p>Examples:</p>
+    <ul>
+      <li><strong>../index.html</strong> - goes to the homepage</li>
+      <li><strong>../about.html</strong> - goes to the about page</li>
+      <li><strong>../gallery/index.html</strong> - goes to gallery (up, then into different folder)</li>
+      <li><strong>index.html</strong> - stays in projects folder</li>
+    </ul>
+
+  
+  </main>
+
+</body>
+
+</html>

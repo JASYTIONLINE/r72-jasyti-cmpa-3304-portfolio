@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Lab - Projects</title>
+  <!--
+    Head explanation: This nested page must reference the shared stylesheet using a path
+    that goes up one level (`../css/style.css`) because the CSS folder is located at the
+    project root. Using a consistent shared stylesheet prevents duplication.
+  -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!--
+    Top navigation explanation: The Projects landing page should use the standard
+    header navigation for parent-style pages (like `index.html` and `about.html`).
+    This provides a consistent header across parent pages while keeping the
+    Projects section identifiable via the active link.
+  -->
+  <nav class="nav-horizontal">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html" aria-current="page">Projects</a></li>
+      <li><a href="../gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Sidebar navigation explanation: Add a `.nav-simple` sidebar to the Projects
+    landing page so it mirrors the root pages' dual-navigation layout. Links use
+    relative paths appropriate for a nested page; the Projects link is marked as
+    the current page for accessibility and to show section context.
+  -->
+  <nav class="sidebar" aria-label="Projects sidebar navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html" aria-current="page">Projects</a></li>
+      <li><a href="../gallery/index.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!--
+    Main content explanation: This main area explains why nested folders are useful and
+    provides a link to a detail page. Keeping structured content here makes it easy to test
+    navigation from nested contexts back to root-level pages.
+  -->
+  <main>
+    <h1>Projects</h1>
+
+    <p>This is the projects landing page. It lives in a nested folder, so the file path is
+      <strong>projects/index.html</strong>.
+    </p>
+
+    <h2>Why Nested Folders?</h2>
+
+    <p>Organizing pages into folders helps keep large websites manageable. Each major section of a site can have its own
+      folder with multiple related pages inside.</p>
+
+    <h2>Sample Projects</h2>
+
+    <ul>
+      <li><a href="project-detail.html">Sample Project Detail Page</a></li>
+    </ul>
+
+    <p>Try creating a third navigation style for this page. Choose from ideas like centered navigation, justified
+      navigation, or create your own custom pattern.</p>
+  </main>
+
+</body>
+
+</html>
