@@ -33,7 +33,7 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="../about.html">About</a></li>
           <li><a href="index.html" aria-current="page">Projects</a></li>
-          <li><a href="../gallery/index.html">Gallery</a></li>
+          <li><a href="../gallery/">Gallery</a></li>
         </ul>
       </nav>
     </div>
@@ -43,11 +43,11 @@
       area that holds the centered navigation and the page content; it grows to
       fill the remaining horizontal space (1fr).
     -->
-    <div class="content-col">
+    <section class="content-col">
 
       <nav class="nav-custom">
-       <a href="index.html">Return to Projects Home</a></li>
-                     </nav>
+        <a href="index.html">Return to Projects Home</a>
+      </nav>
 
       <!--
         Main content explanation: The page content sits below the centered nav
@@ -55,27 +55,27 @@
         together within column 2.
       -->
       <main>
-    <h1>Sample Project Detail</h1>
+        <h1>Sample Project Detail</h1>
 
-    <p>This page demonstrates a detail page within the Projects section. Both this page and the Projects landing page
-      are in the same folder, so linking between them is simple.</p>
+        <p>This page demonstrates a detail page within the Projects section. Both this page and the Projects landing
+          page
+          are in the same folder, so linking between them is simple.</p>
 
-    <h2>Navigation from Nested Pages</h2>
+        <h2>Navigation from Nested Pages</h2>
 
-    <p>When you are in a nested folder like <strong>projects/</strong>, you need to use <strong>../</strong> to go up
-      one level to reach pages at the root level.</p>
+        <p>When you are in a nested folder like <strong>projects/</strong>, you need to use <strong>../</strong> to go
+          up
+          one level to reach pages at the root level.</p>
 
-    <p>Examples:</p>
-    <ul>
-      <li><strong>../index.html</strong> - goes to the homepage</li>
-      <li><strong>../about.html</strong> - goes to the about page</li>
-      <li><strong>../gallery/index.html</strong> - goes to gallery (up, then into different folder)</li>
-      <li><strong>index.html</strong> - stays in projects folder</li>
-    </ul>
-
-  
-  </main>
-
+        <p>Examples:</p>
+        <ul>
+          <li><strong>../index.html</strong> - goes to the homepage</li>
+          <li><strong>../about.html</strong> - goes to the about page</li>
+          <li><strong>../gallery/index.html</strong> - goes to gallery (up, then into different folder)</li>
+          <li><strong>index.html</strong> - stays in projects folder</li>
+        </ul>
+      </main>
+    </section>
+  </div>
 </body>
-
 </html>
