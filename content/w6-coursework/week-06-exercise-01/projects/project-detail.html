@@ -55,27 +55,151 @@
         together within column 2.
       -->
       <main>
-        <h1>Sample Project Detail</h1>
+        <h1>Project Detail Page</h1>
 
-        <p>This page demonstrates a detail page within the Projects section. Both this page and the Projects landing
-          page
-          are in the same folder, so linking between them is simple.</p>
+        <p>This page demonstrates an advanced navigation architecture that combines multiple navigation patterns on a single page. As a detail page nested within the Projects section, it showcases how different navigation patterns can work together to provide both global site navigation and section-specific navigation.</p>
 
-        <h2>Navigation from Nested Pages</h2>
+        <h2>Two-Column Layout Architecture</h2>
 
-        <p>When you are in a nested folder like <strong>projects/</strong>, you need to use <strong>../</strong> to go
-          up
-          one level to reach pages at the root level.</p>
+        <p>This page implements a two-column flexbox layout that demonstrates responsive design principles:</p>
 
-        <p>Examples:</p>
         <ul>
-          <li><strong>../index.html</strong> - goes to the homepage</li>
-          <li><strong>../about.html</strong> - goes to the about page</li>
-          <li><strong>../gallery/index.html</strong> - goes to gallery (up, then into different folder)</li>
-          <li><strong>index.html</strong> - stays in projects folder</li>
+          <li><strong>Sidebar Column (60px fixed width):</strong> Contains the vertical sidebar navigation, providing persistent access to main site sections</li>
+          <li><strong>Content Column (flexible width):</strong> Houses the page content and section-specific navigation, adapting to available space</li>
         </ul>
+
+        <p>This layout pattern is ideal for detail pages where users need both site-wide navigation and section-specific navigation options.</p>
+
+        <h2>Dual Navigation System</h2>
+
+        <p>This page exemplifies a dual navigation approach, combining two distinct navigation patterns:</p>
+
+        <h3>Global Navigation: Sidebar Pattern</h3>
+
+        <p>The left sidebar provides persistent global navigation to all main category pages (Home, About, Projects, Gallery). This fixed vertical navigation remains visible during page scroll, ensuring users can always navigate to other major sections of the site. The sidebar uses the vertical list navigation pattern (Navigation Pattern 01), which is ideal for secondary navigation that doesn't compete with primary content.</p>
+
+        <h3>Section Navigation: Custom Centered Pattern</h3>
+
+        <p>The custom centered navigation bar at the top of the content area provides section-specific navigation within the Projects category. This navigation pattern (Navigation Pattern 03) demonstrates:</p>
+
+        <ul>
+          <li><strong>Centered, contained design:</strong> The navigation bar is visually distinct with a light gradient background and rounded corners, creating a clear separation from page content</li>
+          <li><strong>Scalable architecture:</strong> The flexbox layout with <code>justify-content: space-evenly</code> automatically distributes navigation items evenly, accommodating additional links as the section grows</li>
+          <li><strong>Visual hierarchy:</strong> Larger font size (1.5rem) and prominent styling indicate these are the most likely next navigation actions within the current section</li>
+          <li><strong>Contextual navigation:</strong> Links within this bar navigate to related pages in the same section (e.g., "Return to Projects Home"), providing intuitive breadcrumb-style navigation</li>
+        </ul>
+
+        <h2>Relative Path Navigation</h2>
+
+        <p>This nested page demonstrates proper relative path usage for multi-page sites:</p>
+
+        <ul>
+          <li><strong><code>../index.html</code></strong> - Navigates up one directory level to reach the homepage</li>
+          <li><strong><code>../about.html</code></strong> - Goes up one level to access root-level pages</li>
+          <li><strong><code>index.html</code></strong> - Stays within the current directory (projects folder) to access the Projects landing page</li>
+          <li><strong><code>../gallery/</code></strong> - Goes up one level, then into a different folder to access the Gallery section</li>
+        </ul>
+
+        <p>Understanding relative paths is essential for building maintainable multi-page websites where pages are organized into logical folder structures.</p>
+
+        <h2>CSS Architecture: Shared Stylesheet</h2>
+
+        <p>This page references the shared stylesheet using <code>../css/style.css</code>, demonstrating how nested pages access CSS files located at the project root. This approach ensures:</p>
+
+        <ul>
+          <li>Consistent styling across all pages</li>
+          <li>Single source of truth for design changes</li>
+          <li>Efficient file management without CSS duplication</li>
+        </ul>
+
+        <p>All navigation patterns, layout utilities, and styling are defined in the shared stylesheet, making site-wide design updates simple and consistent.</p>
       </main>
     </section>
   </div>
+
+  <!--
+    Return to Top Button
+    
+    This button provides enhanced user experience on long pages by offering
+    a quick way to return to the top of the page without manual scrolling.
+    The button demonstrates several web development concepts:
+    
+    - Fixed positioning for persistent UI elements
+    - JavaScript event handling for scroll detection
+    - Smooth scrolling behavior using the ScrollTo API
+    - Progressive disclosure (button appears only when needed)
+    - Accessibility with ARIA labels and semantic HTML
+    
+    The button is positioned using fixed positioning (defined in CSS) and
+    becomes visible when the user scrolls more than 300px from the top,
+    indicating they have scrolled past initial content.
+  -->
+  <button id="return-to-top" class="return-to-top" aria-label="Return to top of page" title="Return to top">
+    ↑
+  </button>
+
+  <!--
+    JavaScript: Return to Top Functionality
+    
+    This script implements the interactive behavior for the return-to-top button.
+    It demonstrates:
+    
+    1. DOM Element Selection: Uses getElementById() to select the button element
+    2. Scroll Event Listener: Monitors window scroll position in real-time
+    3. Conditional Visibility: Shows/hides button based on scroll threshold (300px)
+    4. Smooth Scrolling: Uses window.scrollTo() with behavior: 'smooth' for
+       animated scrolling instead of instant jumps
+    
+    The scroll event listener fires continuously as the user scrolls, checking
+    if the vertical scroll position (pageYOffset) exceeds 300 pixels. When true,
+    the 'show' class is added to make the button visible via CSS transitions.
+    When false (near the top), the class is removed to hide the button.
+    
+    The click event listener prevents default behavior and uses the modern
+    ScrollTo API with smooth scrolling behavior, providing a polished user
+    experience that matches contemporary web design standards.
+  -->
+  <script>
+    // DOM Element Selection: Retrieve the return-to-top button element
+    // using its unique ID for direct access
+    const returnToTopButton = document.getElementById('return-to-top');
+
+    /*
+     * Scroll Event Handler: Show/Hide Button Based on Scroll Position
+     * 
+     * This event listener monitors the window's scroll position and toggles
+     * the button's visibility. The 300px threshold prevents the button from
+     * appearing when users are near the top of the page, where it's not needed.
+     * 
+     * The classList API is used to add/remove the 'show' class, which triggers
+     * CSS transitions defined in the stylesheet for smooth fade-in/fade-out effects.
+     */
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        returnToTopButton.classList.add('show');
+      } else {
+        returnToTopButton.classList.remove('show');
+      }
+    });
+
+    /*
+     * Click Event Handler: Smooth Scroll to Top
+     * 
+     * When the button is clicked, this handler prevents any default button
+     * behavior and initiates a smooth scroll animation to the top of the page.
+     * 
+     * The window.scrollTo() method with behavior: 'smooth' provides native
+     * browser smooth scrolling, which is more performant than JavaScript-based
+     * animation libraries. The top: 0 parameter scrolls to the document's
+     * beginning (y-coordinate 0).
+     */
+    returnToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>

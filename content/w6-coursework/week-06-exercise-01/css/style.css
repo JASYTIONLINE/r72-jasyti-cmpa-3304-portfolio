@@ -504,3 +504,135 @@ code {
 }
 
 /* removed in-flow override so sidebar remains fixed across all pages */
+
+/*
+ * Return to Top Button: Base Styles
+ * 
+ * This button implements a fixed-position UI element that provides enhanced
+ * navigation for long-form content. The design demonstrates several CSS concepts:
+ * 
+ * Positioning Strategy:
+ * - position: fixed removes the element from document flow and positions it
+ *   relative to the viewport, ensuring it remains visible during scroll
+ * - bottom: 32px and right: 32px position the button in the bottom-right
+ *   corner with comfortable spacing from viewport edges
+ * 
+ * Visual Design:
+ * - Circular shape (border-radius: 50%) creates a modern, button-like appearance
+ * - Dark background (#333333) with white border provides high contrast
+ * - Box-shadow adds depth, making the button appear elevated above content
+ * - Flexbox (display: flex) centers the arrow icon both horizontally and vertically
+ * 
+ * Progressive Disclosure:
+ * - opacity: 0 and visibility: hidden hide the button by default
+ * - pointer-events: none prevents interaction when hidden, improving performance
+ * - These properties work together with JavaScript to show/hide the button
+ *   based on scroll position, implementing progressive disclosure UX pattern
+ * 
+ * Z-Index Management:
+ * - z-index: 2000 ensures the button appears above all other page content,
+ *   including fixed navigation elements (which typically use z-index: 1000)
+ * 
+ * Transition Properties:
+ * - Multiple transition properties enable smooth animations for opacity,
+ *   visibility, background-color, and transform changes
+ * - 0.3s duration with ease timing function provides polished, natural motion
+ */
+.return-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  background-color: #333333;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2000;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/*
+ * Return to Top Button: Visible State (.show class)
+ * 
+ * This state is toggled by JavaScript when the user scrolls more than 300px
+ * from the top of the page. The class-based approach allows for clean
+ * separation of concerns between JavaScript (behavior) and CSS (presentation).
+ * 
+ * Visibility Control:
+ * - opacity: 1 makes the button fully visible, triggering the CSS transition
+ * - visibility: visible ensures the button is accessible to screen readers
+ *   and participates in layout calculations
+ * - pointer-events: auto re-enables mouse/touch interactions, allowing users
+ *   to click the button
+ * 
+ * The combination of opacity and visibility provides smooth fade-in animation
+ * while ensuring proper accessibility. Using both properties (rather than
+ * just opacity) ensures the button is completely removed from accessibility
+ * trees when hidden, improving screen reader experience.
+ */
+.return-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/*
+ * Return to Top Button: Hover State
+ * 
+ * Provides interactive feedback when users hover over the button, following
+ * established UX patterns for clickable elements. This state demonstrates:
+ * 
+ * Color Change:
+ * - Background transitions from dark gray (#333333) to blue (#0066CC),
+ *   matching the site's primary accent color and maintaining visual consistency
+ * - The transition property (defined in base styles) animates this color change
+ * 
+ * Transform Feedback:
+ * - transform: scale(1.1) enlarges the button by 10% on hover
+ * - This visual feedback clearly indicates the element is interactive
+ * - The scale transform is hardware-accelerated, providing smooth performance
+ * 
+ * Accessibility Benefits:
+ * - Clear hover state improves usability for users with motor impairments
+ * - Visual feedback helps users understand interactive elements
+ * - Consistent with hover patterns used throughout the site's navigation
+ */
+.return-to-top:hover {
+  background-color: #0066CC;
+  transform: scale(1.1);
+}
+
+/*
+ * Return to Top Button: Active State
+ * 
+ * Provides tactile visual feedback when the button is clicked, creating a
+ * "pressed" or "depressed" effect that mimics physical button interaction.
+ * 
+ * Interaction Feedback:
+ * - transform: scale(0.95) reduces button size by 5% when clicked
+ * - This creates a visual "pressed" state that confirms user interaction
+ * - The scale-down effect provides immediate feedback before the scroll
+ *   animation begins, improving perceived responsiveness
+ * 
+ * UX Design Pattern:
+ * - The active state is a common pattern in modern web design for providing
+ *   clear feedback on user actions
+ * - Combined with hover state, creates a complete interaction lifecycle:
+ *   default → hover → active → return to default
+ * - This pattern improves user confidence that their click was registered
+ */
+.return-to-top:active {
+  transform: scale(0.95);
+}
