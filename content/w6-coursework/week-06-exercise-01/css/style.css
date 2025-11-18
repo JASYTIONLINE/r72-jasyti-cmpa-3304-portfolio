@@ -1,9 +1,44 @@
+/*
+ * Navigation Lab - Shared Stylesheet
+ * 
+ * This stylesheet implements three distinct navigation patterns as part of
+ * a multi-page website exercise. The styles demonstrate:
+ * 
+ * 1. Navigation Pattern 01: Sidebar (Vertical List Navigation)
+ * 2. Navigation Pattern 02: Horizontal Flexbox Navigation  
+ * 3. Navigation Pattern 03: Custom Centered Navigation
+ * 
+ * Key concepts demonstrated:
+ * - Semantic HTML navigation with <nav> elements
+ * - Flexbox for layout and navigation arrangement
+ * - CSS transitions for interactive hover effects
+ * - Accessibility with aria-current="page" for current page indication
+ * - Fixed positioning for persistent navigation
+ * - Responsive layout techniques
+ * 
+ * All pages share this single stylesheet, ensuring consistent styling
+ * across the entire multi-page site while demonstrating relative path
+ * management for nested pages.
+ */
+
+/*
+ * CSS Reset
+ * Removes default browser styling to ensure consistent appearance across
+ * different browsers. The box-sizing: border-box property ensures padding
+ * and borders are included in element width calculations, simplifying layout.
+ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*
+ * Base Body Styles
+ * Establishes the document's typography, color scheme, and layout foundation.
+ * Uses flexbox to center content horizontally while maintaining top alignment.
+ * The min-height: 100vh ensures the page fills the viewport height.
+ */
 body {
   font-family: "Times New Roman", serif;
   font-size: 16px;
@@ -17,12 +52,24 @@ body {
   padding: 32px 0;
 }
 
+/*
+ * Main Content Container
+ * Constrains content width for optimal readability (max-width: 800px is
+ * a standard width for comfortable reading). Responsive width: 100% ensures
+ * content adapts to smaller screens.
+ */
 main {
   max-width: 800px;
   width: 100%;
   padding: 0 16px;
 }
 
+/*
+ * Primary Heading (h1)
+ * Large, centered heading with negative letter-spacing for a modern,
+ * condensed appearance. The bottom border creates visual separation
+ * between the heading and content below.
+ */
 h1 {
   font-size: 3.75rem;
   font-weight: normal;
@@ -34,6 +81,11 @@ h1 {
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
+/*
+ * Secondary Heading (h2)
+ * Section headings with consistent spacing and visual hierarchy.
+ * The bottom border provides subtle separation from following content.
+ */
 h2 {
   font-size: 24px;
   font-weight: normal;
@@ -43,6 +95,11 @@ h2 {
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
+/*
+ * Typography: Paragraphs and Lists
+ * Establishes consistent vertical rhythm through margin spacing.
+ * List indentation (margin-left) provides visual hierarchy for nested content.
+ */
 p {
   margin-bottom: 16px;
 }
@@ -56,6 +113,12 @@ li {
   margin-bottom: 8px;
 }
 
+/*
+ * Base Link Styles
+ * Defines default link appearance with blue color (#0066CC) and underline.
+ * Hover state darkens the color to provide visual feedback and improve
+ * user experience by indicating interactive elements.
+ */
 a {
   color: #0066CC;
   text-decoration: underline;
@@ -65,6 +128,12 @@ a:hover {
   color: #004499;
 }
 
+/*
+ * Inline Code Styling
+ * Monospace font distinguishes code from regular text. Light background
+ * and border create visual distinction, making code snippets easily
+ * identifiable within content.
+ */
 code {
   font-family: monospace;
   background-color: #f5f5f5;
@@ -72,6 +141,17 @@ code {
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
+/*
+ * Navigation Pattern 01: Sidebar (Vertical List Navigation)
+ * 
+ * This pattern implements a fixed vertical navigation sidebar, ideal for
+ * sidebar navigation or mobile layouts. Fixed positioning keeps the navigation
+ * visible during page scroll, improving accessibility and user experience.
+ * 
+ * The top offset calculation ensures the sidebar appears below the horizontal
+ * header navigation, preventing overlap. z-index: 1000 ensures the sidebar
+ * appears above other page content.
+ */
 .sidebar {
   position: fixed;
   left: 32px;
@@ -85,6 +165,11 @@ code {
   z-index: 1000;
 }
 
+/*
+ * Sidebar Navigation: List Structure
+ * Removes default list styling (bullets, margins) and centers text
+ * for a clean, button-like appearance.
+ */
 .sidebar ul {
   list-style: none;
   margin: 0;
@@ -96,6 +181,12 @@ code {
   margin-bottom: 8px;
 }
 
+/*
+ * Sidebar Navigation: Link Styling
+ * display: block makes the entire link area clickable (not just text),
+ * improving usability. Light background and border create button-like
+ * appearance. CSS transitions provide smooth hover effects.
+ */
 .sidebar a {
   display: block;
   padding: 8px 12px;
@@ -106,20 +197,49 @@ code {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/*
+ * Sidebar Navigation: Hover State
+ * Inverts colors on hover (blue background, white text) to provide
+ * clear visual feedback when users interact with navigation links.
+ */
 .sidebar a:hover {
   background-color: #0066CC;
   color: #ffffff;
 }
 
+/*
+ * Sidebar Navigation: Current Page Indicator
+ * Uses the aria-current="page" attribute selector to style the active
+ * page link. Dark background and bold text provide clear visual
+ * indication of the user's current location within the site.
+ */
+.sidebar a[aria-current="page"] {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/*
+ * Layout Spacing: Sidebar and Main Content
+ * The general sibling selector (~) ensures main content receives proper
+ * left margin when a sidebar is present, regardless of HTML structure
+ * between elements. This prevents content from being hidden behind the
+ * fixed sidebar. The calculation accounts for sidebar width (100px) plus
+ * a comfortable gutter (32px) for visual spacing.
+ */
 .sidebar ~ main {
-  /*
-    Use the general sibling selector so comments or non-element nodes between
-    the <nav> and <main> do not prevent the layout margin from applying.
-    Keep a left margin equal to the sidebar width plus a comfortable gutter.
-  */
   margin-left: calc(100px + 32px);
 }
 
+/*
+ * Navigation Pattern 02: Horizontal Flexbox Navigation
+ * 
+ * This pattern implements a horizontal navigation bar at the top of the page,
+ * the most common navigation pattern for modern websites. Fixed positioning
+ * keeps navigation accessible during scroll. Dark background (#333333) with
+ * white text creates strong visual contrast. Box-shadow adds depth and
+ * separation from page content.
+ */
 .nav-horizontal {
   position: fixed;
   top: 0;
@@ -131,6 +251,12 @@ code {
   z-index: 1000;
 }
 
+/*
+ * Horizontal Navigation: Flexbox Layout
+ * display: flex arranges navigation items horizontally. gap: 32px provides
+ * consistent spacing between links without requiring margins. justify-content:
+ * flex-start keeps links left-aligned (distinct from centered or justified patterns).
+ */
 .nav-horizontal ul {
   list-style: none;
   margin: 0;
@@ -146,6 +272,12 @@ code {
   margin-bottom: 0;
 }
 
+/*
+ * Horizontal Navigation: Link Styling
+ * White text on dark background ensures high contrast and readability.
+ * Vertical padding (16px 0) creates comfortable clickable areas.
+ * CSS transition provides smooth color change on hover.
+ */
 .nav-horizontal a {
   display: block;
   padding: 16px 0;
@@ -154,25 +286,52 @@ code {
   transition: color 0.3s ease;
 }
 
+/*
+ * Horizontal Navigation: Hover State
+ * Changes link color to blue (#0066CC) on hover, providing visual
+ * feedback while maintaining readability against the dark background.
+ */
 .nav-horizontal a:hover {
   color: #0066CC;
 }
 
+/*
+ * Horizontal Navigation: Current Page Indicator
+ * Black background distinguishes the active page link. Rounded corners
+ * (border-radius) soften the appearance. Increased horizontal padding
+ * accommodates the background color change.
+ */
+.nav-horizontal a[aria-current="page"] {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 16px 12px;
+  border-radius: 4px;
+}
+
+/*
+ * Layout Spacing: Horizontal Navigation and Main Content
+ * Adds top margin to main content to prevent it from being hidden behind
+ * the fixed horizontal navigation bar. The general sibling selector ensures
+ * this works even when other elements (like sidebars) exist between the
+ * navigation and main content in the HTML structure.
+ */
 .nav-horizontal ~ main {
-  /*
-    Ensure the main content receives top margin when a top navigation bar is
-    present even if other nodes (like a sidebar) exist between the top nav and <main>.
-  */
   margin-top: 80px;
 }
 
 /*
-  Navigation - Custom pattern explanation:
-  The `.nav-custom` pattern creates a centered, contained navigation bar with a light background and
-  subtle rounded corners. It demonstrates a third visual approach distinct from the existing
-  sidebar and full-width header patterns. Hover states mirror the other patterns to ensure
-  consistent affordance across the site.
-*/
+ * Navigation Pattern 03: Custom Centered Navigation
+ * 
+ * This pattern demonstrates a custom navigation approach with a centered,
+ * contained navigation bar. The light gradient background and rounded corners
+ * create a distinct visual style from the sidebar and horizontal patterns.
+ * 
+ * Positioning: Fixed positioning with left: 50% and transform: translateX(-50%)
+ * centers the navigation horizontally. The higher z-index (1001) ensures it
+ * appears above other navigation elements. justify-content: space-evenly
+ * distributes navigation items evenly within the container.
+ */
 .nav-custom {
   display: flex;
   flex-direction: row;
@@ -188,7 +347,11 @@ code {
    justify-content: space-evenly;
   z-index: 1001;
 }
-/* Currently not used but left incase other projecs are added and i need to expand the number of nav items */
+/*
+ * Custom Navigation: List Structure
+ * Flexbox layout with gap spacing. Prepared for future expansion when
+ * additional navigation items are needed.
+ */
 .nav-custom ul {
   list-style: none;
   margin: 0;
@@ -199,6 +362,12 @@ code {
   align-items: center;
 }
 
+/*
+ * Custom Navigation: Link Styling
+ * Larger font size (1.5rem) increases visibility. Dark text on light
+ * background provides contrast. Rounded corners (border-radius) create
+ * a modern, button-like appearance.
+ */
 .nav-custom a {
   font-size: 1.5rem;
   color: #333333;
@@ -209,38 +378,70 @@ code {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/*
+ * Custom Navigation: Hover State
+ * Blue background with white text on hover provides clear interactive
+ * feedback, maintaining consistency with other navigation patterns.
+ */
 .nav-custom a:hover {
   background-color: #0066CC;
   color: #ffffff;
 }
 
 /*
-  When a centered `.nav-custom` bar is used on nested pages it occupies
-  vertical space near the top of the viewport. Use a general sibling selector
-  to add top margin to <main> so page content is not overlapped by the fixed
-  centered navigation. The `48px` value approximates the bar's height plus
-  spacing; adjust if you modify padding or font-size for the nav.
-*/
+ * Custom Navigation: Current Page Indicator
+ * Dark gray background distinguishes the active page link, providing
+ * clear visual indication of the user's current location.
+ */
+.nav-custom a[aria-current="page"] {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/*
+ * Layout Spacing: Custom Navigation and Main Content
+ * When the custom centered navigation bar is used, it occupies vertical
+ * space at the top of the viewport. This rule adds top margin to main
+ * content to prevent overlap. The calculation (16px + 48px) accounts for
+ * the navigation bar's height plus comfortable spacing.
+ */
 .nav-custom ~ main {
   margin-top: calc(16px + 48px);
 }
 
 /*
-  When a centered `.nav-custom` bar is present and a sidebar is also used on the
-  same page, the sidebar must clear the centered bar. This rule adjusts the fixed
-  `.nav-simple` top offset when the centered nav appears earlier in the DOM so the
-  sidebar does not overlap the centered navigation.
-*/
+ * Layout Spacing: Custom Navigation and Sidebar Coordination
+ * When both custom navigation and sidebar appear on the same page, the
+ * sidebar must be positioned below the custom navigation to prevent overlap.
+ * This rule adjusts the sidebar's top offset when custom navigation appears
+ * earlier in the DOM structure.
+ */
 .nav-custom ~ .sidebar {
   top: calc(16px + 48px);
 }
 
+/*
+ * Responsive Design: Media Queries
+ * 
+ * Media queries enable responsive design by applying different styles
+ * at specific viewport widths. These empty queries are placeholders
+ * for future responsive adjustments. Common breakpoints:
+ * - 480px: Small tablets and large phones
+ * - 1024px: Desktop screens and larger tablets
+ */
 @media (min-width: 480px) {}
 
 @media (min-width: 1024px) {}
 
 
-/* Projects page two-column layout: sidebar (60px) + content (1fr) */
+/*
+ * Layout Utility: Two-Column Layout for Project Detail Pages
+ * 
+ * This layout creates a two-column structure where a narrow sidebar column
+ * (60px) contains navigation, and a flexible content column (1fr) holds
+ * the main page content. Flexbox enables this responsive layout pattern.
+ */
 .with-sidebar-column .projects-layout {
   display: flex;
   align-items: center;
@@ -251,11 +452,22 @@ code {
   padding: 0 16px;
 }
 
+/*
+ * Two-Column Layout: Sidebar Column
+ * Fixed width (60px) provides minimal space for navigation buttons.
+ * flex: 0 0 60px prevents the column from growing or shrinking.
+ */
 .with-sidebar-column .sidebar-col {
   width: 60px; /* narrow column that hugs the nav buttons */
   flex: 0 0 60px;
 }
 
+/*
+ * Two-Column Layout: Content Column
+ * flex: 1 1 0 allows this column to grow and fill remaining space.
+ * Nested flexbox (display: flex, flex-direction: column) centers
+ * content vertically and horizontally within the column.
+ */
 .with-sidebar-column .content-col {
   flex: 1 1 0;
   display: flex;
@@ -263,7 +475,13 @@ code {
   align-items: center;
 }
 
-/* make centered nav in-flow and centered within the content column */
+/*
+ * Two-Column Layout: Custom Navigation Override
+ * Changes the custom navigation from fixed positioning to relative,
+ * allowing it to flow naturally within the content column layout.
+ * This prevents overlap issues when navigation appears within a
+ * two-column structure.
+ */
 .with-sidebar-column .content-col .nav-custom {
   position: relative;
   left: auto;
@@ -273,6 +491,12 @@ code {
   max-width: 800px;
 }
 
+/*
+ * Two-Column Layout: Main Content Styling
+ * Constrains main content width within the flexible column for
+ * optimal readability, maintaining consistent max-width with
+ * other pages.
+ */
 .with-sidebar-column .content-col > main {
   margin-top: 16px;
   width: 100%;
