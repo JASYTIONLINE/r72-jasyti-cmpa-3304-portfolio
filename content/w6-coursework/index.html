@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>w6-coursework CMPA 3304</title>
+    <title>W6 CMPA 3304</title>
     <link rel="stylesheet" href="../../assets/css/style.css" />
   </head>
 
   <body>
-    <!-- ==========================================================
-       HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
-      ========================================================== -->
     <header class="header">
       <section class="navbar">
         <h1>JASYTI's Portfolio</h1>
@@ -21,7 +18,7 @@
             href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
             >GitHub</a
           >
-          <a href="https://jasytionline.github.io">Digi Port Ai</a>
+          <a href="https://jasytionline.github.io/">Digi Port Ai</a>
         </nav>
       </section>
     </header>
@@ -30,22 +27,22 @@
        HERO — PAGE CONTEXT INTRODUCTION
        ========================================================== -->
     <section class="hero">
-      <h2>CMPA 3304 Week 6</h2>
-      <h3>Site Architecture and Navigation</h3>
+      <h2>CMPA 3304 Week 06</h2>
+      <h3>Multi-Page Site Architecture and Navigation Patterns</h3>
       <p>
-        This week marks a key conceptual shift: learning to build multi-page
-        websites where several connected pages work together as a cohesive
-        whole. The courseworkfocuses on the two fundamental concepts: site
-        architecture (how pages are organized and linked together) and
-        navigation systems (how users move between pages).
+        This week focuses on building multi-page website architecture and
+        experimenting with different navigation patterns. Rather than building a
+        complete site from scratch, this exercise concentrated on the specific
+        skills of linking pages together and styling navigation patterns.
       </p>
       <p>
-        The coursework walks through the fundamentals of site architecture,
-        illustrating how to organize files, link pages with proper relative
-        paths, and use a shared stylesheet across the entire site. It also
-        demonstrates how to create clean, consistent navigation using semantic
-        HTML and Flexbox. The exercise brings it all together by adding
-        additional pages and connecting them into one unified structure.
+        I worked with a template that included root-level pages and nested folders,
+        fixing broken links and CSS paths using relative file paths. I learned how
+        to navigate between root and nested pages using paths like <code>../</code>
+        to move up directory levels. I then experimented with at several
+        different navigation styles across the site and on page, customizing colors, spacing,
+        typography, and hover effects to create a navigation laboratory where I
+        could practice and understand how multi-page architecture works.
       </p>
     </section>
 
@@ -59,89 +56,77 @@
        or any other inserted material. The sidebar remains visible 
        during scrolling for consistent navigation.
        ========================================================== -->
-    <!-- SIDEBAR (LEFT) -->
-    <aside class="sidebar">
-      <h2>Navigation</h2>
-      <section>
-        <h3>Exercises</h3>
-        <ul>
-          <li>
-            <a href="../w1-coursework/index.html">Week 01 Coursework</a>
-          </li>
-          <li>
-            <a href="../w2-coursework/index.html">Week 02 Coursework</a>
-          </li>
-          <li>
-            <a href="../w3-coursework/index.html">Week 03 Coursework</a>
-          </li>
-          <li>
-            <a href="../w4-coursework/index.html">Week 04 Coursework</a>
-          </li>
-          <li>
-            <a href="../w5-coursework/index.html">Week 05 Coursework</a>
-          </li>
-          <li>
-            <a href="../w6-coursework/index.html">Week 06 Coursework</a>
-          </li>
-          <li>
-            <a href="../w7-coursework/index.html">Week 07 Coursework</a>
-          </li>
-          <li>
-            <a href="../w8-coursework/index.html">Week 08 Coursework</a>
-          </li>
-        </ul>
-      </section>
+    <div class="layout">
+      <!-- SIDEBAR (LEFT) -->
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+        <section>
+          <section>
+            <h3>Exercises</h3>
+            <ul>
+              <li>
+                <a href="../w1-coursework/index.html">Week 01 Coursework</a>
+              </li>
+              <li>
+                <a href="../w2-coursework/index.html">Week 02 Coursework</a>
+              </li>
+              <li>
+                <a href="../w3-coursework/index.html">Week 03 Coursework</a>
+              </li>
+              <li>
+                <a href="../w4-coursework/index.html">Week 04 Coursework</a>
+              </li>
+              <li>
+                <a href="../w5-coursework/index.html">Week 05 Coursework</a>
+              </li>
+              <li>
+                <a href="../w6-coursework/index.html">Week 06 Coursework</a>
+              </li>
+            </ul>
+          </section>
 
-      <section>
-        <h3>Assignments</h3>
-        <ul>
-          <li>
-            <a href="../assignment-1/index.html"
-              >Assignment 01: Structuring a Page with Semantic HTML</a
+        <section>
+          <h3>Assignments</h3>
+          <ul>
+            <li>
+              <a href="../assignment-01/index.html"
+                >Assignment 01: Structuring a Page with Semantic HTML</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Projects</h4>
+          <ul>
+            <li>
+              <a href="../w5-coursework/project-1/index.html">Project 01 – Landing Page</a>
+            </li>
+            <!--    <li><a href="project-02/">Project 02 – Portfolio Final</a></li> -->
+          </ul>
+        </section>
+      </aside>
+
+      <!-- MAIN CONTENT (RIGHT) -->
+      <main class="main-content">
+        <div class="feature">
+          <h2>Week 06 Coursework:</h2>
+        </div>
+        <!-- Inside the Card Content  -->
+        <div class="card">
+          <h3>
+            <a href="week-06-exercise-01/index.html"
+              >Week 06 Exercise 01: Navigation Lab</a
             >
-          </li>
-          <li>
-            <a href="../assignment-2/index.html"
-              >Assignment 02: Your Own Web InspirationL</a
-            >
-          </li>
-        </ul>
-      </section>
+          </h3>
+       
 
-      <section>
-        <h4>Projects</h4>
-        <ul>
-          <li>
-            <a href="../project-1/index.html">Project 01 – Landing Page</a>
-          </li>
-          <li>
-            <a href="../project-2/index.html"
-              >Project 02: Final Project - Your Professional Portfolio</a
-            >
-          </li>
-        </ul>
-      </section>
-    </aside>
-
-    <!-- MAIN CONTENT (RIGHT) -->
-    <main class="main-content">
-      <h2>Week 06 Coursework</h2>
-
-      <!-- Inside the Card Content  -->
-      <div class="card">
-        <h2>Week 06 Exercise 01: Navigation Lab</h2>
-        <a
-          href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w6-coursework/week-06-exercise-01/"
-          style="font-size: 32px; font-weight: bold"
-          >Welcome to the Navigation Lab</a
-        >
-      </div>
-
-      <div class="discussion">
-        <h2>Discussion</h2>
-        <h3>No Discussion Topic in Week 6</h3>
-      </div>
-    </main>
+        <div class="discussion">
+          <h2>Discussion</h2>
+          <h3>No Discussion Topic in Week 6</h3>
+        </div>
+      </main>
+    </div>
     <!-- ==========================================================
        FOOTER — SITE CLOSING ELEMENT
        ----------------------------------------------------------
