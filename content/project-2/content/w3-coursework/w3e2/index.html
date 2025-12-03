@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+Week 03 Exercise 01 — Box Model Practice
+This page demonstrates correct separation of concerns between structure (HTML)
+and presentation (CSS). Each comment explains purpose, structure, and rationale
+in paragraph form for future reference and study.
+-->
+<html lang="en">
+  <head>
+    <!--
+  Metadata establishes consistent rendering across devices.
+  The linked stylesheet controls all visual design.
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMPA 3304 W3E2</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="navbar">
+        <h1>JASYTI's Portfolio</h1>
+        <nav class="navbar-links">
+          <a href="../index.html">Home</a>
+          <a href="styleguide/index.html">Style Guide</a>
+          <a
+            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
+            >GitHub</a
+          >
+          <a href="https://jasytionline.github.io/">Digi Port Ai</a>
+        </nav>
+      </section>
+    </header>
+    <!--
+  The main region holds the self-contained article card.
+  It demonstrates the box model using semantic HTML elements.
+  -->
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+        <section>
+          <h3>Exercises</h3>
+          <ul>
+            <li>
+              <a href="../../w1-coursework/index.html">Week 01 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w2-coursework/index.html">Week 02 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w3-coursework/index.html">Week 03 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w4-coursework/index.html">Week 04 Coursework</a>
+            </li>
+            <li>
+              <a href="../../w5-coursework/index.html">Week 05 Coursework</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Assignments</h3>
+          <ul>
+            <li>
+              <a href="../../assignment-01/index.html"
+                >Assignment 01: Structuring a Page with Semantic HTML</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Projects</h4>
+          <ul>
+            <li>
+              <a href="../../w5-coursework/project-1/index.html"
+                >Project 01 – Landing Page</a
+              >
+            </li>
+            <!--    <li><a href="project-02/">Project 02 – Portfolio Final</a></li> -->
+          </ul>
+        </section>
+      </aside>
+
+         <main class="main-content">
+          <h2>CMPA 3304 Week 03</h2>
+            <h3>W3E2: Flexbox Froggy</h3>
+        <!-- Inside the Card Content  -->
+        <section class="assignment-container">
+            <figure class="screenshot">
+      <!--
+      The <img> tag below embeds the PNG screenshot that documents the completed
+      Flexbox Froggy exercise.-->
+      <img src="assets/images/w3e2-flexbox-froggy-solved.png"
+        alt="Screenshot showing the completed Flexbox Froggy exercise, demonstrating alignment and order concepts." />
+
+      <!--
+      The <figcaption> tag provides a brief textual explanation beneath the screenshot. It clarifies what the image represents within the context of the course. Including captions helps reinforce visual-verbal learning by connecting the image to its educational purpose. This also improves SEO because search engines recognize the semantic link between the image and
+      its captioned description.
+      -->
+      <p>
+        Completed Flexbox Froggy exercise — Week 03 CMPA 3304.
+      </p>
+    </figure>
+  </main>
+    </div>
+    <footer class="footer">
+      <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

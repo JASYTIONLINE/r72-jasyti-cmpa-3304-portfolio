@@ -1,0 +1,947 @@
+/* =============================================================================
+   JASYTI UNIVERSAL STYLESHEET (style.css)
+   -----------------------------------------------------------------------------
+   Purpose: The single authoritative stylesheet for all JASYTI portfolio sites.
+   It is structured intentionally by cascade hierarchy to prevent conflicts and
+   ensure predictable inheritance.  Each major section begins with a paragraph-
+   level explanation instead of line-by-line notes, enabling both readability
+   and instructional reuse.  To change the color scheme, edit only :root tokens.
+   ============================================================================= */
+
+/* =============================================================================
+   0) DESIGN TOKENS — COLORS, TYPE, SPACING, MOTION, CONSTRAINTS
+   -----------------------------------------------------------------------------
+   Why: These variables define the entire visual system.  Components and layout
+   rules never hardcode colors or measurements; they reference these tokens.  
+   Changing any token in :root updates the design everywhere instantly.
+   ============================================================================= */
+:root {
+  /* Core Palette */
+  --color-primary: #22d3ee;
+  --color-primary-ghost: #67e8f9;
+  --color-secondary: #1da1f2;
+  --color-secondary-ghost: #68bdf2;
+  --color-tertiary: #ff3344;
+  --color-tertiary-ghost: #f96f7b;
+  --color-quaternary: #06f988;
+  --color-quaternary-ghost: #99f7cb;
+
+  /*theme colors*/
+  --color-dk: #0f172a;
+  --color-dk-offset: #111b33;
+  --color-lt: #e5e7eb;
+  --color-lt-offset: #c8c7c7;
+
+  /*text*/
+  --color-text-dk: var(--color-lt);
+  --color-text-lt: var(--color-dk);
+
+  /* link system */
+  --color-link: #06f988;
+  --color-link-onpage: #99f7cb;
+  --color-link-active: #cbf3e0;
+  --color-link-hover: var(--color-tertiary-ghost);
+
+  /* Typography and rhythm */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --lh-base: 1.5;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* Shape, depth, motion */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --border-strong: 4px solid var(--color-primary);
+  --border-soft: 1px solid rgba(34, 211, 238, 0.25);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+
+  /* Layout bounds */
+  --container-max: 2560px;
+  --content-max: 960px;
+}
+
+/* =============================================================================
+   1) GLOBAL RESET & ACCESSIBILITY
+   -----------------------------------------------------------------------------
+   Why: Standardize the box model, remove inconsistent browser defaults, and
+   guarantee visible focus states.  This section should never contain branding.
+   ============================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--lh-base);
+  color: var(--color-text-dk);
+  background-color: var(--color-dk);
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+p {
+  max-width: 1000px;
+  font-size: 22px;
+}
+
+/* =============================================================================
+   2) GLOBAL TYPOGRAPHY
+   -----------------------------------------------------------------------------
+   Why: Establish visual hierarchy for headings and body text.  The “scanline”
+   palette moves from bright cyan (H1) to muted gray-blue (H6) for readability.
+   ============================================================================= */
+h1,
+.h1 {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
+  margin: 0 0 var(--space-4);
+}
+
+h2,
+.h2 {
+  font-size: 1.9rem;
+  color: #1da1f2;
+  text-shadow: 0 0 6px rgba(29, 161, 242, 0.35);
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+h3,
+.h3 {
+  font-size: 1.6rem;
+  color: #67e8f9;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+h4,
+.h4 {
+  font-size: 1.3rem;
+  color: #8fd3f4;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+h5,
+.h5 {
+  font-size: 1.1rem;
+  color: #dbeafe;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+small,
+.caption {
+  font-size: 0.875rem;
+  color: #8fd3f4;
+}
+
+.accent {
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.9rem;
+  color: #1da1f2;
+  text-shadow: 0 0 6px rgba(29, 161, 242, 0.35);
+  margin: var(--space-4) 0 var(--space-2);
+  margin-bottom: 32px;
+}
+
+/* =============================================================================
+   3) GLOBAL LINKS — UNIVERSAL LVHFA SYSTEM
+   -----------------------------------------------------------------------------
+   Why: Define link appearance once for the whole site.  Correct LVHFA order
+   (Link → Visited → Hover → Focus → Active) ensures consistent behavior.
+   ============================================================================= */
+a,
+a:link {
+  color: var(--color-link);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+a:visited {
+  color: var(--color-link-active);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-link-hover);
+}
+
+a:active {
+  color: var(--color-link-active);
+}
+
+a[href^="#"],
+a[href^="#"]:visited {
+  color: var(--color-link-onpage);
+}
+
+a[href^="#"]:hover,
+a[href^="#"]:focus-visible {
+  color: var(--color-link-hover);
+}
+
+/* =============================================================================
+   4) LAYOUT FRAME — HEADER, HERO, SIDEBAR, MAIN, FOOTER
+   -----------------------------------------------------------------------------
+   Why: Provide structural layout using Flexbox.  Header and footer are fixed,
+   the sidebar is fixed for persistent navigation, and main scrolls freely.
+   ============================================================================= */
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  z-index: 999;
+  background: linear-gradient(180deg, #0f172a 0%, #101a30 100%);
+  border-bottom: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+/* Hero introduction area aligned with main content */
+.hero {
+  width: 100%;
+  background: var(--color-dk-offset);
+  border-bottom: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  /* height of sticky header */
+  margin-top: 65px;
+  margin-left: 260px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 5px 5px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Sidebar navigation (fixed) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  /* height of sticky header */
+  margin-top: 65px;
+  background-color: var(--color-dk);
+  border-right: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6) var(--space-4);
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: var(--space-4);
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: var(--space-3);
+}
+
+/* Main scrollable content area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  padding: var(--space-6);
+  margin-bottom: 50px;
+  flex: 1;
+}
+.assignment-container {
+  padding-bottom: 100px;
+  margin-bottom: 50px;
+  flex: 1;
+}
+.discussion {
+  margin-top: -25px;
+  margin-left: 260px;
+  padding-top: 0;    
+  margin-bottom: 50px;
+  flex: 1;
+}
+.discussion-q {
+  font-size: 22px;
+  color: #1da1f2;
+  margin-bottom: 0px;
+
+}
+.discussion-a {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 0px;
+
+}
+/* Footer fixed at viewport bottom, aligned with main column */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--color-dk);
+  border-top: var(--border-soft);
+  color: var(--color-primary-ghost);
+  text-align: Right;
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-nomarg {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-dk);
+  border-top: var(--border-soft);
+  color: var(--color-primary-ghost);
+  box-shadow: var(--shadow-sm);
+}
+
+.splash-footer {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-dk);
+  border-top: var(--border-soft);
+  color: var(--color-primary-ghost);
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+body {
+  padding-bottom: 80px;
+}
+
+/* =============================================================================
+   5) COMPONENTS — CARDS, SCREENSHOTS, TOOLBAR, BUTTONS
+   -----------------------------------------------------------------------------
+   Why: Self-contained building blocks.  They inherit layout but not link color,
+   so they never override the global link system accidentally.
+   ============================================================================= */
+.card {
+  max-width: 1000px;
+  margin-bottom: 50px;
+  background-color: #111827;
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.card-header {
+  color: var(--color-primary);
+}
+
+.card-body {
+  color: var(--color-text);
+}
+
+.card-footer {
+  border-top: var(--border-soft);
+  padding-top: var(--space-3);
+  padding-right: var(--space-3);
+  text-align: right;
+  color: var(--color-primary-ghost);
+}
+
+.discussion {
+  max-width: 1000px;
+  margin-left: 0;
+  margin-bottom: 50px;
+  background-color: #111827;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Screenshot presentation */
+.screenshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.screenshot img {
+  max-width: 1000px;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.screenshot figcaption {
+  color: var(--color-primary-ghost);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Toolbar container for grouped controls */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-bg-offset);
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button system */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-base),
+    color var(--transition-base), border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.btn-primary {
+  background-color: #0060c7;
+  color: #ffffff;
+  border-color: #0060c7;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-link);
+  border-color: var(--color-link);
+  box-shadow: 0 0 12px var(--color-green);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary-ghost);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  color: var(--color-white);
+  border-color: var(--color-primary-ghost);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+.btn-danger {
+  background-color: var(--color-red);
+  color: #140a0a;
+  border-color: var(--color-red);
+}
+
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background-color: #ff5260;
+  border-color: #ff5260;
+  box-shadow: 0 0 12px rgba(255, 51, 68, 0.65);
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.button-section {
+  padding: 32px;
+  background-color: var(--color-lt-offset);
+  color: var(--color-dk);
+  font-size: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+.button-section h2 {
+  color: var(--color-dk);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.button-01 {
+  background-color: #0066cc;
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #0066cc;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.button-01:hover {
+  background-color: #ffffff;
+  color: #0066cc;
+  border-color: #0066cc;
+}
+
+.button-02 {
+  background-color: #0e6027;
+  color: #ffffff;
+  padding: 16px 32px;
+  border: 2px solid #0e6027;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-02:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================================================================
+   6) CONTEXT OVERRIDES — HEADER & SIDEBAR LINKS
+   -----------------------------------------------------------------------------
+   Why: Scope color overrides to their regions.  Header uses cyan; sidebar uses
+   the electric-green system but reapplies it here to ensure dominance in cascade.
+   ============================================================================= */
+
+/* Header (navbar) links stay cyan by design */
+.navbar-links a {
+  color: var(--color-primary-ghost);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  background-color: rgba(34, 211, 238, 0.12);
+  color: var(--color-white);
+}
+
+/* Sidebar navigation links (explicitly last in cascade) */
+.sidebar a,
+.sidebar a:link {
+  color: var(--color-link);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.sidebar a:visited {
+  color: var(--color-link-active);
+}
+
+.sidebar a:hover,
+.sidebar a:focus-visible {
+  color: var(--color-link-hover);
+}
+
+.sidebar a:active {
+  color: var(--color-link-active);
+}
+
+/* =============================================================================
+   7) UTILITIES & RESPONSIVE ADAPTATION
+   -----------------------------------------------------------------------------
+   Why: Final layer of small, composable helpers and breakpoints.  They adjust
+   layout without changing visual hierarchy or brand logic.
+   ============================================================================= */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-block: var(--space-6);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .main-content,
+  .hero,
+  .footer {
+    margin-left: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding-inline: var(--space-4);
+  }
+
+  .toolbar {
+    gap: var(--space-2);
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+}
+/*
+ * This block was previously experimental and shouldn't be active.
+ * It had syntax errors that broke formatting.
+ * If you need it later, re-enable safely.
+ */
+
+/* html, body {
+
+/* ======================================================
+   1. GLOBAL RESET & PAGE SETUP
+ {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  overflow: hidden; /* Locks scroll during intro video 
+}
+
+*/
+/* ======================================================
+   2. INTRO VIDEO STAGE
+====================================================== */
+
+#stage {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#intro {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======================================================
+   3. Dragon SPLASH (Post Video Banner)
+====================================================== */
+
+#dragon {
+  width: 100vw;
+  height: 25vh;
+  /* Takes up 25% of viewport height */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  overflow: hidden;
+  position: relative;
+}
+
+#dragon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* dragon overlay text */
+.dragon-ui {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.dragon-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* ======================================================
+   4. MAIN CONTENT AREA (Visible After Video)
+====================================================== */
+
+/* Unlock scroll after video */
+body.show-dragon {
+  overflow: auto;
+}
+
+/* ======================================================
+   5. RADIO BUTTON NAVIGATION (Platform Selector)
+====================================================== */
+.dragon-topnav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Navigation buttons for other actions */
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #444;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1001;
+  text-align: center;
+}
+
+.dragon-topnav label {
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #222;
+}
+
+.dragon-topnav input[type="radio"] {
+  margin-right: 6px;
+}
+
+.dragon-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.button-red {
+  background-image: linear-gradient(-180deg, #d92323, #aa1a1a);
+  /* your red gradient */
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, system-ui, sans-serif;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 24px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  margin: 10px;
+}
+
+.button-red:hover {
+  box-shadow: rgba(217, 35, 35, 0.6) 0 3px 10px;
+  transform: translateY(-1px);
+}
+
+/* ======================================================
+   6. EXTRA COMPONENTS
+====================================================== */
+
+/* Navigation buttons for other actions */
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #444;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1001;
+  text-align: center;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Style Guide – Universal Layout</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER (same structure as index) -->
+    <header class="header">
+      <div class="navbar">
+        <h1>JASYTI's Electric Blue Style Guide</h1>
+       <nav class="navbar-links">
+          <a href="../index.html">Home</a>
+          <!--<a href="styleguide/index.html">Style Guide</a>-->
+          <a
+            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
+            >GitHub</a
+          >
+             <a
+            href="https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/w5-coursework/project-1/index.html"
+            >Digi Port Ai</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO (page context) -->
+    <section class="hero">
+      <h2>Hero Section</h2>
+
+      <p>
+        This page demonstrates every major class from the universal style.css.
+        The live components below should look exactly like they do on the site.
+      </p>
+    </section>
+
+    <!-- LAYOUT FRAME (fixed sidebar + scrollable main) -->
+    <div class="layout">
+      <!-- SIDEBAR (left, fixed) -->
+      <aside class="sidebar">
+        <h2>Navigation</h2>
+
+        <h4 class="h4">Catagory 1 Header</h4>
+        <ul>
+          <li><a href=".">Catagory 1 Subfolder 1</a></li>
+          <li><a href=".">Catagory 1 Subfolder 2</a></li>
+          <li><a href=".">Catagory 1 Subfolder 3</a></li>
+          <li><a href=".">Catagory 1 Subfolder 4</a></li>
+        </ul>
+
+        <h4 class="h4" style="margin-top: var(--space-4)">Catagory 2 Header</h4>
+        <ul>
+          <li><a href=".">Catagory 2 Subfolder 1</a></li>
+          <li><a href=".">Catagory 2 Subfolder 2</a></li>
+          <li><a href=".">Catagory 2 Subfolder 3</a></li>
+          <li><a href=".">Catagory 2 Subfolder 4</a></li>
+        </ul>
+
+        <h4 class="h4" style="margin-top: var(--space-4)">On Page Links</h4>
+        <ul>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#buttons">Buttons & Toolbar</a></li>
+          <li><a href="#cards">Cards</a></li>
+          <li><a href="#toc">Table of Contents</a></li>
+          <li><a href="#layout-utils">Layout Utilities</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT (right) -->
+      <main class="main-content">
+        <!-- EXAMPLES AREA (this is where all demos live) -->
+
+        <!-- TYPOGRAPHY -->
+        <section id="typography" class="card">
+          <header class="card-header"><h2 class="h2">Typography</h2></header>
+          <div class="card-body">
+            <h1 class="h1">H1 Electric Blue</h1>
+            <h2 class="h2">H2 Mid Blue</h2>
+            <h3 class="h3">H3 Soft Cyan</h3>
+            <h4 class="h4">H4 Pale Blue-Gray</h4>
+            <h5 class="h5">H5 Off-White Subheader</h5>
+            <h6 class="h6">H6 Muted Gray-Cyan</h6>
+            <p class="lead">Lead paragraph for intros.</p>
+            <p>
+              Standard paragraph text. <a href="#">Link hover shifts to red.</a>
+            </p>
+            <p><small>Small / caption text for secondary labels.</small></p>
+          </div>
+        </section>
+
+        <!-- BUTTONS & TOOLBAR -->
+        <section id="buttons" class="card">
+          <header class="card-header">
+            <h2 class="h2">Buttons & Toolbar</h2>
+          </header>
+          <div class="card-body">
+            <div class="toolbar">
+              <a class="btn btn-primary" href="#">Primary</a>
+              <a class="btn btn-outline" href="#">Outline</a>
+              <a class="btn btn-danger" href="#">Danger</a>
+              <a class="btn btn-disabled" aria-disabled="true" href="#"
+                >Disabled</a
+              >
+            </div>
+            <p>Toolbar groups controls with consistent spacing and states.</p>
+          </div>
+        </section>
+
+        <!-- CARDS -->
+        <section id="cards" class="card">
+          <header class="card-header"><h2 class="h2">Cards</h2></header>
+          <div class="card-body grid-3">
+            <article class="card">
+              <header class="card-header">
+                <h3 class="h3">Standard Card</h3>
+              </header>
+              <div class="card-body">
+                <p>Border, glow, and padding for readable content blocks.</p>
+              </div>
+              <footer class="card-footer">
+                <small>Updated just now</small>
+              </footer>
+            </article>
+
+            <article class="card card--success">
+              <header class="card-header">
+                <h3 class="h3">Success Variant</h3>
+              </header>
+              <div class="card-body">
+                <p>Green accent for completed or positive status.</p>
+              </div>
+              <footer class="card-footer"><small>Looks good</small></footer>
+            </article>
+
+            <article class="card">
+              <header class="card-header">
+                <h3 class="h3">Screenshot Figure</h3>
+              </header>
+              <div class="card-body">
+                <figure class="screenshot">
+                  <img
+                    src="../content/w3-coursework/w3e2/assets/images/w3e2-flexbox-froggy-solved.png"
+                    alt="Flexbox Froggy solved board"
+                  />
+                  <figcaption>
+                    Screenshot component with border + caption.
+                  </figcaption>
+                </figure>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- TABLE OF CONTENTS BOX -->
+        <section id="toc" class="card">
+          <header class="card-header">
+            <h2 class="h2">Table of Contents (.toc)</h2>
+          </header>
+          <div class="card-body">
+            <nav class="toc">
+              <h2>Exercises</h2>
+              <ul>
+                <li>
+                  <a href="../content/w1-coursework/index.html"
+                    >Week 01 Coursework</a
+                  >
+                </li>
+                <li>
+                  <a href="../content/w2-coursework/index.html"
+                    >Week 02 Coursework</a
+                  >
+                </li>
+                <li>
+                  <a href="../content/w3-coursework/index.html"
+                    >Week 03 Coursework</a
+                  >
+                </li>
+                <li>
+                  <a href="../content/w4-coursework/index.html"
+                    >Week 04 Coursework</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <!-- LAYOUT UTILITIES -->
+        <section id="layout-utils" class="card">
+          <header class="card-header">
+            <h2 class="h2">Layout Utilities</h2>
+          </header>
+          <div class="card-body">
+            <div class="flex-center card mb-4">
+              <span>flex-center A</span><span>•</span><span>B</span>
+            </div>
+            <div class="grid-2 mb-4">
+              <div class="card">grid-2 cell 1</div>
+              <div class="card">grid-2 cell 2</div>
+            </div>
+            <div class="grid-3">
+              <div class="card">grid-3 cell 1</div>
+              <div class="card">grid-3 cell 2</div>
+              <div class="card">grid-3 cell 3</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- You can keep adding sections for any new classes you introduce -->
+      </main>
+    </div>
+
+    <!-- FOOTER (sticky via CSS) -->
+    <footer class="footer">
+      <p>© 2025 John E. Barkle IV • Style Guide</p>
+    </footer>
+  </body>
+</html>
