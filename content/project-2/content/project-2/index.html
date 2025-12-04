@@ -3,230 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMPA 3304 Course Portfolio Home</title>
+    <title>Under Construction — CMPA 3304 Portfolio</title>
     <link rel="stylesheet" href="../../assets/css/style.css" />
+    <style>
+      /* ========================================
+         UNDER CONSTRUCTION PAGE STYLES
+         ======================================== */
+      
+      /* Remove sidebar margins for full-width layout */
+      .hero-full {
+        width: 100%;
+        background: var(--color-dk-offset);
+        border-bottom: var(--border-soft);
+        box-shadow: var(--shadow-sm);
+        padding: var(--space-6);
+        margin-top: 65px;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .construction-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 200px);
+        padding: var(--space-8);
+        text-align: center;
+      }
+
+      .construction-icon {
+        font-size: 6rem;
+        margin-bottom: var(--space-6);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 10px var(--color-primary));
+        }
+        50% {
+          transform: scale(1.05);
+          filter: drop-shadow(0 0 25px var(--color-primary));
+        }
+      }
+
+      .construction-title {
+        font-size: 3rem;
+        color: var(--color-primary);
+        text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+        margin-bottom: var(--space-4);
+        letter-spacing: 2px;
+      }
+
+      .construction-subtitle {
+        font-size: 1.4rem;
+        color: var(--color-secondary);
+        margin-bottom: var(--space-6);
+        max-width: 600px;
+      }
+
+      .progress-container {
+        width: 100%;
+        max-width: 500px;
+        height: 12px;
+        background: rgba(34, 211, 238, 0.15);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--color-primary);
+        margin-bottom: var(--space-6);
+      }
+
+      .progress-bar {
+        height: 100%;
+        width: 45%;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-quaternary));
+        border-radius: var(--radius-lg);
+        animation: shimmer 2.5s ease-in-out infinite;
+        background-size: 200% 100%;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      .construction-message {
+        font-size: 1.1rem;
+        color: var(--color-lt);
+        max-width: 550px;
+        line-height: 1.7;
+        margin-bottom: var(--space-6);
+      }
+
+      .construction-card {
+        background-color: #111827;
+        border: var(--border-strong);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-6);
+        max-width: 650px;
+        margin-bottom: var(--space-6);
+      }
+
+      .back-home-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        color: var(--color-dk);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      }
+
+      .back-home-btn:hover,
+      .back-home-btn:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(34, 211, 238, 0.5);
+        color: var(--color-dk);
+      }
+
+      /* Full-width footer without sidebar offset */
+      .footer-full {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: var(--space-3);
+        background-color: var(--color-dk);
+        border-top: var(--border-soft);
+        color: var(--color-primary-ghost);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Decorative geometric elements */
+      .geo-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .geo-shapes::before,
+      .geo-shapes::after {
+        content: '';
+        position: absolute;
+        border: 2px solid rgba(34, 211, 238, 0.1);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .geo-shapes::before {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: -100px;
+      }
+
+      .geo-shapes::after {
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        right: -50px;
+        animation-delay: -4s;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Decorative background elements -->
+    <div class="geo-shapes"></div>
+
     <!-- ==========================================================
-       HEADER — GLOBAL NAVIGATION AND SITE IDENTITY
-       ----------------------------------------------------------
-       This region defines the persistent top-level navigation bar 
-       across the entire website. It introduces site identity and 
-       provides quick access to universal links such as Home or Repo.
-       The header is designed to remain visible during scroll 
-       (sticky positioning) and anchors the site's brand color scheme.
+       HEADER — TOP NAVIGATION ONLY
        ========================================================== -->
     <header class="header">
       <section class="navbar">
         <h1>John E. Barkle IV - CMPA 3304</h1>
         <nav class="navbar-links">
+          <a href="../../index.html">Home</a>
           <a href="../../styleguide/index.html">Style Guide</a>
-          <a
-            href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main"
-            >GitHub</a
-          >
+          <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
           <a href="https://jasytionline.github.io">Digi Port Ai</a>
         </nav>
       </section>
     </header>
 
     <!-- ==========================================================
-       HERO — PAGE CONTEXT INTRODUCTION
-       ----------------------------------------------------------
-       The hero region directly follows the header and serves as a 
-       contextual introduction for each page. It provides a brief 
-       headline and subtitle that explain what content the visitor 
-       is viewing. Its width aligns with the main content area 
-       (not full-screen) to maintain visual hierarchy and focus.
+       HERO — PAGE CONTEXT
        ========================================================== -->
-    <section class="hero">
-      <h2>CMPA 3304 - Project 02: Final Project - My Professional Portfolio</h2>
-      <p>
-        Welcome to my CMPA 3304 Course Portfolio. This project presents the
-        fully developed website I built from scratch as my Professional
-        Portfolio for CMPA 3304 and showcases all the student learning
-        objectives covered throughout the course. It goes well beyond the
-        minimum requirements for Project 02: the site lives in its own project
-        folder, is linked cleanly from my Course Homepage, and includes a
-        complete multi-page architecture with consistent navigation across every
-        section. I designed and developed the entire portfolio using
-        professional practices in HTML, CSS ensuring responsive layouts,
-        semantic structure, smooth interactive hover effects, and polished
-        transitions. What you see here is a complete, production-ready website
-        that demonstrates the full range of skills covered throughout the
-        course.
-      </p>
+    <section class="hero-full">
+      <h2>Page Under Construction</h2>
+      <p>This section of the portfolio is currently being developed.</p>
     </section>
 
     <!-- ==========================================================
-       LAYOUT WRAPPER — SIDEBAR + MAIN CONTENT REGION
-       ----------------------------------------------------------
-       This flex container creates the core of the site layout. 
-       It divides the viewport horizontally into two primary zones:
-       (1) a fixed-position sidebar for navigation links, and
-       (2) a scrollable main content area that displays cards, text, 
-       or any other inserted material. The sidebar remains visible 
-       during scrolling for consistent navigation.
+       MAIN CONTENT — CONSTRUCTION MESSAGE
        ========================================================== -->
+    <main class="construction-main">
+      <div class="construction-card">
+        <!-- Animated Icon -->
+        <div class="construction-icon">🚧</div>
 
-    <!-- SIDEBAR (LEFT) -->
-    <aside class="sidebar">
-      <h2>Navigation</h2>
-      <section>
-        <h3>Exercises</h3>
-        <ul>
-          <li>
-            <a href="content/w1-coursework/index.html">Week 01 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w2-coursework/index.html">Week 02 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w3-coursework/index.html">Week 03 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w4-coursework/index.html">Week 04 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w5-coursework/index.html">Week 05 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w6-coursework/index.html">Week 06 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w7-coursework/index.html">Week 07 Coursework</a>
-          </li>
-          <li>
-            <a href="content/w8-coursework/index.html">Week 08 Coursework</a>
-          </li>
-        </ul>
-      </section>
+        <!-- Title -->
+        <h1 class="construction-title">UNDER CONSTRUCTION</h1>
 
-      <section>
-        <h3>Assignments</h3>
-        <ul>
-          <li>
-            <a href="content/assignment-1/index.html"
-              >Assignment 01: Structuring a Page with Semantic HTML</a
-            >
-          </li>
-          <li>
-            <a href="content/assignment-2/index.html"
-              >Assignment 02: Your Own Web InspirationL</a
-            >
-          </li>
-        </ul>
-      </section>
+        <!-- Subtitle -->
+        <p class="construction-subtitle">
+          Building something awesome for you!
+        </p>
 
-      <section>
-        <h4>Projects</h4>
-        <ul>
-          <li>
-            <a href="content/project-1/index.html">Project 01 – Landing Page</a>
-          </li>
-          <li>
-            <a href="content/project-2/index.html"
-              >Project 02: Final Project - Your Professional Portfolio</a
-            >
-          </li>
-        </ul>
-      </section>
-    </aside>
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
 
-    <!-- MAIN CONTENT (for Project 2 Index) -->
-    <main class="main-content">
-      <h1>Project 02 — Main Features</h1>
-      <p>
-        This professional portfolio site demonstrates every competency outlined
-        in the Project 02 checklist and rubric: semantic structure, responsive
-        design, content depth, accessibility, and professional documentation.
-      </p>
+        <!-- Message -->
+        <p class="construction-message">
+          This page is currently under development as part of my CMPA 3304 course portfolio. 
+          Check back soon to see the completed work, or explore other sections of the site in the meantime.
+        </p>
 
-      <article class="card">
-        <h2>Semantic Structure & Navigation</h2>
-        <ul>
-          <li>
-            Every page uses semantic regions (header, hero, aside, main, footer)
-            to organize content logically.
-          </li>
-          <li>
-            Global nav and sidebar mirror the complete assignment/project
-            hierarchy so graders can reach every artifact in two clicks.
-          </li>
-          <li>
-            Hero headlines and summaries frame each page’s purpose, satisfying
-            the rubric’s content clarity requirement.
-          </li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Visual Design & Responsive Layout</h2>
-        <ul>
-          <li>
-            The shared stylesheet establishes a consistent typography scale,
-            color palette, and spacing system.
-          </li>
-          <li>
-            Flexbox layouts keep the sidebar fixed while the main column remains
-            fluid, and breakpoints ensure the layout collapses cleanly on
-            tablets and phones.
-          </li>
-          <li>
-            Cards, dividers, and callouts highlight key deliverables, addressing
-            the rubric’s visual hierarchy and polish criteria.
-          </li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Accessibility, Interaction & Performance</h2>
-        <ul>
-          <li>
-            Descriptive link labels, ordered headings, and semantic landmarks
-            improve screen‑reader navigation.
-          </li>
-          <li>
-            Interactive elements (links, cards) maintain adequate color contrast
-            and large hit targets to satisfy usability checks.
-          </li>
-          <li>
-            Lightweight assets and GitHub Pages hosting provide fast load times,
-            exceeding the performance expectations in the rubric.
-          </li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Professionalism & Documentation</h2>
-        <ul>
-          <li>
-            Inline comments explain layout decisions, demonstrating intentional
-            design thinking.
-          </li>
-          <li>
-            Version control is transparent through the linked GitHub repository,
-            satisfying the process/documentation checklist item.
-          </li>
-          <li>
-            The project narrative connects skills learned across the course to a
-            cohesive professional deliverable, earning full marks for reflection
-            and presentation.
-          </li>
-        </ul>
-      </article>
+        <!-- Back Button -->
+        <a href="../../index.html" class="back-home-btn">
+          ← Return to Portfolio Home
+        </a>
+      </div>
     </main>
 
     <!-- ==========================================================
-       FOOTER — SITE CLOSING ELEMENT
-       ----------------------------------------------------------
-       The footer provides secondary navigation or ownership data.
-       It visually anchors the page bottom with a soft border and 
-       subdued color contrast to maintain readability without 
-       competing with primary content.
+       FOOTER — FULL WIDTH (NO SIDEBAR)
        ========================================================== -->
-    <footer class="footer">
+    <footer class="footer-full">
       <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
     </footer>
   </body>

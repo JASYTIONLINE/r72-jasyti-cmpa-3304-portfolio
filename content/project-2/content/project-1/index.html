@@ -1,121 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>DigiPortAI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Construction — CMPA 3304 Portfolio</title>
     <link rel="stylesheet" href="../../assets/css/style.css" />
+    <style>
+      /* ========================================
+         UNDER CONSTRUCTION PAGE STYLES
+         ======================================== */
+      
+      /* Remove sidebar margins for full-width layout */
+      .hero-full {
+        width: 100%;
+        background: var(--color-dk-offset);
+        border-bottom: var(--border-soft);
+        box-shadow: var(--shadow-sm);
+        padding: var(--space-6);
+        margin-top: 65px;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .construction-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 200px);
+        padding: var(--space-8);
+        text-align: center;
+      }
+
+      .construction-icon {
+        font-size: 6rem;
+        margin-bottom: var(--space-6);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 10px var(--color-primary));
+        }
+        50% {
+          transform: scale(1.05);
+          filter: drop-shadow(0 0 25px var(--color-primary));
+        }
+      }
+
+      .construction-title {
+        font-size: 3rem;
+        color: var(--color-primary);
+        text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+        margin-bottom: var(--space-4);
+        letter-spacing: 2px;
+      }
+
+      .construction-subtitle {
+        font-size: 1.4rem;
+        color: var(--color-secondary);
+        margin-bottom: var(--space-6);
+        max-width: 600px;
+      }
+
+      .progress-container {
+        width: 100%;
+        max-width: 500px;
+        height: 12px;
+        background: rgba(34, 211, 238, 0.15);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--color-primary);
+        margin-bottom: var(--space-6);
+      }
+
+      .progress-bar {
+        height: 100%;
+        width: 45%;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-quaternary));
+        border-radius: var(--radius-lg);
+        animation: shimmer 2.5s ease-in-out infinite;
+        background-size: 200% 100%;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      .construction-message {
+        font-size: 1.1rem;
+        color: var(--color-lt);
+        max-width: 550px;
+        line-height: 1.7;
+        margin-bottom: var(--space-6);
+      }
+
+      .construction-card {
+        background-color: #111827;
+        border: var(--border-strong);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-6);
+        max-width: 650px;
+        margin-bottom: var(--space-6);
+      }
+
+      .back-home-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        color: var(--color-dk);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      }
+
+      .back-home-btn:hover,
+      .back-home-btn:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(34, 211, 238, 0.5);
+        color: var(--color-dk);
+      }
+
+      /* Full-width footer without sidebar offset */
+      .footer-full {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: var(--space-3);
+        background-color: var(--color-dk);
+        border-top: var(--border-soft);
+        color: var(--color-primary-ghost);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Decorative geometric elements */
+      .geo-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .geo-shapes::before,
+      .geo-shapes::after {
+        content: '';
+        position: absolute;
+        border: 2px solid rgba(34, 211, 238, 0.1);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .geo-shapes::before {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: -100px;
+      }
+
+      .geo-shapes::after {
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        right: -50px;
+        animation-delay: -4s;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- VIDEO OVERLAY (COVERS PAGE WHILE PLAYING) -->
-    <div id="stage" aria-label="Intro video">
-      <video id="intro" autoplay muted playsinline>
-        <source src="../../assets/video/index-intro.mp4" type="video/mp4" />
-      </video>
-      <div class="skip-message">
-        Click or press Spacebar to skip intro video
-      </div>
-    </div>
+    <!-- Decorative background elements -->
+    <div class="geo-shapes"></div>
 
-    <!-- Dragon BANNER (25% HEIGHT) -->
-    <header class="dragon" id="dragon">
-      <img
-        src="../../assets/images/Dai-banner.png"
-        alt="DigiPortAI splash"
-      />
-      <div class="dragon-ui">
-        <h1 class="dragon-title">Your Portal to the Digital AI Universe</h1>
-      </div>
+    <!-- ==========================================================
+       HEADER — TOP NAVIGATION ONLY
+       ========================================================== -->
+    <header class="header">
+      <section class="navbar">
+        <h1>John E. Barkle IV - CMPA 3304</h1>
+        <nav class="navbar-links">
+          <a href="../../index.html">Home</a>
+          <a href="../../styleguide/index.html">Style Guide</a>
+          <a href="https://github.com/JASYTIONLINE/r72-jasyti-cmpa-3304-portfolio/tree/main">GitHub</a>
+          <a href="https://jasytionline.github.io">Digi Port Ai</a>
+        </nav>
+      </section>
     </header>
 
-    <!-- MAIN CONTENT BELOW DRAGON -->
-    <main id="content">
-      <!-- Custom Button Navigation -->
-      <section class="dragon-grid">
-        <div class="dragon-buttons" id="modeButtons">
-          <button class="button-red" data-mode="portfolio">CMPA 3304</button>
-          <button class="button-red" data-mode="juke">Juke Box</button>
-          <button class="button-red" data-mode="pmp">Project PMP</button>
-          <button class="button-red" data-mode="ghost">
-            JASYTI's Ghost Kitchen
-          </button>
-          <button class="button-red" data-mode="hr">
-            JASYTI's HR Portal Application
-          </button>
+    <!-- ==========================================================
+       HERO — PAGE CONTEXT
+       ========================================================== -->
+    <section class="hero-full">
+      <h2>Page Under Construction</h2>
+      <p>This section of the portfolio is currently being developed.</p>
+    </section>
+
+    <!-- ==========================================================
+       MAIN CONTENT — CONSTRUCTION MESSAGE
+       ========================================================== -->
+    <main class="construction-main">
+      <div class="construction-card">
+        <!-- Animated Icon -->
+        <div class="construction-icon">🚧</div>
+
+        <!-- Title -->
+        <h1 class="construction-title">UNDER CONSTRUCTION</h1>
+
+        <!-- Subtitle -->
+        <p class="construction-subtitle">
+          Building something awesome for you!
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar"></div>
         </div>
-      </section>
-      <!-- Section content -->
-      <div class="container">
-        <h2>
-          Welcome to the Digital Artificial Intelligence Integrated Solutions
-          Portal
-        </h2>
-        <h3>Use the buttons above to explore my current published projects .</h3>
+
+        <!-- Message -->
+        <p class="construction-message">
+          This page is currently under development as part of my CMPA 3304 course portfolio. 
+          Check back soon to see the completed work, or explore other sections of the site in the meantime.
+        </p>
+
+        <!-- Back Button -->
+        <a href="../../index.html" class="back-home-btn">
+          ← Return to Portfolio Home
+        </a>
       </div>
     </main>
 
-    <footer class="splash-footer">
+    <!-- ==========================================================
+       FOOTER — FULL WIDTH (NO SIDEBAR)
+       ========================================================== -->
+    <footer class="footer-full">
       <p>© 2025 John E. Barkle IV — All Rights Reserved</p>
     </footer>
-    <!-- JS to Remove Video and Handle Navigation -->
-    <script>
-      const vid = document.getElementById("intro");
-      const stage = document.getElementById("stage");
-      const skipMessage = document.querySelector(".skip-message");
-
-      function showDragon() {
-        stage.remove();
-        document.body.classList.add("show-Dragon");
-      }
-
-      // Auto-hide video when it ends
-      vid.addEventListener("ended", showDragon);
-
-      // Fallback: in case video doesn’t autoplay
-      let started = false;
-      vid.addEventListener(
-        "play",
-        () => {
-          started = true;
-        },
-        { once: true }
-      );
-      setTimeout(() => {
-        if (!started) showDragon();
-      }, 3000);
-
-      // Click anywhere to skip
-      stage.addEventListener("click", showDragon);
-
-      // Press spacebar to skip
-      window.addEventListener("keydown", (e) => {
-        if (e.code === "Space") {
-          e.preventDefault();
-          showDragon();
-        }
-      });
-
-      // Custom nav button logic
-      const modeButtons = document.getElementById("modeButtons");
-      if (modeButtons) {
-        modeButtons.addEventListener("click", (e) => {
-          const btn = e.target.closest("button[data-mode]");
-          if (!btn) return;
-          const mode = btn.getAttribute("data-mode");
-          const map = {
-            portfolio:
-              "https://jasytionline.github.io/r72-jasyti-cmpa-3304-portfolio/content/project-2/index.html",
-            juke: "https://jasytionline.github.io/r91-juke-box/index.html",
-            pmp: "https://jasytionline.github.io/r32-project-pass-pmp/",
-            ghost:
-              "https://jasytionline.github.io/r61-fullstack/web-sites/jasytis-ghost-kitchen/",
-            hr: "https://r63-hr-portal-app-jjr2.vercel.app/",
-          };
-          const url = map[mode];
-          if (url) window.open(url, "_blank", "noopener");
-        });
-      }
-    </script>
   </body>
 </html>
