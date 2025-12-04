@@ -17,20 +17,30 @@
    ============================================================================= */
 :root {
   /* Core Palette */
-  --color-bg-dark: #0f172a;
-  --color-surface: #111b33;
   --color-primary: #22d3ee;
   --color-primary-ghost: #67e8f9;
-  --color-text: #e5e7eb;
-  --color-white: #ffffff;
-  --color-red: #ff3344;
-  --color-green: #00ff88;
+  --color-secondary: #1da1f2;
+  --color-secondary-ghost: #68bdf2;
+  --color-tertiary: #ff3344;
+  --color-tertiary-ghost: #f96f7b;
+  --color-quaternary: #06f988;
+  --color-quaternary-ghost: #99f7cb;
 
-  /* Electric-green link system */
-  --color-link: #1ef2a0;
-  --color-link-onpage: #5ceab1;
-  --color-link-hover: #ff3344;
-  --color-link-active: #22d3ee;
+  /*theme colors*/
+  --color-dk: #0f172a;
+  --color-dk-offset: #111b33;
+  --color-lt: #e5e7eb;
+  --color-lt-offset: #c8c7c7;
+
+  /*text*/
+  --color-text-dk: var(--color-lt);
+  --color-text-lt: var(--color-dk);
+
+  /* link system */
+  --color-link: #06f988;
+  --color-link-onpage: #99f7cb;
+  --color-link-active: #cbf3e0;
+  --color-link-hover: var(--color-tertiary-ghost);
 
   /* Typography and rhythm */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -82,8 +92,8 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   line-height: var(--lh-base);
-  color: var(--color-text);
-  background-color: var(--color-bg-dark);
+  color: var(--color-text-dk);
+  background-color: var(--color-dk);
   overflow-x: hidden;
 }
 
@@ -102,6 +112,7 @@ video {
 
 p {
   max-width: 1000px;
+  font-size: 22px;
 }
 
 /* =============================================================================
@@ -113,7 +124,7 @@ p {
 h1,
 .h1 {
   font-size: 2.2rem;
-  color: #22d3ee;
+  color: var(--color-primary);
   text-shadow: 0 0 8px rgba(34, 211, 238, 0.45);
   margin: 0 0 var(--space-4);
 }
@@ -222,18 +233,36 @@ a[href^="#"]:focus-visible {
    Why: Provide structural layout using Flexbox.  Header and footer are fixed,
    the sidebar is fixed for persistent navigation, and main scrolls freely.
    ============================================================================= */
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 65
-px;
+  height: 65px;
   z-index: 999;
   background: linear-gradient(180deg, #0f172a 0%, #101a30 100%);
   border-bottom: var(--border-soft);
   box-shadow: var(--shadow-sm);
   text-align: center;
+}
+
+/* Hero introduction area aligned with main content */
+.hero {
+  width: 100%;
+  background: var(--color-dk-offset);
+  border-bottom: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  /* height of sticky header */
+  margin-top: 65px;
+  margin-left: 260px;
 }
 
 .navbar {
@@ -242,27 +271,12 @@ px;
   align-items: center;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: var(--space-4) var(--space-6);
-}
-
-.navbar h1 {
-  color: var(--color-primary);
-  margin: 0;
-  font-weight: 700;
+  padding: 5px 5px;
 }
 
 .navbar-links {
   display: flex;
-  gap: var(--space-4);
-}
-
-/* Hero introduction area aligned with main content */
-.hero {
-  background: var(--color-surface);
-  border-bottom: var(--border-soft);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-6);
-  margin-left: 260px;
+  gap: 1rem;
 }
 
 /* Sidebar navigation (fixed) */
@@ -272,9 +286,9 @@ px;
   left: 0;
   width: 260px;
   height: 100vh;
-  margin-top: 86px;
   /* height of sticky header */
-  background-color: var(--color-surface);
+  margin-top: 65px;
+  background-color: var(--color-dk);
   border-right: var(--border-soft);
   box-shadow: var(--shadow-sm);
   padding: var(--space-6) var(--space-4);
@@ -298,26 +312,50 @@ px;
 
 /* Main scrollable content area */
 .main-content {
+  display: flex;
+  flex-direction: column;
   margin-left: 260px;
   padding: var(--space-6);
   margin-bottom: 50px;
   flex: 1;
 }
-
-.discussion {
-  margin-top: 0;
-  margin-left: 260px;
-  padding-top: 0;
+.assignment-container {
+  padding-bottom: 100px;
+  margin-bottom: 50px;
   flex: 1;
 }
+.discussion {
+  margin-top: -25px;
+  margin-left: 260px;
+  padding-top: 0;    
+  margin-bottom: 50px;
+  flex: 1;
+}
+.discussion-q {
+  font-size: 22px;
+  color: #1da1f2;
+  margin-bottom: 0px;
 
+}
+.discussion-a {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 0px;
+
+}
 /* Footer fixed at viewport bottom, aligned with main column */
 .footer {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
   position: fixed;
   bottom: 0;
   left: 260px;
   right: 0;
-  background-color: var(--color-surface);
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--color-dk);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
   text-align: Right;
@@ -329,19 +367,19 @@ px;
   width: 100%;
   bottom: 0;
   right: 0;
-  background-color: var(--color-surface);
+  background-color: var(--color-dk);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
   box-shadow: var(--shadow-sm);
-
 }
 
-
 .splash-footer {
+  display: flex;
+  justify-content: flex-end;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: var(--color-surface);
+  background-color: var(--color-dk);
   border-top: var(--border-soft);
   color: var(--color-primary-ghost);
   text-align: center;
@@ -370,6 +408,7 @@ body {
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-4);
 }
 
@@ -384,6 +423,7 @@ body {
 .card-footer {
   border-top: var(--border-soft);
   padding-top: var(--space-3);
+  padding-right: var(--space-3);
   text-align: right;
   color: var(--color-primary-ghost);
 }
@@ -403,13 +443,12 @@ body {
 .screenshot {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  margin: var(--space-6) auto;
+  align-items: center;
   gap: var(--space-2);
 }
 
 .screenshot img {
-  max-width: 300px;
+  max-width: 1000px;
   border: 3px solid var(--color-primary);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
@@ -427,7 +466,7 @@ body {
   flex-wrap: wrap;
   gap: var(--space-3);
   padding: var(--space-3);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-offset);
   border: var(--border-soft);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -505,13 +544,16 @@ body {
 
 .button-section {
   padding: 32px;
-  background-color: #ffffff;
+  background-color: var(--color-lt-offset);
+  color: var(--color-dk);
+  font-size: 24px;
   border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
 }
-
-.button-section p {
-  font-size: 16px;
+.button-section h2 {
+  color: var(--color-dk);
   margin-bottom: 24px;
+  font-weight: 500;
 }
 
 .button-01 {
@@ -643,7 +685,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
@@ -681,10 +722,16 @@ body {
     padding: var(--space-4);
   }
 }
+/*
+ * This block was previously experimental and shouldn't be active.
+ * It had syntax errors that broke formatting.
+ * If you need it later, re-enable safely.
+ */
+
+/* html, body {
 
 /* ======================================================
    1. GLOBAL RESET & PAGE SETUP
-====================================================== 
  {
   box-sizing: border-box;
 }
@@ -719,7 +766,6 @@ html, body {
   display: block;
 }
 
-
 /* ======================================================
    3. Dragon SPLASH (Post Video Banner)
 ====================================================== */
@@ -744,8 +790,6 @@ html, body {
   height: auto;
   display: block;
 }
-
-*
 
 /* dragon overlay text */
 .dragon-ui {
@@ -783,6 +827,43 @@ body.show-dragon {
   text-align: center;
 }
 
+/* Navigation buttons for other actions */
+.navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.navigation button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #444;
+}
+
+.skip-message {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1001;
+  text-align: center;
+}
+
 .dragon-topnav label {
   margin: 0 10px;
   font-weight: 500;
@@ -799,12 +880,8 @@ body.show-dragon {
   margin-top: 30px;
 }
 
-.dragon-grid {}
-
 .button-red {
-  background-image: linear-gradient(-180deg,
-      #d92323,
-      #aa1a1a);
+  background-image: linear-gradient(-180deg, #d92323, #aa1a1a);
   /* your red gradient */
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
@@ -831,12 +908,6 @@ body.show-dragon {
 /* ======================================================
    6. EXTRA COMPONENTS
 ====================================================== */
-/* Optional intro message section */
-.intro {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
 
 /* Navigation buttons for other actions */
 .navigation {
