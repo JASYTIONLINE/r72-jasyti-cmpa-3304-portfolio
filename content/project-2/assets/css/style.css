@@ -316,7 +316,7 @@ a[href^="#"]:focus-visible {
   flex-direction: column;
   margin-left: 260px;
   padding: var(--space-6);
-  margin-bottom: 50px;
+  margin-bottom: 200px;
   flex: 1;
 }
 .assignment-container {
